@@ -235,6 +235,146 @@ public class RewardExample {
             return (Criteria) this;
         }
 
+        public Criteria andBankIsNull() {
+            addCriterion("bank is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankIsNotNull() {
+            addCriterion("bank is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankEqualTo(String value) {
+            addCriterion("bank =", value, "bank");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankNotEqualTo(String value) {
+            addCriterion("bank <>", value, "bank");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankGreaterThan(String value) {
+            addCriterion("bank >", value, "bank");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankGreaterThanOrEqualTo(String value) {
+            addCriterion("bank >=", value, "bank");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankLessThan(String value) {
+            addCriterion("bank <", value, "bank");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankLessThanOrEqualTo(String value) {
+            addCriterion("bank <=", value, "bank");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankLike(String value) {
+            addCriterion("bank like", value, "bank");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankNotLike(String value) {
+            addCriterion("bank not like", value, "bank");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankIn(List<String> values) {
+            addCriterion("bank in", values, "bank");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankNotIn(List<String> values) {
+            addCriterion("bank not in", values, "bank");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankBetween(String value1, String value2) {
+            addCriterion("bank between", value1, value2, "bank");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankNotBetween(String value1, String value2) {
+            addCriterion("bank not between", value1, value2, "bank");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirectInputBankIsNull() {
+            addCriterion("direct_input_bank is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirectInputBankIsNotNull() {
+            addCriterion("direct_input_bank is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirectInputBankEqualTo(String value) {
+            addCriterion("direct_input_bank =", value, "directInputBank");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirectInputBankNotEqualTo(String value) {
+            addCriterion("direct_input_bank <>", value, "directInputBank");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirectInputBankGreaterThan(String value) {
+            addCriterion("direct_input_bank >", value, "directInputBank");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirectInputBankGreaterThanOrEqualTo(String value) {
+            addCriterion("direct_input_bank >=", value, "directInputBank");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirectInputBankLessThan(String value) {
+            addCriterion("direct_input_bank <", value, "directInputBank");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirectInputBankLessThanOrEqualTo(String value) {
+            addCriterion("direct_input_bank <=", value, "directInputBank");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirectInputBankLike(String value) {
+            addCriterion("direct_input_bank like", value, "directInputBank");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirectInputBankNotLike(String value) {
+            addCriterion("direct_input_bank not like", value, "directInputBank");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirectInputBankIn(List<String> values) {
+            addCriterion("direct_input_bank in", values, "directInputBank");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirectInputBankNotIn(List<String> values) {
+            addCriterion("direct_input_bank not in", values, "directInputBank");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirectInputBankBetween(String value1, String value2) {
+            addCriterion("direct_input_bank between", value1, value2, "directInputBank");
+            return (Criteria) this;
+        }
+
+        public Criteria andDirectInputBankNotBetween(String value1, String value2) {
+            addCriterion("direct_input_bank not between", value1, value2, "directInputBank");
+            return (Criteria) this;
+        }
+
         public Criteria andAccountNoIsNull() {
             addCriterion("account_no is null");
             return (Criteria) this;
@@ -432,6 +572,66 @@ public class RewardExample {
 
         public Criteria andEarmRequestedMoneyNotBetween(Integer value1, Integer value2) {
             addCriterion("earm_requested_money not between", value1, value2, "earmRequestedMoney");
+            return (Criteria) this;
+        }
+
+        public Criteria andEarmRequestedCommissionIsNull() {
+            addCriterion("earm_requested_commission is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEarmRequestedCommissionIsNotNull() {
+            addCriterion("earm_requested_commission is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEarmRequestedCommissionEqualTo(Integer value) {
+            addCriterion("earm_requested_commission =", value, "earmRequestedCommission");
+            return (Criteria) this;
+        }
+
+        public Criteria andEarmRequestedCommissionNotEqualTo(Integer value) {
+            addCriterion("earm_requested_commission <>", value, "earmRequestedCommission");
+            return (Criteria) this;
+        }
+
+        public Criteria andEarmRequestedCommissionGreaterThan(Integer value) {
+            addCriterion("earm_requested_commission >", value, "earmRequestedCommission");
+            return (Criteria) this;
+        }
+
+        public Criteria andEarmRequestedCommissionGreaterThanOrEqualTo(Integer value) {
+            addCriterion("earm_requested_commission >=", value, "earmRequestedCommission");
+            return (Criteria) this;
+        }
+
+        public Criteria andEarmRequestedCommissionLessThan(Integer value) {
+            addCriterion("earm_requested_commission <", value, "earmRequestedCommission");
+            return (Criteria) this;
+        }
+
+        public Criteria andEarmRequestedCommissionLessThanOrEqualTo(Integer value) {
+            addCriterion("earm_requested_commission <=", value, "earmRequestedCommission");
+            return (Criteria) this;
+        }
+
+        public Criteria andEarmRequestedCommissionIn(List<Integer> values) {
+            addCriterion("earm_requested_commission in", values, "earmRequestedCommission");
+            return (Criteria) this;
+        }
+
+        public Criteria andEarmRequestedCommissionNotIn(List<Integer> values) {
+            addCriterion("earm_requested_commission not in", values, "earmRequestedCommission");
+            return (Criteria) this;
+        }
+
+        public Criteria andEarmRequestedCommissionBetween(Integer value1, Integer value2) {
+            addCriterion("earm_requested_commission between", value1, value2, "earmRequestedCommission");
+            return (Criteria) this;
+        }
+
+        public Criteria andEarmRequestedCommissionNotBetween(Integer value1, Integer value2) {
+            addCriterion("earm_requested_commission not between", value1, value2, "earmRequestedCommission");
             return (Criteria) this;
         }
 

@@ -5,15 +5,18 @@ var newSwiper = new Swiper('.swiper_container_new', {
     spaceBetween: mainWidth*0.05,
     mousewheelControl : true,
     scrollbar: '.swiper-scrollbar-new',
-    scrollbarHide: true
+    scrollbarHide: true,
+    lazyLoading: true,
+    lazyLoadingInPrevNext: true,
+    lazyLoadingInPrevNextAmount: 3    
 })
 
 newSwiper.on("onSlideChangeStart", function(swiper){
-	console.log("newSwiper onSlideChangeStart");
+	// console.log("newSwiper onSlideChangeStart");
 	// 화면에 로딩된 슬라이드 그림 개수
 	var slidesCnt = swiper.slides.length - 1;
 	// 만약, 현재 선택한 슬라이드가 로딩된 슬라이드의 수보다 하나 작을 경우 서버에 5개의 그림을 재요청
-	console.log(swiper.slides.length + "-" + swiper.activeIndex);
+	// console.log(swiper.slides.length + "-" + swiper.activeIndex);
 	if (slidesCnt - 1 <= swiper.activeIndex && slidesCnt < 100) {
 		var controller = new NewController();
 		controller.getListData(slidesCnt);
@@ -48,7 +51,7 @@ function NewController() {
 
 NewController.prototype = {
 	getListData: function (startRow) {
-		console.log("---startRow---" + startRow);
+		// console.log("---startRow---" + startRow);
 		
 		this.startRow = startRow;
 		var controller = this;
@@ -61,7 +64,7 @@ NewController.prototype = {
 		);
 	},
 	getListDataRes: function (result) {
-		console.log(result);
+		// console.log(result);
 		if (!this.startRow) {
 			$("#new_count").text(result.count);
 		}
@@ -78,16 +81,18 @@ NewController.prototype = {
 function initNew(){
   var newHome = new Home();
 	  newHome.setTitle("new");
-	  newHome.setExplain("새로 올라온 그림입니다.");
+	  newHome.setExplain("<span data-i18n='new.explain'><span>");
 	  newHome.setContents(totalPosted());
 	  newSwiper.appendSlide(newHome.buildStructure());
-
   delete newHome;
+
+  // 다국어 변경 적용
+  exeTranslation('.main_container', lang);
 }
 
 //전체그림/전체좋아요 숫자설정
 function totalPosted(){
     var contents = $("<div>");
-    contents.html("<span id='new_count'>0</span>개 그림이 paintee에 있습니다.")
+    contents.html("<span id='new_count'>0</span><span data-i18n='new.content'><span>")
     return contents;
 }

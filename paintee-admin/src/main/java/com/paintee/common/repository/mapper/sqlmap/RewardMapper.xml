@@ -4,9 +4,12 @@
   <resultMap id="BaseResultMap" type="com.paintee.common.repository.entity.Reward" >
     <id column="seq" property="seq" jdbcType="INTEGER" />
     <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="bank" property="bank" jdbcType="VARCHAR" />
+    <result column="direct_input_bank" property="directInputBank" jdbcType="VARCHAR" />
     <result column="account_no" property="accountNo" jdbcType="VARCHAR" />
     <result column="account_name" property="accountName" jdbcType="VARCHAR" />
     <result column="earm_requested_money" property="earmRequestedMoney" jdbcType="INTEGER" />
+    <result column="earm_requested_commission" property="earmRequestedCommission" jdbcType="INTEGER" />
     <result column="reward_status" property="rewardStatus" jdbcType="CHAR" />
     <result column="created_date" property="createdDate" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -69,7 +72,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    seq, user_id, account_no, account_name, earm_requested_money, reward_status, created_date
+    seq, user_id, bank, direct_input_bank, account_no, account_name, earm_requested_money, 
+    earm_requested_commission, reward_status, created_date
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.paintee.common.repository.entity.RewardExample" >
     select
@@ -106,11 +110,13 @@
     <selectKey resultType="java.lang.Integer" keyProperty="seq" order="AFTER" >
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into tb_reward (user_id, account_no, account_name, 
-      earm_requested_money, reward_status, created_date
+    insert into tb_reward (user_id, bank, direct_input_bank, 
+      account_no, account_name, earm_requested_money, 
+      earm_requested_commission, reward_status, created_date
       )
-    values (#{userId,jdbcType=VARCHAR}, #{accountNo,jdbcType=VARCHAR}, #{accountName,jdbcType=VARCHAR}, 
-      #{earmRequestedMoney,jdbcType=INTEGER}, #{rewardStatus,jdbcType=CHAR}, #{createdDate,jdbcType=TIMESTAMP}
+    values (#{userId,jdbcType=VARCHAR}, #{bank,jdbcType=VARCHAR}, #{directInputBank,jdbcType=VARCHAR}, 
+      #{accountNo,jdbcType=VARCHAR}, #{accountName,jdbcType=VARCHAR}, #{earmRequestedMoney,jdbcType=INTEGER}, 
+      #{earmRequestedCommission,jdbcType=INTEGER}, #{rewardStatus,jdbcType=CHAR}, #{createdDate,jdbcType=TIMESTAMP}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.paintee.common.repository.entity.Reward" >
@@ -122,6 +128,12 @@
       <if test="userId != null" >
         user_id,
       </if>
+      <if test="bank != null" >
+        bank,
+      </if>
+      <if test="directInputBank != null" >
+        direct_input_bank,
+      </if>
       <if test="accountNo != null" >
         account_no,
       </if>
@@ -130,6 +142,9 @@
       </if>
       <if test="earmRequestedMoney != null" >
         earm_requested_money,
+      </if>
+      <if test="earmRequestedCommission != null" >
+        earm_requested_commission,
       </if>
       <if test="rewardStatus != null" >
         reward_status,
@@ -142,6 +157,12 @@
       <if test="userId != null" >
         #{userId,jdbcType=VARCHAR},
       </if>
+      <if test="bank != null" >
+        #{bank,jdbcType=VARCHAR},
+      </if>
+      <if test="directInputBank != null" >
+        #{directInputBank,jdbcType=VARCHAR},
+      </if>
       <if test="accountNo != null" >
         #{accountNo,jdbcType=VARCHAR},
       </if>
@@ -150,6 +171,9 @@
       </if>
       <if test="earmRequestedMoney != null" >
         #{earmRequestedMoney,jdbcType=INTEGER},
+      </if>
+      <if test="earmRequestedCommission != null" >
+        #{earmRequestedCommission,jdbcType=INTEGER},
       </if>
       <if test="rewardStatus != null" >
         #{rewardStatus,jdbcType=CHAR},
@@ -174,6 +198,12 @@
       <if test="record.userId != null" >
         user_id = #{record.userId,jdbcType=VARCHAR},
       </if>
+      <if test="record.bank != null" >
+        bank = #{record.bank,jdbcType=VARCHAR},
+      </if>
+      <if test="record.directInputBank != null" >
+        direct_input_bank = #{record.directInputBank,jdbcType=VARCHAR},
+      </if>
       <if test="record.accountNo != null" >
         account_no = #{record.accountNo,jdbcType=VARCHAR},
       </if>
@@ -182,6 +212,9 @@
       </if>
       <if test="record.earmRequestedMoney != null" >
         earm_requested_money = #{record.earmRequestedMoney,jdbcType=INTEGER},
+      </if>
+      <if test="record.earmRequestedCommission != null" >
+        earm_requested_commission = #{record.earmRequestedCommission,jdbcType=INTEGER},
       </if>
       <if test="record.rewardStatus != null" >
         reward_status = #{record.rewardStatus,jdbcType=CHAR},
@@ -198,9 +231,12 @@
     update tb_reward
     set seq = #{record.seq,jdbcType=INTEGER},
       user_id = #{record.userId,jdbcType=VARCHAR},
+      bank = #{record.bank,jdbcType=VARCHAR},
+      direct_input_bank = #{record.directInputBank,jdbcType=VARCHAR},
       account_no = #{record.accountNo,jdbcType=VARCHAR},
       account_name = #{record.accountName,jdbcType=VARCHAR},
       earm_requested_money = #{record.earmRequestedMoney,jdbcType=INTEGER},
+      earm_requested_commission = #{record.earmRequestedCommission,jdbcType=INTEGER},
       reward_status = #{record.rewardStatus,jdbcType=CHAR},
       created_date = #{record.createdDate,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
@@ -213,6 +249,12 @@
       <if test="userId != null" >
         user_id = #{userId,jdbcType=VARCHAR},
       </if>
+      <if test="bank != null" >
+        bank = #{bank,jdbcType=VARCHAR},
+      </if>
+      <if test="directInputBank != null" >
+        direct_input_bank = #{directInputBank,jdbcType=VARCHAR},
+      </if>
       <if test="accountNo != null" >
         account_no = #{accountNo,jdbcType=VARCHAR},
       </if>
@@ -221,6 +263,9 @@
       </if>
       <if test="earmRequestedMoney != null" >
         earm_requested_money = #{earmRequestedMoney,jdbcType=INTEGER},
+      </if>
+      <if test="earmRequestedCommission != null" >
+        earm_requested_commission = #{earmRequestedCommission,jdbcType=INTEGER},
       </if>
       <if test="rewardStatus != null" >
         reward_status = #{rewardStatus,jdbcType=CHAR},
@@ -234,9 +279,12 @@
   <update id="updateByPrimaryKey" parameterType="com.paintee.common.repository.entity.Reward" >
     update tb_reward
     set user_id = #{userId,jdbcType=VARCHAR},
+      bank = #{bank,jdbcType=VARCHAR},
+      direct_input_bank = #{directInputBank,jdbcType=VARCHAR},
       account_no = #{accountNo,jdbcType=VARCHAR},
       account_name = #{accountName,jdbcType=VARCHAR},
       earm_requested_money = #{earmRequestedMoney,jdbcType=INTEGER},
+      earm_requested_commission = #{earmRequestedCommission,jdbcType=INTEGER},
       reward_status = #{rewardStatus,jdbcType=CHAR},
       created_date = #{createdDate,jdbcType=TIMESTAMP}
     where seq = #{seq,jdbcType=INTEGER}

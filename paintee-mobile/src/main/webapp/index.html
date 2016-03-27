@@ -76,13 +76,13 @@
                 <div class="side_menu_lang">
                     Language
                     <select class="side_menu_lang_select">
-                            <option value="1">English</option>
-                            <option value="2">Korean</option>
+                            <option value="en">English</option>
+                            <option value="ko">Korean</option>
                     </select>
                 </div>
                 <div class="side_menu_copyright">Copyright ⓒ paintee. Inc.,</div>
             </div>
-        </div>        
+        </div>
         <div class="modal"></div>
         <div id="fullscreen_btn"><i class="material-icons" style="font-size:24px">fullscreen</i></div>
     </div>
@@ -104,7 +104,6 @@
                     <input type="checkbox" id="privateAt" name="privateAt"> private
                 </div>
                 <div class="purchase_box_bottom">
-                    <div class="purchase_like_btn"><i class="material-icons">favorite</i><div class="purchase_btn_text"> like without postcard</div></div>
                     <div class="purchase_next_btn"><div class="purchase_btn_text">address </div><i class="material-icons">keyboard_arrow_right</i></div>
                 </div>
             </div>
@@ -115,15 +114,6 @@
                     <div class="purchase_col_name">
                         <input type="text" id="senderName" name="senderName" class="purchase_input" placeholder="name">
                     </div>
-                    <!-- 
-                    <div class="purchase_col_name">
-                        <select class="purchase_select">
-                            <option value="1">your ID</option>
-                            <option value="2">Paintee</option>
-                            <option value="3">Direct Input</option>
-                        </select>
-                    </div>
-                     -->                    
                     <div class="purchase_col_input"></div>
 
                     <div class="purchase_col_title">addressee</div>
@@ -131,16 +121,15 @@
                         <input type="text" id="receiverName" name="receiverName" class="purchase_input" placeholder="name">
                     </div>
                     <div class="purchase_col_input">
-                        <input type="text" name="receiverBasicAddr" class="purchase_input2" placeholder="address 1">
-						<span id="postSearch"><input type="button" onclick="execDaumPostcode()" value="post search" class="purchase_button"></span>
+                        <input type="text" name="receiverBasicAddr" class="purchase_input" placeholder="address 1">
                         <input type="text" name="receiverDetailAddr" class="purchase_input" placeholder="address 2">
                         <input type="text" name="receiverCity" class="purchase_input" placeholder="city" style="width: 30%">
                         <input type="text" name="receiverZipcode" class="purchase_input" placeholder="zip code" style="width: 30%">
                         <select name="location" class="purchase_select" style="width: 30%">
-                            <option value="1">Korea</option>
-                            <option value="2">USA</option>
-                            <option value="3">China</option>
-                            <option value="3">Japan</option>
+                            <option value="Korea" selected="selected">Korea</option>
+                            <option value="USA">USA</option>
+                            <option value="China">China</option>
+                            <option value="Japan">Japan</option>
                         </select>
                     </div>
                 </div>
@@ -189,41 +178,44 @@
         <div class="profile_contents">
             <div class="profile_section">username</div>
             <div class="profile_form">
-                <input type="text" class="account_form profile_username" placeholder="name">
+                <input type="text" id="profileUserName" name="profileUserName" class="account_form profile_username" placeholder="name">
             </div>
             <div class="profile_section">passward</div>
             <div class="profile_form">
-                <input type="passward" class="account_form profile_passward" placeholder="new passward">
-                <input type="passward" class="account_form profile_passward" placeholder="repeat passward">
+                <input id="profileUserPassword" name="profileUserPassword" type="passward" class="account_form profile_passward" placeholder="new passward">
+                <input id="profileConfirmPassord" name="profileConfirmPassord" type="passward" class="account_form profile_passward" placeholder="repeat passward">
             </div>
             <div class="profile_section">introduction</div>
             <div class="profile_form">
-                <input type="text" class="account_form profile_username" placeholder="name">
+                <input id="profileIntroduction" name="profileIntroduction" type="text" class="account_form profile_username" placeholder="introduction">
             </div>
             <div class="profile_section">address</div>
             <div class="profile_form">
-                <input type="text" class="account_form" placeholder="address 1">
-                <input type="text" class="account_form" placeholder="address 2">
-                <input type="text" class="account_form" placeholder="city" style="width: 30%">
-                <input type="text" class="account_form" placeholder="zip code" style="width: 30%">
-                <select class="profile_select" style="width: 30%">
-                        <option value="1">Korea</option>
-                        <option value="2">USA</option>
-                        <option value="3">China</option>
-                        <option value="3">Japan</option>
+                <input type="text" id="profileBasicAddr" name="profileBasicAddr" class="account_form" placeholder="address 1">
+                <input type="text" id="profileDetailAddr" name="profileDetailAddr" class="account_form" placeholder="address 2">
+                <input type="text" id="profileCity" name="profileCity" class="account_form" placeholder="city" style="width: 30%">
+                <input type="text" id="profileZipcode" name="profileZipcode" class="account_form" placeholder="zip code" style="width: 30%">
+                <select id="profileLocation" name="profileLocation" class="profile_select" style="width: 30%">
+                        <option value="Korea">Korea</option>
+                        <option value="USA">USA</option>
+                        <option value="China">China</option>
+                        <option value="Japan">Japan</option>
                 </select>
             </div>
             <div class="profile_section">language</div>
             <div class="profile_form">
                 <select class="profile_select">
-                        <option value="1">English</option>
-                        <option value="2">Korean</option>
+                        <option value="en">English</option>
+                        <option value="ko">Korean</option>
                 </select>
             </div>
             <div class="return_btn"><i class="material-icons">keyboard_backspace</i></div>
+	        <div id="profileLayer" style="display:none;position:absolute;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
+				<img src="//i1.daumcdn.net/localimg/localimages/07/postcode/320/close.png" id="btnCloseProfileLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
+			</div>
         </div>
         <div class="profile_bottom">
-            <div class="profile_btn"> Update profile <i class="material-icons">done</i></div>
+            <div class="profile_btn" id="profileUpdateBtn"> Update profile <i class="material-icons">done</i></div>
         </div>
     </div>
         
@@ -245,7 +237,7 @@
         <div class="login_btn_main">
             Log In
         </div>
-        <div class="login_social_btn">
+        <div id="login_facebook_btn" class="login_social_btn">
             Log in with Facebook
         </div>
         <div class="account_bottom_btn login_signup_btn">
@@ -259,18 +251,20 @@
             Paintee
         </div>
         <div class="account_box">
-            <input type="text" class="account_form signup_id" placeholder="Enter email address">
-            <input type="password" class="account_form signup_pw" placeholder="Enter passward">
-            <input type="password" class="account_form signup_pw" placeholder="Repeat passward">
-            <input type="text" class="account_form signup_username" placeholder="username">
+        	<form id="signupForm" name="signupForm" method="POST">
+            <input type="text" id="signupUserId" name="signupUserId" class="account_form signup_id" placeholder="Enter email address" value="javahaja@hotmail.com">
+            <input type="password" id="signupUserPassword" name="signupUserPassword" class="account_form signup_pw" placeholder="Enter passward" value="qazwsx123">
+            <input type="password" id="signupConfirmPassord" name="signupConfirmPassord" class="account_form signup_pw" placeholder="Repeat passward" value="qazwsx123">
+            <input type="text" id="signupUserName" name="signupUserName" class="account_form signup_username" placeholder="username" value="javadori">
+            </form>
         </div>
         <div class="account_middle signup_terms">
             By signing up, you agree to our <b>Terms & Policy.</b>
         </div>
-        <div class="signup_btn">
+        <div id="signup_btn" class="signup_btn">
             Sign Up
         </div>
-        <div class="signup_social_btn">
+        <div id="signup_facebook_btn" class="signup_social_btn">
             Start with Facebook
         </div>
         <div class="account_bottom_btn signup_login_btn">
@@ -284,33 +278,47 @@
             Paintee
         </div>
         <div class="account_box">
-            <input type="text" class="account_form login_help_id" placeholder="Enter email address">
+            <input type="text" id="resetUserEmaiil" name="resetUserEmail" class="account_form login_help_id" placeholder="Enter email address">
         </div>
         <div class="account_middle">
             Enter your email address associated with your account
         </div>
-        <div class="loginhelp_btn">
+        <div id="resetPasswordBtn" class="loginhelp_btn">
             Send temporary passward
         </div>
         <div class="account_bottom_btn help_login_btn">
             Return to <b>Log in</b>
         </div>
     </div>
-    
-    <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/swiper.jquery.min.js"></script>
-    <script src="js/jquery.touchSwipe.min.js"></script>
-	<script src="js/common-ajax.js"></script>
-	<script src="js/common.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/popular.js"></script>
-    <script src="js/new.js"></script>
-    <script src="js/purchase.js"></script>
-    <script src="js/detail.js"></script>
-    <script src="js/login.js"></script>
-    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-    <script src="js/daumAddrApi.js"></script>
 
+    <!--  Scripts-->
+    <script src="/js/jquery/jquery-2.1.1.js"></script>
+    <script src="/js/swiper.jquery.min.js"></script>
+    <script src="/js/jquery.touchSwipe.min.js"></script>
+
+    <script src="/js/facebook.js"></script>
+	<script src="/js/common-ajax.js"></script>
+	<script src="/js/common.js"></script>
+    <script src="/js/detail.js"></script>
+    <script src="/js/init.js"></script>
+    <script src="/js/myhome.js"></script>
+    <script src="/js/follow.js"></script>
+    <script src="/js/popular.js"></script>
+    <script src="/js/new.js"></script>
+    <script src="/js/personal.js"></script>
+    <script src="/js/purchase.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/reward.js"></script>
+    <script src="/js/signup.js"></script>
+    <script src="/js/profile.js"></script>
+    <script src="/js/upload.js"></script>
+    <script src="/js/history.js"></script>
+
+	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js?1"></script>
+    <script src="/js/daumAddrApi.js"></script>
+
+	<!-- 다국어 지원 라이브러리 -->
+	<script src="/js/jquery/i18next.min.js"></script>
+	<script src="/js/translation.js"></script>
 </body>
 </html>

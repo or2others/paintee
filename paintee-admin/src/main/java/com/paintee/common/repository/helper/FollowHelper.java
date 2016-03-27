@@ -14,6 +14,11 @@
 */
 package com.paintee.common.repository.helper;
 
+import java.util.List;
+
+import com.paintee.common.repository.entity.Follow;
+import com.paintee.common.repository.entity.vo.FollowSearchVO;
+import com.paintee.common.repository.entity.vo.FollowVO;
 import com.paintee.common.repository.mapper.FollowMapper;
 
 /**
@@ -34,12 +39,10 @@ com.paintee.common.repository.helper \n
    helper.xml 은 별도 쿼리 구현시 생성하여 사용한다. 별도 구현 sql 이 존재 하지 않을경우 생성하지 않아도 된다.
 */
 public interface FollowHelper extends FollowMapper {
-	/**
-	 @fn selectTotalCount
-	 @brief 함수 간략한 설명 : 총 개수 조회
-	 @remark
-	 - 함수의 상세 설명 : 데이터 총 개수를 조회 한다.
-	 @return 
-	*/
-	public int selectTotalCount();
+	public List<FollowVO> selectFollowPaintingList(FollowSearchVO searchVO);
+	public FollowVO selectFollowCount(FollowSearchVO search);
+	public List<FollowVO> selectFollowsList(FollowSearchVO searchVO);
+	public List<FollowVO> selectFollowingList(FollowSearchVO searchVO);
+	public void insertFollowByName(Follow follow);
+	public void deleteFollowByName(Follow follow);
 }

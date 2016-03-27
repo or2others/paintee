@@ -74,51 +74,50 @@ public class LoginRestController {
 			resultMap.put("errorNo", 402);
 		} else {
 			resultMap = loginService.login(userLoginVO);
-/* TODO: 사용자 화면에서 처리하기로 함.
-			int resultCode = Integer.parseInt(String.valueOf(resultMap.get("errorNo")).trim());
+		}
 
-			if(resultCode == 0) {
-				int cookieMaxAge = expireDay*24*60*60;
-				String domain = "localhost";
+		return resultMap;
+	}
 
-				//사용자 id cookie 생성
-				Cookie userIdCookie = new Cookie("userId", String.valueOf(resultMap.get("userId")));
-				//hash 의 생존 주기와 같게 설정
-				userIdCookie.setMaxAge(cookieMaxAge);
-				userIdCookie.setDomain(domain);
-				userIdCookie.setPath("/");
-				response.addCookie(userIdCookie);
+	/**
+	 @fn loginSocial
+	 @brief 함수 간략한 설명 : 소셜 사용자 인증
+	 @remark
+	 - 함수의 상세 설명 : email 과 providerId, accessToken 을 사용하여 사용자 인증을 한다.
+	 @param userLoginVO
+	 @param response
+	 @return 
+	*/
+	@RequestMapping(value = "/api/login/social", method = {RequestMethod.POST})
+	public Map<String, Object> loginSocial(@RequestBody UserLoginVO userLoginVO, HttpServletResponse response) {
+		Map<String, Object> resultMap = new HashMap<>();
 
-				//사용자 eamil cookie 생성
-				Cookie emailCookie = new Cookie("email", String.valueOf(resultMap.get("email")));
-				//hash 의 생존 주기와 같게 설정
-				emailCookie.setMaxAge(cookieMaxAge);
-				emailCookie.setDomain(domain);
-				emailCookie.setPath("/");
-				response.addCookie(emailCookie);
+		if(userLoginVO.getEmail() == null || userLoginVO.getEmail().trim().length() == 0) {
+			resultMap.put("errorNo", 401);
+		} else {
+			resultMap = loginService.loginSocial(userLoginVO);
+		}
 
-				//사용자 hash cookie 생성
-				Cookie hashCookie = new Cookie("hash", String.valueOf(resultMap.get("hash")));
-				//hash 의 생존 주기와 같게 설정
-				hashCookie.setMaxAge(cookieMaxAge);
-				hashCookie.setDomain(domain);
-				hashCookie.setPath("/");
-				response.addCookie(hashCookie);
+		return resultMap;
+	}
 
-				try {
-					//사용자 name cookie 생성
-					String name = String.valueOf(resultMap.get("name"));
-					Cookie nameCookie = null;
-					nameCookie = new Cookie("name", URLEncoder.encode(name, "UTF-8"));
-					//hash 의 생존 주기와 같게 설정
-					nameCookie.setMaxAge(cookieMaxAge);
-					nameCookie.setDomain(domain);
-					nameCookie.setPath("/");
-					response.addCookie(nameCookie);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}*/
+	/**
+	 @fn resetpasswd
+	 @brief 함수 간략한 설명 : 비밀번호 초기화후 메일로 임시비밀번호 발송
+	 @remark
+	 - 함수의 상세 설명 : 비밀번호 초기화후 메일로 임시비밀번호 발송
+	 @param userLoginVO
+	 @param response
+	 @return 
+	*/
+	@RequestMapping(value = "/api/resetpasswd", method = {RequestMethod.POST})
+	public Map<String, Object> resetpasswd(@RequestBody UserLoginVO userLoginVO, HttpServletResponse response) throws Exception {
+		Map<String, Object> resultMap = new HashMap<>();
+
+		if(userLoginVO.getEmail() == null || userLoginVO.getEmail().trim().length() == 0) {
+			resultMap.put("errorNo", 401);
+		} else {
+			resultMap = loginService.resetpassword(userLoginVO);
 		}
 
 		return resultMap;

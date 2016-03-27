@@ -14,9 +14,24 @@
 */
 package com.paintee.mobile.follow.service;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.paintee.common.repository.entity.FileInfo;
+import com.paintee.common.repository.entity.FileInfoExample;
+import com.paintee.common.repository.entity.Follow;
+import com.paintee.common.repository.entity.FollowExample;
+import com.paintee.common.repository.entity.vo.FollowSearchVO;
+import com.paintee.common.repository.entity.vo.FollowVO;
+import com.paintee.common.repository.helper.FileInfoHelper;
+import com.paintee.common.repository.helper.FollowHelper;
+import com.paintee.common.repository.helper.UserHelper;
 
 /**
 @class FollowServiceImpl
@@ -37,4 +52,62 @@ com.paintee.mobile.follow.service \n
 public class FollowServiceImpl implements FollowService {
 	private final static Logger logger = LoggerFactory.getLogger(FollowServiceImpl.class);
 
+	@Autowired
+	private FollowHelper followHelper;
+	
+	@Autowired
+	private FileInfoHelper fileInfoHelper;
+	
+	@Override
+	public Map<String, Object> getFollowPaintingInfo(FollowSearchVO searchVO) {
+		
+		
+		List<FollowVO> list = followHelper.selectFollowPaintingList(searchVO);
+		logger.debug("list ::: {}", list);
+		
+		// 파일정보 조회
+		for (FollowVO follow : list) {
+			FileInfoExample fileInfoExample = new FileInfoExample();
+			FileInfoExample.Criteria fileWhere = fileInfoExample.createCriteria();
+			fileWhere.andFileGroupSeqEqualTo(follow.getFileGroupSeq());
+	
+			List<FileInfo> fileInfoList = fileInfoHelper.selectByExample(fileInfoExample);
+	
+			if(fileInfoList != null && fileInfoList.size() > 0) {
+				FileInfo fileInfo = fileInfoList.get(0);
+				follow.setFileId(fileInfo.getId());
+			}
+		}
+		
+		Map<String, Object> result = new HashMap<>();
+//		result.put("count", count);
+		result.put("list", list);
+		return result;
+	}
+
+	@Override
+	public FollowVO getFollowCount(FollowSearchVO search) {
+		return followHelper.selectFollowCount(search);
+	}
+
+	
+	@Override
+	public List<FollowVO> getFollowsList(FollowSearchVO search) {
+		return followHelper.selectFollowsList(search);
+	}
+	
+	@Override
+	public List<FollowVO> getFollowingList(FollowSearchVO search) {
+		return followHelper.selectFollowingList(search);
+	}
+
+	@Override
+	public void addFollows(Follow follow) {
+		followHelper.insertFollowByName(follow);
+	}
+
+	@Override
+	public void delFollows(Follow follow) {
+		followHelper.deleteFollowByName(follow);
+	}
 }

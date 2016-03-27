@@ -8,11 +8,17 @@ public class Reward extends BaseEntity {
 
     private String userId;
 
+    private String bank;
+
+    private String directInputBank;
+
     private String accountNo;
 
     private String accountName;
 
     private Integer earmRequestedMoney;
+
+    private Integer earmRequestedCommission;
 
     private String rewardStatus;
 
@@ -32,6 +38,22 @@ public class Reward extends BaseEntity {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getBank() {
+        return bank;
+    }
+
+    public void setBank(String bank) {
+        this.bank = bank;
+    }
+
+    public String getDirectInputBank() {
+        return directInputBank;
+    }
+
+    public void setDirectInputBank(String directInputBank) {
+        this.directInputBank = directInputBank;
     }
 
     public String getAccountNo() {
@@ -56,6 +78,14 @@ public class Reward extends BaseEntity {
 
     public void setEarmRequestedMoney(Integer earmRequestedMoney) {
         this.earmRequestedMoney = earmRequestedMoney;
+    }
+
+    public Integer getEarmRequestedCommission() {
+        return earmRequestedCommission;
+    }
+
+    public void setEarmRequestedCommission(Integer earmRequestedCommission) {
+        this.earmRequestedCommission = earmRequestedCommission;
     }
 
     public String getRewardStatus() {

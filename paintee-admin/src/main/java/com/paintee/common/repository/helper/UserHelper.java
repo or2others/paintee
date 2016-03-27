@@ -14,6 +14,7 @@
 */
 package com.paintee.common.repository.helper;
 
+import com.paintee.common.repository.entity.Purchase;
 import com.paintee.common.repository.entity.User;
 import com.paintee.common.repository.mapper.UserMapper;
 
@@ -36,11 +37,31 @@ public interface UserHelper extends UserMapper {
 	
 	/**
 	 @fn updateUserPurchaseInfo
-	 @brief 함수 간략한 설명 : 회원의 구매 정보를 등록
+	 @brief 함수 간략한 설명 : 회원의 구매카운트를 증가시킨다.
 	 @remark
-	 - 함수의 상세 설명 : 회원의 정보 중에서 구매카운트와 구매 전체 합계 금액을 업데이트 한다.
+	 - 함수의 상세 설명 : 로그인한 사용자가 구매시 구매카운트를 증가시킨다.
 	 @param user
 	 @return 
 	*/
-	public void updateUserPurchaseInfo(User user);
+	public void updateUserInfo(User user);
+
+	/**
+	 @fn updateUserEarnTotalMoney
+	 @brief 함수 간략한 설명 : 회원의 전체 수익 금액을 증가시킨다.
+	 @remark
+	 - 함수의 상세 설명 : 회원의 정보 중에서 전체 수익 합계 금액을 업데이트 한다
+	                - 로그인한 사용자가 구매한 그림의 아티스트의 전체 수익합계 금액을 업데이트
+	 @param user
+	 @return 
+	*/
+	public void updateUserEarnTotalMoney(Purchase purchase);
+
+	/**
+	 @fn updateUserEarnRewordMoney
+	 @brief 함수 간략한 설명 : 구매시의 리워드 금액 증가
+	 @remark
+	 - 함수의 상세 설명 : 
+	 @param user 
+	*/
+	public void updateUserEarnRewordMoney(User user);
 }

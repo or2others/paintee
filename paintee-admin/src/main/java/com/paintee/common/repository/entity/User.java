@@ -12,9 +12,17 @@ public class User extends BaseEntity {
 
     private String name;
 
+    private String providerId;
+
     private String introduce;
 
-    private String address;
+    private String basicAddr;
+
+    private String detailAddr;
+
+    private String zipcode;
+
+    private String city;
 
     private String location;
 
@@ -22,17 +30,27 @@ public class User extends BaseEntity {
 
     private Integer postCnt;
 
-    private Integer earnTotalMoney;
+    private Float earnTotalMoney;
 
-    private Integer earnRewordMoney;
+    private Float earnRewordMoney;
 
-    private String resentSendAddr;
+    private String resentSendBasicAddr;
+
+    private String resentSendDetailAddr;
+
+    private String resentSendZipcode;
+
+    private String resentSendCity;
+
+    private String resentSendLocation;
 
     private String resentSendName;
 
     private Integer point;
 
     private String userStatus;
+
+    private String snsType;
 
     private Date createdDate;
 
@@ -68,6 +86,14 @@ public class User extends BaseEntity {
         this.name = name;
     }
 
+    public String getProviderId() {
+        return providerId;
+    }
+
+    public void setProviderId(String providerId) {
+        this.providerId = providerId;
+    }
+
     public String getIntroduce() {
         return introduce;
     }
@@ -76,12 +102,36 @@ public class User extends BaseEntity {
         this.introduce = introduce;
     }
 
-    public String getAddress() {
-        return address;
+    public String getBasicAddr() {
+        return basicAddr;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setBasicAddr(String basicAddr) {
+        this.basicAddr = basicAddr;
+    }
+
+    public String getDetailAddr() {
+        return detailAddr;
+    }
+
+    public void setDetailAddr(String detailAddr) {
+        this.detailAddr = detailAddr;
+    }
+
+    public String getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getLocation() {
@@ -108,28 +158,60 @@ public class User extends BaseEntity {
         this.postCnt = postCnt;
     }
 
-    public Integer getEarnTotalMoney() {
+    public Float getEarnTotalMoney() {
         return earnTotalMoney;
     }
 
-    public void setEarnTotalMoney(Integer earnTotalMoney) {
+    public void setEarnTotalMoney(Float earnTotalMoney) {
         this.earnTotalMoney = earnTotalMoney;
     }
 
-    public Integer getEarnRewordMoney() {
+    public Float getEarnRewordMoney() {
         return earnRewordMoney;
     }
 
-    public void setEarnRewordMoney(Integer earnRewordMoney) {
+    public void setEarnRewordMoney(Float earnRewordMoney) {
         this.earnRewordMoney = earnRewordMoney;
     }
 
-    public String getResentSendAddr() {
-        return resentSendAddr;
+    public String getResentSendBasicAddr() {
+        return resentSendBasicAddr;
     }
 
-    public void setResentSendAddr(String resentSendAddr) {
-        this.resentSendAddr = resentSendAddr;
+    public void setResentSendBasicAddr(String resentSendBasicAddr) {
+        this.resentSendBasicAddr = resentSendBasicAddr;
+    }
+
+    public String getResentSendDetailAddr() {
+        return resentSendDetailAddr;
+    }
+
+    public void setResentSendDetailAddr(String resentSendDetailAddr) {
+        this.resentSendDetailAddr = resentSendDetailAddr;
+    }
+
+    public String getResentSendZipcode() {
+        return resentSendZipcode;
+    }
+
+    public void setResentSendZipcode(String resentSendZipcode) {
+        this.resentSendZipcode = resentSendZipcode;
+    }
+
+    public String getResentSendCity() {
+        return resentSendCity;
+    }
+
+    public void setResentSendCity(String resentSendCity) {
+        this.resentSendCity = resentSendCity;
+    }
+
+    public String getResentSendLocation() {
+        return resentSendLocation;
+    }
+
+    public void setResentSendLocation(String resentSendLocation) {
+        this.resentSendLocation = resentSendLocation;
     }
 
     public String getResentSendName() {
@@ -154,6 +236,14 @@ public class User extends BaseEntity {
 
     public void setUserStatus(String userStatus) {
         this.userStatus = userStatus;
+    }
+
+    public String getSnsType() {
+        return snsType;
+    }
+
+    public void setSnsType(String snsType) {
+        this.snsType = snsType;
     }
 
     public Date getCreatedDate() {

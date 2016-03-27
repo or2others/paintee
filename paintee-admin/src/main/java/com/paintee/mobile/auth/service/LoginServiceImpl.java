@@ -25,7 +25,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.paintee.common.mail.HtmlContentBuilder;
+import com.paintee.common.mail.MailService;
 import com.paintee.common.repository.entity.Login;
 import com.paintee.common.repository.entity.LoginExample;
 import com.paintee.common.repository.entity.User;
@@ -33,6 +36,7 @@ import com.paintee.common.repository.entity.UserExample;
 import com.paintee.common.repository.entity.vo.UserLoginVO;
 import com.paintee.common.repository.helper.LoginHelper;
 import com.paintee.common.repository.helper.UserHelper;
+import com.paintee.common.util.PasswordGenerator;
 import com.paintee.common.util.Sha512Encrypt;
 
 /**
@@ -63,11 +67,20 @@ public class LoginServiceImpl implements LoginService {
 	@Value("#{config['common.login.hash.expireDay'] }")
 	private int expireDay;
 
+	@Autowired
+	private PasswordGenerator passwordGenerator;
+
+	@Autowired
+	private HtmlContentBuilder htmlContentBuilder;
+
+	@Autowired
+	private MailService mailService;
+
 	/**
 	 @fn 
 	 @brief (Override method) 함수 간략한 설명 : 사용자 인증
 	 @remark
-	 - 오버라이드 함수의 상세 설명 : userId 와 passwod 를 사용하여 사용자 인증을 한다.
+	 - 오버라이드 함수의 상세 설명 : email 과 passwod 를 사용하여 사용자 인증을 한다.
 	 @see com.paintee.mobile.auth.service.LoginService#login(com.paintee.common.repository.entity.vo.UserLoginVO)
 	*/
 	public Map<String, Object> login(UserLoginVO userLoginVO) {
@@ -78,6 +91,7 @@ public class LoginServiceImpl implements LoginService {
 		UserExample.Criteria where = userExamplem.createCriteria();
 		where.andEmailEqualTo(userLoginVO.getEmail());
 		where.andPasswordEqualTo(Sha512Encrypt.hash(userLoginVO.getPassword()));
+		where.andProviderIdEqualTo("PAINTEE");
 		where.andUserStatusEqualTo("N");
 
 		List<User> userList = userHelper.selectByExample(userExamplem);
@@ -105,6 +119,58 @@ public class LoginServiceImpl implements LoginService {
 			resultMap.put("email", userInfo.getEmail());
 			resultMap.put("name", userInfo.getName());
 			resultMap.put("userId", userInfo.getUserId());
+			resultMap.put("location", userInfo.getLocation());
+			resultMap.put("providerId", userInfo.getProviderId());
+			resultMap.put("hash", login.getHash());
+		}
+
+		return resultMap;
+	}
+
+	/**
+	 @fn 
+	 @brief (Override method) 함수 간략한 설명 : 소셜 사용자 인증
+	 @remark
+	 - 오버라이드 함수의 상세 설명 : email 과 providerId, accessToken 을 사용하여 사용자 인증을 한다.
+	 @see com.paintee.mobile.auth.service.LoginService#loginSocial(com.paintee.common.repository.entity.vo.UserLoginVO)
+	*/
+	public Map<String, Object> loginSocial(UserLoginVO userLoginVO) {
+		Map<String, Object> resultMap = new HashMap<>();
+
+		//사용자 정보 조회
+		UserExample userExamplem = new UserExample();
+		UserExample.Criteria where = userExamplem.createCriteria();
+		where.andEmailEqualTo(userLoginVO.getEmail());
+		where.andProviderIdEqualTo(userLoginVO.getProviderId());
+		where.andUserStatusEqualTo("N");
+
+		List<User> userList = userHelper.selectByExample(userExamplem);
+
+		if(userList == null || userList.size() == 0) {
+			resultMap.put("errorNo", 404);
+		} else {
+			User userInfo = userList.get(0);
+
+			DateTime toDate = new DateTime();
+			DateTime expireDate = toDate.plusDays(expireDay);
+
+			String loginWord = userInfo.getUserId()+userLoginVO.getAccessGubun()+expireDate.getMillis();
+
+			Login login = new Login();
+			login.setUserId(userInfo.getUserId());
+			login.setAccessGubun(userLoginVO.getAccessGubun());
+			login.setHash(Sha512Encrypt.hash(loginWord));
+			login.setExpireDate(expireDate.toDate());
+
+			loginHelper.insert(login);
+			logger.debug("login:"+login);
+
+			resultMap.put("errorNo", 0);
+			resultMap.put("email", userInfo.getEmail());
+			resultMap.put("name", userInfo.getName());
+			resultMap.put("userId", userInfo.getUserId());
+			resultMap.put("location", userInfo.getLocation());
+			resultMap.put("providerId", userInfo.getProviderId());
 			resultMap.put("hash", login.getHash());
 		}
 
@@ -161,5 +227,43 @@ public class LoginServiceImpl implements LoginService {
 		}
 
 		return user;
+	}
+
+	/**
+	 @fn 
+	 @brief (Override method) 함수 간략한 설명 :
+	 @remark
+	 - 오버라이드 함수의 상세 설명 : 
+	 @see com.paintee.mobile.auth.service.LoginService#resetpassword(com.paintee.common.repository.entity.vo.UserLoginVO)
+	*/
+	@Transactional
+	public Map<String, Object> resetpassword(UserLoginVO userLoginVO) throws Exception {
+		Map<String, Object> resultMap = new HashMap<>();
+
+		String tempPasswordPlainText = passwordGenerator.randomPassword();
+
+		UserExample userExample = new UserExample();
+		UserExample.Criteria where = userExample.createCriteria();
+		where.andEmailEqualTo(userLoginVO.getEmail());
+		where.andUserStatusEqualTo("N");
+
+		User user = new User();
+		user.setPassword(Sha512Encrypt.hash(tempPasswordPlainText));
+
+		int count = userHelper.updateByExampleSelective(user, userExample);
+
+		if(count > 0) {
+			//임시비밀번호 메일 발송
+			ResetPasswordMailVO resetPasswordMailVO = new ResetPasswordMailVO();
+			resetPasswordMailVO.setPassword(tempPasswordPlainText);
+			resetPasswordMailVO.setTitle("SignUp Title");
+			resetPasswordMailVO.setSenderName("paintee");
+	
+			mailService.sendMail(user.getEmail(), "SignUp confirm", htmlContentBuilder.getResetPasswordMail(resetPasswordMailVO));
+		}
+
+		resultMap.put("errorNo", 0);
+
+		return resultMap;
 	}
 }

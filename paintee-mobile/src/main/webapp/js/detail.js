@@ -1,14 +1,26 @@
 // 상세화면의 구조
-function DetailStructure(paintingId, fileId, artistName, artistId, artistSentence, uploadDate, postedNum){
+//function DetailStructure(paintingId, fileId, artistName, artistId, artistSentence, uploadDate, postedNum){
+function DetailStructure(paintingId, paintingInfo){
     this.paintingId     = paintingId;
 
-    this.fileId          = fileId;
+    /*
+    this.fileId         = fileId;
     this.artistName     = artistName;
     this.artistId       = artistId;
     this.artistSentence = artistSentence;
     this.uploadDate     = uploadDate;
     this.postedNum      = postedNum;
-
+    */
+    this.fileId         = paintingInfo.fileId;
+    this.artistName     = paintingInfo.artistName;
+    this.artistId       = paintingInfo.artistId;
+    this.artistSentence = paintingInfo.artistSentence;
+    this.uploadDate     = paintingInfo.uploadDate;
+    this.postedNum      = paintingInfo.postedNum;
+    // 히스토리 사용 부분 추가
+    this.colorDark      = paintingInfo.colorDark;
+    this.color          = paintingInfo.color;
+    
     this.detail             =$(".detail");
 
     this.detailBgContainer  =$("<div>").addClass("detail_bg_container");
@@ -29,16 +41,16 @@ function DetailStructure(paintingId, fileId, artistName, artistId, artistSentenc
     this.detailArtistSentence=$("<div>").addClass("detail_artist_sentence");
     this.detailArtistDate   =$("<div>").addClass("detail_artist_date");
     this.detailArtistBottom =$("<div>").addClass("detail_artist_bottom").html("Share to ");
-    this.sociconFacebook    =$("<span>").addClass("social_btn").addClass("socicon-facebook");
-    this.sociconTwitter     =$("<span>").addClass("social_btn").addClass("socicon-twitter");
-    this.sociconInstagram   =$("<span>").addClass("social_btn").addClass("socicon-instagram");
-    this.sociconPinterest   =$("<span>").addClass("social_btn").addClass("socicon-pinterest");
+    this.sociconFacebook    =$("<span id='detail_fac_share'>").addClass("social_btn").addClass("socicon-facebook");
+    this.sociconTwitter     =$("<span id='detail_twi_share'>").addClass("social_btn").addClass("socicon-twitter");
+    this.sociconInstagram   =$("<span id='detail_ins_share'>").addClass("social_btn").addClass("socicon-instagram");
+    this.sociconPinterest   =$("<span id='detail_pin_share'>").addClass("social_btn").addClass("socicon-pinterest");
 
     this.detailPostbar      =$("<div>").addClass("detail_postbar").addClass("swiper-slide");
     this.detailPostbarPostnum=$("<div>").addClass("detail_postbar_postnum");
     this.detailPostbarPostedNum=$("<span>").addClass("list_info_posted_num");
 
-    this.detailPostBtn      =$("<div>").addClass("detail_post_btn").html("post it").click(function(){purchase()});
+    this.detailPostBtn      =$("<div>").addClass("detail_post_btn").html("post it").click(function(){purchase(paintingId)});
     this.detailScroll       =$("<div>").addClass("swiper-scrollbar").addClass("swiper-scrollbar-detail");
     this.returnBtn          =$("<div>").addClass("return_btn").append($("<i>").addClass("material-icons").html("keyboard_backspace"));
 }
@@ -48,7 +60,18 @@ DetailStructure.prototype = {
         this.detailBgImg.attr("src", imageUrl+"/cmm/file/view/"+fileId);
     },
     setArtist   : function(artistName){
+    	var paintingId = this.paintingId;
+    	var color      = this.color;
+    	var colorDark  = this.colorDark;
+    	
         this.detailArtistBtn.html(artistName);
+        this.detailArtistBtn.click(function () {
+        	processDetailClose();
+        	// 히스토리 설정
+        	replaceHistory({"call": "detailOpen", "paintingId": paintingId, "colorDark": colorDark, "color": color, "mainIndex": mainSwiper.activeIndex, "index": currentSwiper.activeIndex});
+        	addHistory({"call": "personal"});
+        	showPersonal(artistName);
+        });
     },
     setFollow   : function(artistId){
         this.detailArtistFollow.append('<i class="material-icons" style="font-size:12px">star</i> follow artist');
@@ -114,6 +137,19 @@ DetailStructure.prototype = {
         this.sociconTwitter     =$("<span>").addClass("social_btn").addClass("socicon-twitter");
         this.sociconInstagram   =$("<span>").addClass("social_btn").addClass("socicon-instagram");
         this.sociconPinterest   =$("<span>").addClass("social_btn").addClass("socicon-pinterest");
+        
+        var paintingId = this.paintingId;
+        var artistName = this.artistName;
+        // 소셜 공유
+        $("#detail_fac_share").click(function() {
+        	shareSocial({type: "facebook", name: artistName, page: paintingId});
+        });
+        $("#detail_twi_share").click(function() {
+        	shareSocial({type: "twitter", name: artistName, page: paintingId});
+        });
+        $("#detail_pin_share").click(function() {
+        	shareSocial({type: "pinterest", name: artistName, page: paintingId});
+        });
     }
 }
 
@@ -139,12 +175,16 @@ DetailController.prototype = {
 	//디테일화면에서 보여질 데이터 조회
 	getDetailData: function (paintingId, color, colorDark) {
 		var controller = this;
-
 		AjaxCall.call(apiUrl+"/painting/"+paintingId, null, "GET", function (result, status) { controller.getDetailDataRes(result, status, paintingId, color, colorDark); });
 	},
 	getDetailDataRes: function (result, status, paintingId, color, colorDark) {
-
+		console.log("getDetailDataRes", color, colorDark);
 		//loadDetail 에서 하던내용
+		
+		// 히스트리에서 사용하기 위해서 객체 변수 추가
+		result.color = color;
+		result.colorDark = colorDark;
+		
 		initDetail(paintingId, result);
 		setDetailLayout();
 
@@ -167,9 +207,11 @@ DetailController.prototype = {
 	artistFollowRes: function(result, status) {
 		console.log(selectedArtistId);
 		if(result.errorNo == 0) {
-			alert(selectedArtistName+' 님을 Follow 하였습니다.');
+			alert(selectedArtistName + $.i18n.t('alert.detail.processFollow'));
+//			alert(selectedArtistName+' 님을 Follow 하였습니다.');
 		} else if(result.errorNo == 501){
-			alert(selectedArtistName+' 님은 이미 Follow 되어있습니다.');
+			alert(selectedArtistName + $.i18n.t('alert.detail.existFollow'));
+//			alert(selectedArtistName+' 님은 이미 Follow 되어있습니다.');
 		}
 	}
 };
@@ -177,7 +219,7 @@ DetailController.prototype = {
 //디테일화면 표시
 function loadDetail(paintingId, color, colorDark) {
 	selectedPaintingId = paintingId;
-	new DetailController().getDetailData(paintingId, color, colorDark);
+	detailController = new DetailController().getDetailData(paintingId, color, colorDark);
 }
 
 //디테일화면 초기화
@@ -191,7 +233,8 @@ function initDetail(paintingId, paintingInfo){
  selectedArtistName = paintingInfo.artistName;
 
  //this.detailStructure = new DetailStructure(index);
- this.detailStructure = new DetailStructure(paintingId, paintingInfo.fileId, paintingInfo.artistName, paintingInfo.artistId, paintingInfo.sentence, paintingInfo.uploadDate, paintingInfo.postedNum);
+// this.detailStructure = new DetailStructure(paintingId, paintingInfo.fileId, paintingInfo.artistName, paintingInfo.artistId, paintingInfo.sentence, paintingInfo.uploadDate, paintingInfo.postedNum);
+ this.detailStructure = new DetailStructure(paintingId, paintingInfo);
  this.detailStructure.buildDetail();
 
  this.detailSwiper = new Swiper('.swiper_container_detail', {
@@ -233,17 +276,26 @@ function setDetailLayout(){
 
 //디테일화면 닫기
 function closeDetail(){
- if(isDetail){
-     $(".detail").animate({top: 200, opacity: 0}, 200, "linear", function(){
-         $(".detail").empty();
-         $(".detail").hide().css("top", 0);
-         delete detailStructure;
-         delete detailSwiper;
-     });
-     isDetail = false;   
- }
+    if(isDetail){
+    	history.back();
+    	processDetailClose();
+    }
 }
 
+function processDetailClose() {
+    if(get.page){
+//      goPainting(get.user, get.page);
+      // 최초 한번만 동작하게 한다.
+    	get.page = null;
+    }        
+    $(".detail").animate({top: 200, opacity: 0}, 200, "linear", function(){
+    	$(".detail").empty();
+    	$(".detail").hide().css("top", 0);
+    	delete detailStructure;
+    	delete detailSwiper;
+    });
+    isDetail = false; 
+}
 //디테일화면의 스크롤 잠금/열기
 function changeMode(swiper){            
  var translate = swiper.translate;

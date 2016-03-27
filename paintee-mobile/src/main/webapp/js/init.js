@@ -10,6 +10,7 @@ var purchaseStatus="";
 var boxWidth;
 var boxHeight;
 var boxStatus="";
+var popName="";
 
 var userInfo = getUserInfoCookie();
 
@@ -19,11 +20,68 @@ if(userInfo) {
 	userID = '';
 }
 
+// 나중에 로그인 사용자의 언어를 설정해야 한다.
+var lang = "en";
+
+//if(userInfo) {
+//	console.log('userInfo.location:'+userInfo.location);
+//	lang = userInfo.location;
+//}
+
+console.log('lang:'+lang);
 console.log('userID:'+userID);
 
-var imageUrl="http://localhost:8090";
+// 최초 화면 로딩시 해야할 일
+$(function () {
+	setSideMenu();  // 사이드 메뉴 설정
+});
+
+/**
+ * 사이드 메뉴의 액션 설정 및 활성화/비활성화 처리
+ */
+function setSideMenu() {
+	// 사이드 메뉴 활성화 및 비활성화 설정
+	if (!userID) {
+		$("#menu_upload").addClass("side_menu_minor_inactive").click(sideOff);
+		$("#menu_reward").addClass("side_menu_minor_inactive").click(sideOff);
+	}
+	else {
+		$("#menu_upload").click(function(){
+		    upload();
+		    sideOff();
+		});
+		$("#menu_reward").click(function(){
+		    reward();
+		    sideOff();
+		});
+	}
+
+	// 사이드 메뉴 언어 설정
+	// 로그인 정보를 매번 가져오지 않기 때문에 사이트 로딩시 로그인 상태일 경우만 로그인 정보를 가져온다.
+	if (userInfo) {
+		AjaxCall.call(apiUrl + "/user/me", 
+			null, 
+			"GET", 
+			function (result) {
+				lang = result.userInfo.location;
+				$(".side_menu_lang_select").val(lang);
+			}
+		);
+	}
+}
+
+
+//var imageUrl="http://192.168.0.14:8090";
+//var imageUrl="http://10.100.69.12:8090";
 //var imageUrl="http://192.168.1.31:8090";
-//var imageUrl="http://192.168.0.10:8090";
+//var imageUrl="http://192.168.43.63:8090";
+//var imageUrl="http://192.168.0.9:8090";
+var imageUrl="http://localhost:8090";
+//var imageUrl="http://localhost:8090";
+//var imageUrl="http://192.168.43.89:8090";
+//var imageUrl="http://192.168.1.31:8090";
+//var imageUrl="http://192.168.43.63:8090";
+//var imageUrl="http://192.168.0.9:8090";
 var apiUrl=imageUrl+"/api";
 
 setWidth();
@@ -33,25 +91,6 @@ var mainSwiper = new Swiper('.swiper_container', {
     direction: 'vertical',
     mousewheelControl : true
 });
-
-// list container 시작        
-var followSwiper = new Swiper('.swiper_container_follow', {
-    slidesPerView: 'auto',
-    centeredSlides: true,
-    spaceBetween: mainWidth*0.05,
-    mousewheelControl : true,
-    scrollbar: '.swiper-scrollbar-follow',
-    scrollbarHide: true
-})
-
-var mySwiper = new Swiper('.swiper_container_my', {
-    slidesPerView: 'auto',
-    centeredSlides: true,
-    spaceBetween: mainWidth*0.05,
-    mousewheelControl : true,
-    scrollbar: '.swiper-scrollbar-my',
-    scrollbarHide: true
-})
 
 // 각각의 home 화면 (follow/popular/new/my)
 function Home(){
@@ -95,75 +134,8 @@ Home.prototype = {
                         }
 }
 
-// 각각의 home 화면 설정
-function initFollow(userID){
-    if(userID==""){
-        var welcome = new Home();
-        welcome.setTitle("Welcome!");
-        welcome.setExplain("환영합니다.<br>그림을 엽서로 보내거나 받아보세요.");
-        welcome.hidePrev();
-        followSwiper.appendSlide(welcome.buildStructure());
-        $("#menu_follow").addClass("side_menu_major_inactive");
-        delete welcome;
-    }else{
-        followSwiper.removeAllSlides();
-        var followHome = new Home();
-        var content1 =
-            $("<div>").addClass("home_btn_follow").html("follows ").append($("<b>").html(" 12")).click(function(){initFollows()});
-        var content2 =
-            $("<div>").addClass("home_btn_follow").html("following ").append($("<b>").html(" 21")).click(function(){initFollowing()});
-        followHome.setTitle("Follow");
-        followHome.setExplain("가까운 사람들의 그림입니다.");
-        followHome.setContents(content1);
-        followHome.setContents(content2);
-        followHome.hidePrev();
-        followSwiper.appendSlide(followHome.buildStructure());
-        delete followHome;
-        delete content1;
-        delete content2;
-        $("#menu_follow").removeClass("side_menu_major_inactive");
-        
-        addPainting(followSwiper, 0, "follow");
-    }
-}
-
-function initMy(userID){
-    if(userID==""){
-        var myHome = new Home();
-        var logInBtn = $("<div>").addClass("login_btn").html("Log in").click(function(){showLogin()});
-        myHome.setTitle("my");
-        myHome.setExplain("로그인해서 나와 팔로워의 그림을 확인하세요<br><br><br>");
-        myHome.hideNext();
-        myHome.setContents(logInBtn);
-        mySwiper.appendSlide(myHome.buildStructure());
-        delete myHome;
-        delete logInBtn;
-    }else{
-        mySwiper.removeAllSlides();
-        var myHome = new Home();
-        myHome.setTitle("my");
-        myHome.setExplain("내가 올리거나 포스트한 그림입니다.<br>여기에 자신을 소개할 문구를 넣어주세요. <i class='material-icons' style='font-size:1em'>create</i>");
-        var content1 =
-            $("<div>").addClass("home_btn_my").html("uploaded ").append($("<b>").html(" 5"))
-        var content2 =
-            $("<div>").addClass("home_btn_my").html("posted ").append($("<b>").html(" 14"))
-        content1.click(function(){btnToggle(this)});
-        content2.click(function(){btnToggle(this)});
-        myHome.hideNext();
-        myHome.setContents(content1);
-        myHome.setContents(content2);
-        mySwiper.appendSlide(myHome.buildStructure());
-        delete myHome;
-        delete content1;
-        delete content2;
-
-        addPainting(mySwiper, 0, "my");   
-    }
-}
-
-
 // 그림 목록 화면
-function Structure(index, paintingId){
+function Structure(index, paintingId, artistName){
 		
         this.index              =index;
         this.container          =$("<div>").addClass("list_contents swiper-slide");
@@ -178,8 +150,14 @@ function Structure(index, paintingId){
         this.listPainting       =$("<div>").addClass("list_painting").attr("index", this.index);
 
         this.bottom             =$("<div>").addClass("bottom_bar");
-        this.listArtist         =$("<div>").addClass("list_artist_btn").click(function(){showPersonal("artist"+index)});
-        this.listPostBtn        =$("<div>").addClass("list_post_btn").html("post it").click(function(){purchase(paintingId)});
+        this.listArtist         =$("<div>").addClass("list_artist_btn").click(function() {
+        							console.log("currentSwiper : " + currentSwiper);
+						        	// 히스토리 설정
+						        	replaceHistory({"call": "list", "mainIndex": mainSwiper.activeIndex, "index": currentSwiper.activeIndex ? currentSwiper.activeIndex : index});
+						        	addHistory({"call": "personal"});
+        							showPersonal(artistName)
+        						});
+        this.listPostBtn        =$("<div>").addClass("list_post_btn").html("post it").click(function(){purchase(paintingId, artistName)});
 
 }
 Structure.prototype = {
@@ -202,9 +180,13 @@ Structure.prototype = {
                                 this.listPainting.swipe({
                                     swipeUp:function(){
                                         loadDetail(paintingId, color, colorDark);
+                                        replaceHistory({"call": "detailPop"});
+                                        addHistory({"call": "dummy"});
                                     },
                                     tap:function(){
                                         loadDetail(paintingId, color, colorDark);
+                                        replaceHistory({"call": "detailPop"});
+                                        addHistory({"call": "dummy"});
                                     },
                                     threshold:10
                                 });
@@ -237,8 +219,8 @@ function addPainting(swiper, currentIndex, type, listData){
 	
 	if (!listData) { return; }
 	
-	var newSlide = new Structure(swiper.slides.length, listData.paintingId);
-    newSlide.setSentence(listData.sentence, listData.artistName);
+	var newSlide = new Structure(swiper.slides.length, listData.paintingId, listData.artistName);
+    newSlide.setSentence(listData.sentence, listData.sentenceName ? listData.sentenceName : listData.artistName);
     newSlide.setPostedNumber(listData.postedPeopleCnt);
     newSlide.setDate(toEngDateStr(listData.uploadDate));
     newSlide.setArtist(listData.artistName);
@@ -256,96 +238,8 @@ function addPainting(swiper, currentIndex, type, listData){
     delete newSlide;    
 }
 
-followSwiper.on("onSlideChangeStart", function(swiper){if(userID!=="")addPainting(swiper, swiper.activeIndex, "follow")});
-mySwiper.on("onSlideChangeStart", function(swiper){if(userID!=="")addPainting(swiper, swiper.activeIndex, "my")});
-
-
-
-// 개인페이지 생성
-
-var personal = "";
-var isPersonal = false;
-
-function initPersonal(username){
-        var personalHome = new Home();
-        personalHome.setTitle(username);
-        personalHome.setExplain(username + "님이 포스트하거나 업로드한 그림들입니다.");
-        var content1 =
-            $("<div>").addClass("home_btn_my").html("uploaded ").append($("<b>").html(" 5"))
-        var content2 =
-            $("<div>").addClass("home_btn_my").html("posted ").append($("<b>").html(" 14"))
-        content1.click(function(){btnToggle(this)});
-        content2.click(function(){btnToggle(this)});
-        personalHome.hideNext();
-        personalHome.setContents(content1);
-        personalHome.setContents(content2);
-        personal.swiper.appendSlide(personalHome.buildStructure());
-        delete personalHome;
-        delete content1;
-        delete content2;
-
-        addPainting(personal.swiper, 0, "my");
-}
-
-function Personal(username){
-    this.container  = $("<div>").addClass("personal_container").addClass("swiper-slide");
-    this.list       = $("<div>").addClass("list_container").addClass("swiper_container_personal");
-    this.homeBtn    = $("<div>").addClass("home_btn").css("font-weight", 700).html(username);
-    this.bottom     = $("<div>").addClass("bottom_bar").css("background-color", "hsl(250,60%,20%)");
-    this.wrapper    = $("<div>").addClass("swiper-wrapper");
-    this.scroll     = $("<div>").addClass("swiper-scrollbar").addClass("swiper-scrollbar-personal");
-    this.swiper;
-}
-Personal.prototype = {
-    setSwiper       : function(){
-                        this.swiper = new Swiper('.swiper_container_personal', {
-                            slidesPerView: 'auto',
-                            centeredSlides: true,
-                            spaceBetween: mainWidth*0.05,
-                            mousewheelControl : true,
-                            scrollbar: '.swiper-scrollbar-personal',
-                            scrollbarHide: true
-                        })
-                    },
-    buildStructure  : function(){
-                        this.list.append(this.homeBtn);
-                        this.list.append(this.bottom);
-                        this.list.append(this.wrapper);
-                        this.list.append(this.scroll);
-                        this.container.append(this.list);
-        
-                        return this.container;
-                    }
-}
-             
-function showPersonal(username){
-    if(personal!="")hidePersonal();
-    isPersonal = true;
-    color = "250,60%,50%";
-    colorDark = "250,60%,20%";
-    
-    personal = new Personal(username);
-    mainSwiper.appendSlide(personal.buildStructure());
-    personal.setSwiper();
-    personal.swiper.on("onSlideChangeStart", function(swiper){addPainting(swiper, swiper.activeIndex, "my")});
-    personal.swiper.on("onTransitionEnd", function(swiper){listLock(swiper)});
-    personal.swiper.on("onSetTranslate", function(swiper, translate){swipeToMenu(swiper, translate)});
-      
-    initPersonal(username);
-    selectMenu(4);
-}
-
-function hidePersonal(){
-    isPersonal = false;
-    mainSwiper.removeSlide(4);
-    personal = "";
-}
-
 // 최초 5개 미리 생성
-initFollow(userID);
-initMy(userID);
 initMenu(userID);
-
 
 // mainSwiper의 첫항목과 마지막항목에서 스와이프 방지
 function mainLock(mainSwiper){
@@ -398,9 +292,6 @@ function listLock(swiper){
     }
 }
 mainSwiper.on("onTransitionEnd", function(mainSwiper){mainLock(mainSwiper)});
-followSwiper.on("onTransitionEnd", function(swiper){listLock(swiper)});
-mySwiper.on("onTransitionEnd", function(swiper){listLock(swiper)});
-
 
 // side menu 초기설정
 function initMenu(userID){
@@ -411,7 +302,14 @@ function initMenu(userID){
         sideLogin.empty()
         sideLogin.append($("<div>").addClass("side_menu_login_id").html(userID));
 //        sideLogin.append($("<div>").html("edit | logout").click(function(){showProfile()}));
-        sideLogin.append($("<div>").html("edit | logout").click(function(){logout()}));
+
+        //TODO:profile edit 버튼과 logout 버튼 분리 디자인 확인해야함.
+        var editBtn = $("<a>").html("edit").on("click", function(){showProfile()});
+        var logoutBtn = $("<a>").html("logout").on("click", function(){logout()});
+
+        var btnGroup = $("<div>").append(editBtn).append(" | ").append(logoutBtn);
+
+        sideLogin.append(btnGroup);
     }
 }
 
@@ -458,25 +356,8 @@ function selectMenu(index){
     mainSwiper.slideTo(index);
 }
 
-$("#menu_follow").click(function(){
-    selectMenu(0);
-});
-$("#menu_my").click(function(){
-    selectMenu(3);
-});
-$("#menu_upload").click(function(){
-    upload();
-    sideOff();
-});
-$("#menu_reward").click(function(){
-    reward();
-    sideOff();
-});
-
 // 초기 설정들
 // 가로휠방지 && 페이지네이션숨김 && 위로스와이프방지
-followSwiper.disableMousewheelControl();
-mySwiper.disableMousewheelControl();
 mainSwiper.lockSwipeToPrev();
 $(".swiper-scrollbar").hide();
 $(".home_btn").hide()
@@ -522,8 +403,6 @@ $(".home_btn").click(function(){
          sideOn();
      }
  }
-followSwiper.on("onSetTranslate", function(swiper, translate){swipeToMenu(swiper, translate)});
-mySwiper.on("onSetTranslate", function(swiper, translate){swipeToMenu(swiper, translate)});
 
 // 모바일 웹브라우져를 전체화면으로 표시
 $("#fullscreen_btn").click(function(){toggleFullScreen()});
@@ -558,228 +437,68 @@ function setBox(){
     }
 }
 
-// 업로드화면
-function upload(){
-    boxStatus = "upload"
-    $(".upload_container").show();
-    initUpload();
-    setBox();
-}
-
-function Upload(){
-    this.title      = $("<div>").addClass("upload_title").addClass("popup_title");
-    this.contents   = $("<div>").addClass("upload_contents").addClass("popup_contents");
-    this.bottom     = $("<div>").addClass("upload_bottom").addClass("popup_bottom");
-}
-
-Upload.prototype = {
-    setTitle    : function(title){
-        $(this.title).html(title);
-    },
-    setContents : function(contents){
-        $(this.contents).html(contents);
-    },
-    setBottom   : function(bottom){
-        $(this.bottom).html(bottom);
-    },
-    buildUpload : function(){
-        $(".upload_box").append(this.title);
-        $(".upload_box").append(this.contents);
-        $(".upload_box").append(this.bottom);
-    }
-}
-
-function initUpload(){
-    $(".upload_box").empty();
-    var upload = new Upload();
-    upload.setTitle("Upload Painting");
-    upload.setContents("당신의 그림이 Post될 때 마다,<br>추가로 업로드할 수 있는 그림의 수가 늘어납니다.<br>지금까지 253회 Post된 당신은 최대 50개의 그림을 올릴 수 있고<br> 지금 <span class='reward_money'>7</span>개 의 그림을 더 올릴 수 있습니다.<br><br><br>업로드를 위해서는<br>가로 사이즈 <b>1080px</b> 세로 사이즈 <b>1440px</b><br>이상의 이미지가 필요합니다.");
-    upload.setBottom("<div class='popup_btn upload_btn'><div class='purchase_btn_text'>Select image file </div><i class='material-icons'>folder</i></div>");
-    upload.buildUpload();
-    $(".upload_btn").click(function(){
-        failUpload();
-    })
-    delete upload;
-}
-function failUpload(){
-    $(".upload_box").empty();
-    var uploadFail = new Upload();
-    uploadFail.setTitle("Upload Painting");
-    uploadFail.setContents('고화질의 출력을 위해 더 큰 이미지가 필요합니다.<br><b>가로 사이즈 1080px 세로 사이즈 1440px</b><br>이상의 이미지가 필요합니다.');
-    uploadFail.setBottom("<div class='popup_btn upload_btn'><div class='purchase_btn_text'>Select image file </div><i class='material-icons'>folder</i></div>");
-    uploadFail.buildUpload();
-    $(".upload_btn").click(function(){
-        successUpload();
-    })
-    delete uploadFail;
-}
-
-function successUpload(){
-    $(".upload_box").empty();
-    var uploadSuccess = new Upload();
-    uploadSuccess.setTitle("Upload Painting");
-    uploadSuccess.setContents('성공적으로 그림이 등록되었습니다.<br>당신의 생각, 당신의 느낌을 그림과 함께 적어주세요.<br><div class="upload_sentence"><span class="character_counter">0/200</span><textarea class="upload_sentence_textarea" length="200"></textarea><input type="checkbox"> private</div>');
-    uploadSuccess.setBottom("<div class='popup_cancle_btn upload_btn'><i class='material-icons'>folder</i><div class='purchase_btn_text'>Select again</div></div><div class='popup_btn upload_btn'><div class='purchase_btn_text'>Done </div><i class='material-icons'>done</i></div>");
-    uploadSuccess.buildUpload();
-    delete uploadSuccess;
-}
-
-// 리워드화면
-function reward(){
-    boxStatus = "reward";
-    $(".reward_container").show();
-    initReward();
-    setBox();
-}
-
-function Reward(){
-    this.title      = $("<div>").addClass("reward_title").addClass("popup_title");
-    this.contents   = $("<div>").addClass("reward_contents").addClass("popup_contents");
-    this.bottom     = $("<div>").addClass("reward_bottom").addClass("popup_bottom");
-}
-
-Reward.prototype = {
-    setTitle    : function(title){
-        $(this.title).html(title);
-    },
-    setContents : function(contents){
-        $(this.contents).html(contents);
-    },
-    setBottom   : function(bottom){
-        $(this.bottom).html(bottom);
-    },
-    buildUpload : function(){
-        $(".reward_box").append(this.title);
-        $(".reward_box").append(this.contents);
-        $(".reward_box").append(this.bottom);
-    }
-}
-
-function initReward(){
-    $(".reward_box").empty();
-    var reward = new Reward();
-    reward.setTitle("Reward");
-    reward.setContents("당신의 그림이 post될 때 마다 reward가 쌓입니다.<br> 지금까지 253회 post된 당신이 얻은 총 Reward는<br><span class='reward_money'>$63.25 </span>입니다.<br><br><br>지금 Reward를 신청하면 남은 <b>$53.25 </b>에<br><b>수수료 $5</b>가 제외된 금액을 받을 수 있습니다.<br>");
-    reward.setBottom("<div class='popup_btn reward_btn'><div class='purchase_btn_text'>Get reward now </div><i class='material-icons'>attach_money</i></div>");
-    reward.buildUpload();
-    $(".reward_btn").click(function(){
-        checkReward();
-    })
-    delete reward;
-}
-
-function checkReward(){
-    $(".reward_box").empty();
-    var reward = new Reward();
-    reward.setTitle("Reward");
-    reward.setContents('아래 계좌로 지금 받을 수 있는 <b>$53.25</b> 에<br>reward <b>수수료 $5</b>를 제외한<br><br><span class="reward_money">$48.25</span> 이 입금됩니다.<br><br><br><select class="purchase_select" style="width:50%"><option value="1">City Bank</option></select><br><br><input type="text" class="purchase_input" placeholder="name of account holder"><br><input type="text" class="purchase_input" placeholder="account"><br>계좌명과 계좌번호를 정확하게 입력해주세요.<br>계좌명이 정확하지 않을 경우, 입금에 장애가 있을 수 있습니다.');
-    reward.setBottom("<div class='popup_btn upload_btn'><div class='purchase_btn_text'>Done </div><i class='material-icons'>done</i></div>");
-    reward.buildUpload();
-}
-
-// 팔로우즈/팔로잉 화면
-function People(){
-    this.title      = $("<div>").addClass("people_title").addClass("popup_title");
-    this.contents   = $("<div>").addClass("people_contents").addClass("popup_contents");
-}
-
-People.prototype = {
-    setTitle    : function(title){
-        $(this.title).html(title);
-    },
-    buildUpload : function(){
-        $(".people_box").append(this.title);
-        $(".people_box").append(this.contents);
-    }
-}
-
-function Following(){
-    this.following  = $("<div>").addClass("people_list");
-    this.name       = $("<div>").addClass("people_list_name");
-    this.btn        = $("<div>").addClass("people_list_remove").html("<div class='people_list_btn_text'></div><i class='material-icons'>clear</i>");
-    this.build      = function(name){
-                        $(this.name).html(name);
-                        $(this.following).append(this.name);
-                        $(this.following).append(this.btn);
-                        return this.following;
-                    }
-}
-
-function addFollowing(name){
-        var adder = new Following();
-        $(adder.build(name)).appendTo($(".people_contents"));
-        delete adder;
-}
-
-function Follows(){
-    this.follows   = $("<div>").addClass("people_list");
-    this.name       = $("<div>").addClass("people_list_name");
-    this.btn        = $("<div>").addClass("people_list_add").html("<div class='people_list_btn_text'> </div><i class='material-icons'>add</i>");
-    this.freind     = $("<div>").addClass("people_list_add").html("<div class='people_list_btn_text'> </div><i class='material-icons' style='color:rgba(120,120,120,0.5)'>done</i>");
-    this.build      = function(name, isfriend){
-                        $(this.name).html(name);
-                        $(this.follows).append(this.name);
-                        if(isfriend){
-                            $(this.follows).append(this.freind);   
-                        }else{
-                            $(this.follows).append(this.btn); 
-                        }
-                        return this.follows;
-                    }
-}
-
-function addFollows(name, isfriend){
-        var adder = new Follows();
-        $(adder.build(name, isfriend)).appendTo($(".people_contents"));
-        delete adder;
-}
-
-function initFollows(){
-    setBox();
-    $(".people_container").show();
-    $(".people_box").empty();
-    var people = new People();
-    people.setTitle("Follows");
-    people.buildUpload();
-    for(var i=0 ; i<20 ; i++){
-        addFollows("name", i%3);
-    }
-}
-
-function initFollowing(){
-    boxStatus = "people";
-    setBox();
-    $(".people_container").show();
-    $(".people_box").empty();
-    var people = new People();
-    people.setTitle("Following");
-    people.buildUpload();
-    for(var i=0 ; i<20 ; i++){
-        addFollowing("name");
-    }
-}
-
-// 프로필 수정화면
-function showProfile(){
-    boxStatus = "profile";
-    setBox();
-    sideOff();
-    $(".profile_container").show();
-}
-
 // 팝업 닫기
 $(".return_btn").click(function(){
 	// 구매 정보 초기화
-	resetPurchase();
-    $(".purchase_container").hide();
-    $(".popup_container").hide();
-    purchaseStatus = "";
-    boxStatus = "";
-})
+	closePopup();
+});
+
 $(".popup_container").click(function(){
-    $(".purchase_container").hide();
+	closePopup();
+    popName = "";  // 다시 초기화
+});
+
+function closePopup() {
+	console.log("boxStatus : " + boxStatus);
+	
+	// boxStatus payment
+	if (boxStatus == "payment") {
+		// 구매 정보 초기화
+		resetPurchase();
+		purchaseStatus = "";
+		$(".purchase_container").hide();
+		history.go(-2);
+		boxStatus = "";
+	} 
+	else if (boxStatus == "rewardStep2") {
+		history.go(-2);
+	}
+	else {
+		history.back();
+	}
     $(".popup_container").hide();
-})
+    boxStatus = "";
+}
+
 $(".popup_box").click(function(e){
     e.stopPropagation();
-})
+});
+
+/**
+ *   홈 페이지 데이터 리로딩
+ *   그림 구매시 : My, Popular  
+ *   팔로우 대상 변경 시 : Follow, 
+ */
+function dataReload(loadPages) {
+	console.log("dataReload.....");
+	for (var index in loadPages) {
+		eval(loadPages[index]);
+	}
+}
+
+/**
+ *  사이드 메뉴 언어 선택시 테이블 언어 변경 및 화면 언어 적용
+ */
+$(".side_menu_lang_select").change(function(event) {
+	lang = $(this).val();
+	exeTranslation(".main_container", lang);
+	if (userID) {
+		AjaxCall.call(apiUrl + "/user/me", 
+			{"location": lang}, 
+			"POST", 
+			function (result) {
+				console.log(result);			
+			}
+		);
+	} 
+});
