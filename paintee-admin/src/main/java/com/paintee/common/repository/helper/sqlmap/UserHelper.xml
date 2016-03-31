@@ -4,7 +4,7 @@
 	
 	<!-- 회원의 구매 정보를 업데이트 -->
   	<update id="updateUserInfo">
-		update tb_user 
+		update TB_USER 
 		   set post_cnt = post_cnt + 1 
 	    <if test="basicAddr != null">
 	          ,basic_addr = #{basicAddr}
@@ -35,14 +35,14 @@
 	
 	<!-- 회원의 구매 정보를 업데이트(전체 판매 금액 증가) -->
   	<update id="updateUserEarnTotalMoney">
-		update tb_user 
+		update TB_USER 
 		   set earn_total_money = earn_total_money + 0.5 
-		 where user_id = (select artist_id from tb_painting where painting_id = #{paintingId})
+		 where user_id = (select artist_id from TB_PAINTING where painting_id = #{paintingId})
   	</update>
 
   	<!-- 회원의 구매 정보를 업데이트(리워드 전체 금액) -->
   	<update id="updateUserEarnRewordMoney">
-		update tb_user 
+		update TB_USER 
 		   set earn_reword_money = earn_reword_money + #{earnRewordMoney}  
 		 where user_id = #{userId}
   	</update>
