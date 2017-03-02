@@ -3,6 +3,8 @@
 <mapper namespace="com.paintee.common.repository.helper.PersonalHelper">
 	<resultMap id="BaseResultMap" type="com.paintee.common.repository.entity.vo.PersonalVO" extends="com.paintee.common.repository.mapper.PaintingMapper.BaseResultMap">
 	    <result column="artist_name" property="artistName" />
+	    <result column="like_cnt" property="likeCnt" />
+	    <result column="login_like_cnt" property="loginLikeCnt" />	  	    
 	</resultMap>
   	
 	<!-- 특정 개인 작가가 업로드한 그림의 목록을 가져오기 -->
@@ -14,9 +16,16 @@
 			   a.upload_date, 
 			   a.painting_id, 
 			   a.posted_num, 
-			   a.posted_people_cnt
+			   a.comment_cnt, 
+			   a.posted_people_cnt,
+		       (select count(*) from TB_PAINTING_LIKE where painting_id = a.painting_id and user_id = #{loginId}) login_like_cnt,
+		       (select count(*) from TB_PAINTING_LIKE where painting_id = a.painting_id) like_cnt
 		  from TB_PAINTING a
 		 where a.artist_id = (select user_id from TB_USER where name = #{artistName})
+		   and a.private_at = 'N'
+		   and a.painting_status in <foreach item="status" collection="paintingStatusList" open="(" close=")" separator=",">
+		    							#{status}
+		                            </foreach>				 
 	    <choose >
            <when test="paintingId != null" >
            and seq &gt;= (select seq from TB_PAINTING where painting_id = #{paintingId})
@@ -29,12 +38,21 @@
         </choose>    
   	</select>  	
 
-	<!-- 그림 작가가 업로드한 그림 카운트 -->
+	<!-- 개인페이지 홈에 필요한 정보 조회 -->
   	<select id="selectPersonalPaintingInfo" resultType="com.paintee.common.repository.entity.vo.PersonalVO">
   	    select (select introduce from TB_USER where name = #{artistName} limit 0, 1) as introduce,
+  	    	   (select user_id from TB_USER where name = #{artistName} limit 0, 1) as artistId,
+  	    	   (select count(*) 
+  	    	      from TB_FOLLOW 
+  	    	     where user_id = #{loginId} 
+  	    	       and following = (select user_id from TB_USER where name = #{artistName})) as followCnt,
   	           (select count(*) 
   	              from TB_PAINTING 
-  	             where artist_id = (select user_id from TB_USER where name = #{artistName})) as uploadCount 
+  	             where artist_id = (select user_id from TB_USER where name = #{artistName})
+  	               and private_at = 'N'
+  	               and painting_status in <foreach item="status" collection="paintingStatusList" open="(" close=")" separator=",">
+		    								  #{status}
+		                                  </foreach>) as uploadCount 
   	      from dual
   	</select>    	
 </mapper>

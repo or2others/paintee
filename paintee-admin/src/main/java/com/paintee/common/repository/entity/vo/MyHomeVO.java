@@ -14,8 +14,6 @@
 */
 package com.paintee.common.repository.entity.vo;
 
-import com.paintee.common.repository.entity.Painting;
-
 /**
 @class MyHomeVO
 com.paintee.common.repository.entity.vo \n
@@ -32,7 +30,7 @@ com.paintee.common.repository.entity.vo \n
  - 상세설명 은 여기에 기입해 주세요.
  -# 여기는 리스트로 표시됩니다.
 */
-public class MyHomeVO extends Painting {
+public class MyHomeVO extends PaintingVO {
 	
 	private String artistName;
 	private String sentenceName;
@@ -40,6 +38,17 @@ public class MyHomeVO extends Painting {
 	private String introduce;
 	private Integer uploadCount;
 	private Integer postCount;
+	private Integer commentCount;
+	/**
+	 * 그림의 로그인한 사용자의 좋아요 카운트
+	 */
+	private Integer loginLikeCnt;   
+	
+	/** 
+	 * My 리스트에 나오는 그림이 업로드된 그림인지 구매된 그림인지 표시
+	 * 업로드 : U, 구매 : P 
+	 */
+	private String type;
 	
 	public String getArtistName() {
 		return artistName;
@@ -88,4 +97,29 @@ public class MyHomeVO extends Painting {
 	public void setPostCount(Integer postCount) {
 		this.postCount = postCount;
 	}
+
+	public Integer getLoginLikeCnt() {
+		return loginLikeCnt;
+	}
+
+	public void setLoginLikeCnt(Integer loginLikeCnt) {
+		this.loginLikeCnt = loginLikeCnt;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public Integer getCommentCount() {
+		return commentCount;
+	}
+
+	public void setCommentCount(Integer commentCount) {
+		this.commentCount = commentCount;
+	}
+	
 }

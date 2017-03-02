@@ -5,45 +5,51 @@
 	<!-- 회원의 구매 정보를 업데이트 -->
   	<update id="updateUserInfo">
 		update TB_USER 
-		   set post_cnt = post_cnt + 1 
-	    <if test="basicAddr != null">
-	          ,basic_addr = #{basicAddr}
-	    </if>	   
-	    <if test="detailAddr != null">
-	          ,detail_addr = #{detailAddr}
-	    </if>	   
-	    <if test="zipcode != null">
-	          ,zipcode = #{zipcode}
-	    </if>	   
-	    <if test="resentSendZipcode != null">
-	          ,resent_send_zipcode = #{resentSendZipcode}
-	    </if>	   
-	    <if test="resentSendBasicAddr != null">
-	          ,resent_send_basic_addr = #{resentSendBasicAddr}
-	    </if>	   
-	    <if test="resentSendDetailAddr != null">
-	          ,resent_Send_Detail_Addr = #{resentSendDetailAddr}
-	    </if>	   
-	    <if test="resentSendCity != null">
-	          ,resent_send_city = #{resentSendCity}
-	    </if>	   
-	    <if test="resentSendName != null">
-	          ,resent_send_name = #{resentSendName}
-	    </if>	   
-		 where user_id = #{userId}
-  	</update>
-	
-	<!-- 회원의 구매 정보를 업데이트(전체 판매 금액 증가) -->
-  	<update id="updateUserEarnTotalMoney">
-		update TB_USER 
-		   set earn_total_money = earn_total_money + 0.5 
-		 where user_id = (select artist_id from TB_PAINTING where painting_id = #{paintingId})
-  	</update>
-
-  	<!-- 회원의 구매 정보를 업데이트(리워드 전체 금액) -->
-  	<update id="updateUserEarnRewordMoney">
-		update TB_USER 
-		   set earn_reword_money = earn_reword_money + #{earnRewordMoney}  
+		<trim prefix="SET" prefixOverrides=",">
+		    <!-- 서비스 - 임시 오픈 이후에는 삭제해야 함 -->
+		    <if test="serviceCnt != null">
+			   	  ,service_cnt = service_cnt + #{serviceCnt}
+		    </if>	   
+		    <if test="postCnt != null">
+			   	  ,post_cnt = post_cnt + #{postCnt}
+		    </if>	   
+		    <if test="earnTotalMoney != null">
+			   	  ,earn_total_money = earn_total_money + #{earnTotalMoney} 
+		    </if>	   
+		    <if test="earnRewordMoney != null">
+			   	  ,earn_reword_money = earn_reword_money + #{earnRewordMoney}  
+		    </if>	   
+		    <if test="uploadCnt != null">
+			   	  ,upload_cnt = upload_cnt + #{uploadCnt}
+		    </if>	   
+		    <if test="basicAddr != null">
+		          ,basic_addr = #{basicAddr}
+		    </if>	   
+		    <if test="detailAddr != null">
+		          ,detail_addr = #{detailAddr}
+		    </if>	   
+		    <if test="zipcode != null">
+		          ,zipcode = #{zipcode}
+		    </if>	   
+		    <if test="resentSendZipcode != null">
+		          ,resent_send_zipcode = #{resentSendZipcode}
+		    </if>	   
+		    <if test="resentSendBasicAddr != null">
+		          ,resent_send_basic_addr = #{resentSendBasicAddr}
+		    </if>	   
+		    <if test="resentSendDetailAddr != null">
+		          ,resent_Send_Detail_Addr = #{resentSendDetailAddr}
+		    </if>	   
+		    <if test="resentSendCity != null">
+		          ,resent_send_city = #{resentSendCity}
+		    </if>	   
+		    <if test="resentSendName != null">
+		          ,resent_send_name = #{resentSendName}
+		    </if>	   
+		    <if test="likeCnt != null">
+			   	  ,like_cnt = like_cnt + #{likeCnt}
+		    </if>
+		</trim>
 		 where user_id = #{userId}
   	</update>
 </mapper>

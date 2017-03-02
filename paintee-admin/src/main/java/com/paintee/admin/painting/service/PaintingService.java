@@ -17,7 +17,6 @@ package com.paintee.admin.painting.service;
 import java.util.Map;
 
 import com.paintee.common.repository.entity.Painting;
-import com.paintee.common.repository.entity.vo.PaintingSearchVO;
 
 /**
 @class PaintingService
@@ -45,13 +44,13 @@ public interface PaintingService {
 	 @return
 	 @throws Exception 
 	*/
-	public Map<String, Object> getPatingList(PaintingSearchVO search);
+	public Map<String, Object> getPatingList();
 
 	/**
 	 @fn modPaintingStatus
 	 @brief 함수 간략한 설명 : 그림의 업로드된 상태를 변경 
 	 @remark
-	 - 함수의 상세 설명 : 
+	 - 함수의 상세 설명 : 그림의 업로드된 상태를 변경 
 	 @param painting
 	 */
 	public void modPaintingStatus(Painting painting);

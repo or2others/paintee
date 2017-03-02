@@ -18,6 +18,8 @@ public class Painting extends BaseEntity {
 
     private Integer postedNum;
 
+    private Integer commentCnt;
+
     private Integer postedPeopleCnt;
 
     private String originalSize;
@@ -29,6 +31,8 @@ public class Painting extends BaseEntity {
     private Long fileGroupSeq;
 
     private String paintingStatus;
+
+    private String privateAt;
 
     private Date createdDate;
 
@@ -88,6 +92,14 @@ public class Painting extends BaseEntity {
         this.postedNum = postedNum;
     }
 
+    public Integer getCommentCnt() {
+        return commentCnt;
+    }
+
+    public void setCommentCnt(Integer commentCnt) {
+        this.commentCnt = commentCnt;
+    }
+
     public Integer getPostedPeopleCnt() {
         return postedPeopleCnt;
     }
@@ -134,6 +146,14 @@ public class Painting extends BaseEntity {
 
     public void setPaintingStatus(String paintingStatus) {
         this.paintingStatus = paintingStatus;
+    }
+
+    public String getPrivateAt() {
+        return privateAt;
+    }
+
+    public void setPrivateAt(String privateAt) {
+        this.privateAt = privateAt;
     }
 
     public Date getCreatedDate() {

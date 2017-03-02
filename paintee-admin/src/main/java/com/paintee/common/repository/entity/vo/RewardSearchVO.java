@@ -14,8 +14,7 @@
 */
 package com.paintee.common.repository.entity.vo;
 
-import com.paintee.common.paging.PageVO;
-import com.paintee.common.repository.entity.Reward;
+import java.util.List;
 
 /**
 @class RewardVO
@@ -34,5 +33,48 @@ com.paintee.common.repository.entity.vo \n
  -# 여기는 리스트로 표시됩니다.
 */
 public class RewardSearchVO extends PagingVO {
+	private List<String> rewardStatus;
+	private Integer seq;
+	private Integer money;
+	private String userId;
 	
+	public List<String> getRewardStatus() {
+		return rewardStatus;
+	}
+
+	public void setRewardStatus(List<String> rewardStatus) {
+		this.rewardStatus = rewardStatus;
+	}
+
+	public Integer getSeq() {
+		return seq;
+	}
+
+	public void setSeq(Integer seq) {
+		this.seq = seq;
+	}
+
+	public Integer getMoney() {
+		return money;
+	}
+
+	public void setMoney(Integer money) {
+		this.money = money;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 }
+
+
+
+
+
+
+
+

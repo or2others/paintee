@@ -51,6 +51,10 @@ public class LoginedUserVO extends BaseObject {
     private String city;
 
     private String location;
+    
+    private String providerId;
+    
+    private String language;
 
 	public String getUserId() {
 		return userId;
@@ -122,5 +126,21 @@ public class LoginedUserVO extends BaseObject {
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+
+	public String getProviderId() {
+		return providerId;
+	}
+
+	public void setProviderId(String providerId) {
+		this.providerId = providerId;
+	}
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
 	}
 }

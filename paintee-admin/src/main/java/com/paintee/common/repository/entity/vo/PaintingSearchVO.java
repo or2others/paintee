@@ -14,6 +14,8 @@
 */
 package com.paintee.common.repository.entity.vo;
 
+import java.util.List;
+
 import com.paintee.common.repository.entity.FileInfo;
 
 /**
@@ -29,13 +31,35 @@ com.paintee.common.repository.entity.vo \n
     | Class Version | v1.0 |
     | 작업자 | Administrator |
  @section 상세설명
- - 상세설명 은 여기에 기입해 주세요.
- -# 여기는 리스트로 표시됩니다.
+ - 그림 목록 조회시 사용되는 검색 조건 처리 VO
 */
 public class PaintingSearchVO extends PagingVO {
 	
-    private String paintingStatus;
+    /**
+	@brief 직렬화 버젼 키
+	*/
+	private static final long serialVersionUID = -1913077104807476258L;
+	/**
+	@brief 그림 상태
+	*/
+	private String paintingStatus;
+	/**
+	@brief 구매 상태
+	 */
+	private List<String> purchaseStatusList;
+    /**
+    @brief 그림 업로드 시 공개/비공개
+    */
+    private String privateAt;
+    /**
+    @brief 업로드된 그림의 파일 정보
+     */
 	private FileInfo fileInfo;
+	
+	/**
+    @brief 사용자 아이디
+	 */
+	private String userId;
 	
 	public String getPaintingStatus() {
 		return paintingStatus;
@@ -43,10 +67,28 @@ public class PaintingSearchVO extends PagingVO {
 	public void setPaintingStatus(String paintingStatus) {
 		this.paintingStatus = paintingStatus;
 	}
+	public List<String> getPurchaseStatusList() {
+		return purchaseStatusList;
+	}
+	public void setPurchaseStatusList(List<String> purchaseStatusList) {
+		this.purchaseStatusList = purchaseStatusList;
+	}
+	public String getPrivateAt() {
+		return privateAt;
+	}
+	public void setPrivateAt(String privateAt) {
+		this.privateAt = privateAt;
+	}
 	public FileInfo getFileInfo() {
 		return fileInfo;
 	}
 	public void setFileInfo(FileInfo fileInfo) {
 		this.fileInfo = fileInfo;
+	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 }

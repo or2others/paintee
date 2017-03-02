@@ -3,11 +3,11 @@
 @section 파일생성정보
 |    항  목       |      내  용       |
 | :-------------: | -------------   |
-| File name | FileInfoGenerator.java |    
-| Package | com.paintee.common.file.service |    
-| Project name | paintee-admin |    
-| Type name | FileInfoGenerator |    
-| Company | Paintee | 
+| File name | FileInfoGenerator.java |
+| Package | com.paintee.common.file.service |
+| Project name | paintee-admin |
+| Type name | FileInfoGenerator |
+| Company | Paintee |
 | Create Date | 2016 2016. 3. 1. 오후 11:58:45 |
 | Author | Administrator |
 | File Version | v1.0 |
@@ -25,11 +25,15 @@ import org.apache.commons.io.FilenameUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.paintee.common.aws.s3.AWSS3Helper;
 import com.paintee.common.repository.entity.FileInfo;
+import com.paintee.common.util.ImgScalrWrapper;
+import com.paintee.mobile.painting.controller.PaintingCreateVO;
 
 /**
 @class FileInfoGenerator
@@ -53,13 +57,22 @@ public class FileInfoGenerator {
 	@Autowired
 	private FilePathGenerator filePathGenerator;
 
+	@Autowired
+	private ImgScalrWrapper imgScalrWrapper;
+
+    @Autowired
+    private AWSS3Helper awsS3Helper;
+
+    @Value("#{properties['aws.s3.bucketName'] }")
+    private String bucketName;
+
 	/**
 	 @fn makeFileInfo
 	 @brief 함수 간략한 설명 : 첨부파일 정보 생성
 	 @remark
 	 - 함수의 상세 설명 : 첨부파일 정보 생성
 	 @param multipartFiles
-	 @return 
+	 @return
 	*/
 	public List<FileInfo> makeFileInfo(MultipartFile[] multipartFiles) throws Exception {
 		return makeFileInfo(multipartFiles, null, null);
@@ -72,7 +85,7 @@ public class FileInfoGenerator {
 	 - 함수의 상세 설명 : 첨부파일 정보 생성
 	 @param multipartFiles
 	 @param middlePath
-	 @return 
+	 @return
 	*/
 	public List<FileInfo> makeFileInfo(MultipartFile[] multipartFiles, String middlePath) throws Exception {
 		return makeFileInfo(multipartFiles, middlePath, null);
@@ -86,7 +99,7 @@ public class FileInfoGenerator {
 	 @param multipartFiles
 	 @param middlePath
 	 @param displayName
-	 @return 
+	 @return
 	*/
 	public List<FileInfo> makeFileInfo(MultipartFile[] multipartFiles, String middlePath, String[] displayNames) throws Exception {
 		List<FileInfo> fileInfoList= new ArrayList<FileInfo>();
@@ -129,7 +142,7 @@ public class FileInfoGenerator {
 	 @remark
 	 - 함수의 상세 설명 : 첨부파일 정보 생성
 	 @param multipartFile
-	 @return 
+	 @return
 	*/
 	public FileInfo makeFileInfo(MultipartFile multipartFile) throws Exception {
 
@@ -142,7 +155,7 @@ public class FileInfoGenerator {
 	 @remark
 	 - 함수의 상세 설명 : 첨부파일 정보 생성
 	 @param multipartFile
-	 @return 
+	 @return
 	*/
 	public FileInfo makeFileInfo(MultipartFile multipartFile, String middlePath) throws Exception {
 
@@ -158,7 +171,7 @@ public class FileInfoGenerator {
 	 @param middlePath
 	 @param altNm
 	 @param extraFiled
-	 @return 
+	 @return
 	*/
 	public FileInfo makeFileInfo(MultipartFile multipartFile, String middlePath, String displayName) throws Exception {
 		Date today = new Date();
@@ -193,6 +206,126 @@ public class FileInfoGenerator {
 		} catch (IOException e) {
 			logger.error("exception [{}]", e);
 			throw e;
+		}
+
+		return fileInfo;
+	}
+
+	/**
+	 @fn makePainteeFileInfo
+	 @brief 함수 간략한 설명 : 옆서 그림 파일용 upload
+	 @remark
+	 - 함수의 상세 설명 : 옆서 그림 파일용 upload
+	 @param multipartFile
+	 @param middlePath
+	 @param displayName
+	 @return
+	 @throws Exception
+	*/
+	public FileInfo makePainteeFileInfo(MultipartFile multipartFile, String middlePath, String displayName, PaintingCreateVO paintingCreateVO) throws Exception {
+		Date today = new Date();
+
+		//crop image file path
+		String filePath = filePathGenerator.generateFilPath(middlePath);
+		String newId = UUID.randomUUID().toString();
+
+		FileInfo fileInfo = new FileInfo();
+		fileInfo.setId(newId);
+		fileInfo.setName(newId);
+		fileInfo.setOriName(multipartFile.getOriginalFilename());
+		fileInfo.setExtension("jpeg");
+		fileInfo.setPath(filePath);
+		fileInfo.setContentType("image/png");
+		fileInfo.setDisplayName(displayName);
+		fileInfo.setCreatedDate(today);
+
+		StringBuilder fullPath = new StringBuilder();
+		fullPath.append(filePathGenerator.getAbsoluteFilPath(filePath));
+		fullPath.append(newId);
+
+		File originalFile = null;
+		File cropImageFile = null;
+		File cropImageFilePre = null;
+		File thumbnailFile1 = null;
+		File thumbnailFile2 = null;
+
+		try {
+			File cropImageFilePath = new File(filePathGenerator.getAbsoluteFilPath(filePath));
+			//크롭된 원본 파일 경로
+			if(!cropImageFilePath.exists()) {
+				logger.info("created {} directory", filePath);
+				cropImageFilePath.mkdirs();
+			}
+
+			//원본파일 생성
+			originalFile = new File(fullPath.toString()+"_ori");
+			FileCopyUtils.copy(multipartFile.getBytes(), originalFile);
+
+			//crop 이미지 생성
+			cropImageFilePre = new File(fullPath.toString());
+            cropImageFile = new File(fullPath.toString());
+
+            // 2016-10-04 : 가로/세로 Problem
+			//imgScalrWrapper.cropCenter(originalFile, cropImageFile, "jpeg", 1080, 1500);
+			imgScalrWrapper.cropCustom(originalFile, cropImageFile, "jpeg", paintingCreateVO.getX(), paintingCreateVO.getY(), paintingCreateVO.getxWidth(), paintingCreateVO.getyWidth(), paintingCreateVO.getRotate());
+            imgScalrWrapper.resize(cropImageFilePre, cropImageFile, "jpeg", 1080, 1500);
+			fileInfo.setSize(cropImageFile.length());
+
+			//중간 크기 썸네일
+			fullPath.delete(0, fullPath.length());
+			fullPath.append(filePathGenerator.getAbsoluteFilPath(filePath));
+			fullPath.append(newId).append("_2");
+			thumbnailFile1 = new File(fullPath.toString());
+
+			imgScalrWrapper.resize(cropImageFile, thumbnailFile1, "jpeg", 648, 900);
+
+			//작은 크기 썸네일
+			fullPath.delete(0, fullPath.length());
+			fullPath.append(filePathGenerator.getAbsoluteFilPath(filePath));
+			fullPath.append(newId).append("_3");
+
+			thumbnailFile2 = new File(fullPath.toString());
+
+			imgScalrWrapper.resize(cropImageFile, thumbnailFile2, "jpeg", 360, 500);
+			//생성된 파일들을 aws 로 전송
+			StringBuilder awsPath = new StringBuilder();
+
+			//crop image
+			awsPath.append(filePath);
+			awsPath.append(newId);
+			awsS3Helper.putObject(bucketName, awsPath.toString(), cropImageFile);
+
+			//thumbnail1
+			awsPath.delete(0, awsPath.length());
+			awsPath.append(filePath);
+			awsPath.append(newId).append("_2");
+			awsS3Helper.putObject(bucketName, awsPath.toString(), thumbnailFile1);
+
+			//thumbnail2
+			awsPath.delete(0, awsPath.length());
+			awsPath.append(filePath);
+			awsPath.append(newId).append("_3");
+			awsS3Helper.putObject(bucketName, awsPath.toString(), thumbnailFile2);
+
+		} catch (IOException e) {
+			logger.error("exception [{}]", e);
+			throw e;
+		} finally {
+			if(originalFile != null) {
+				originalFile.delete();
+			}
+            if(cropImageFilePre != null) {
+				cropImageFilePre.delete();
+			}
+			if(cropImageFile != null) {
+				cropImageFile.delete();
+			}
+			if(thumbnailFile1 != null) {
+				thumbnailFile1.delete();
+			}
+			if(thumbnailFile2 != null) {
+				thumbnailFile2.delete();
+			}
 		}
 
 		return fileInfo;

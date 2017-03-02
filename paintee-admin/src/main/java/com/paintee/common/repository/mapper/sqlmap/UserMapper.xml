@@ -13,8 +13,10 @@
     <result column="zipcode" property="zipcode" jdbcType="VARCHAR" />
     <result column="city" property="city" jdbcType="VARCHAR" />
     <result column="location" property="location" jdbcType="VARCHAR" />
+    <result column="language" property="language" jdbcType="VARCHAR" />
     <result column="upload_cnt" property="uploadCnt" jdbcType="INTEGER" />
     <result column="post_cnt" property="postCnt" jdbcType="INTEGER" />
+    <result column="like_cnt" property="likeCnt" jdbcType="INTEGER" />
     <result column="earn_total_money" property="earnTotalMoney" jdbcType="REAL" />
     <result column="earn_reword_money" property="earnRewordMoney" jdbcType="REAL" />
     <result column="resent_send_basic_addr" property="resentSendBasicAddr" jdbcType="VARCHAR" />
@@ -27,6 +29,7 @@
     <result column="user_status" property="userStatus" jdbcType="CHAR" />
     <result column="sns_type" property="snsType" jdbcType="CHAR" />
     <result column="created_date" property="createdDate" jdbcType="TIMESTAMP" />
+    <result column="service_cnt" property="serviceCnt" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -88,9 +91,10 @@
   </sql>
   <sql id="Base_Column_List" >
     user_id, password, email, name, provider_id, introduce, basic_addr, detail_addr, 
-    zipcode, city, location, upload_cnt, post_cnt, earn_total_money, earn_reword_money, 
-    resent_send_basic_addr, resent_send_detail_addr, resent_send_zipcode, resent_send_city, 
-    resent_send_location, resent_send_name, point, user_status, sns_type, created_date
+    zipcode, city, location, language, upload_cnt, post_cnt, like_cnt, earn_total_money, 
+    earn_reword_money, resent_send_basic_addr, resent_send_detail_addr, resent_send_zipcode, 
+    resent_send_city, resent_send_location, resent_send_name, point, user_status, sns_type, 
+    created_date, service_cnt
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.paintee.common.repository.entity.UserExample" >
     select
@@ -124,24 +128,26 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.paintee.common.repository.entity.User" >
-    insert into TB_USER (user_id, password, email, 
+    insert into TB_USER (user_id, password, email,
       name, provider_id, introduce, 
       basic_addr, detail_addr, zipcode, 
-      city, location, upload_cnt, 
-      post_cnt, earn_total_money, earn_reword_money, 
-      resent_send_basic_addr, resent_send_detail_addr, 
-      resent_send_zipcode, resent_send_city, resent_send_location, 
-      resent_send_name, point, user_status, 
-      sns_type, created_date)
+      city, location, language, 
+      upload_cnt, post_cnt, like_cnt, 
+      earn_total_money, earn_reword_money, resent_send_basic_addr, 
+      resent_send_detail_addr, resent_send_zipcode, 
+      resent_send_city, resent_send_location, resent_send_name, 
+      point, user_status, sns_type, 
+      created_date, service_cnt)
     values (#{userId,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
       #{name,jdbcType=VARCHAR}, #{providerId,jdbcType=VARCHAR}, #{introduce,jdbcType=VARCHAR}, 
       #{basicAddr,jdbcType=VARCHAR}, #{detailAddr,jdbcType=VARCHAR}, #{zipcode,jdbcType=VARCHAR}, 
-      #{city,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{uploadCnt,jdbcType=INTEGER}, 
-      #{postCnt,jdbcType=INTEGER}, #{earnTotalMoney,jdbcType=REAL}, #{earnRewordMoney,jdbcType=REAL}, 
-      #{resentSendBasicAddr,jdbcType=VARCHAR}, #{resentSendDetailAddr,jdbcType=VARCHAR}, 
-      #{resentSendZipcode,jdbcType=VARCHAR}, #{resentSendCity,jdbcType=VARCHAR}, #{resentSendLocation,jdbcType=VARCHAR}, 
-      #{resentSendName,jdbcType=VARCHAR}, #{point,jdbcType=INTEGER}, #{userStatus,jdbcType=CHAR}, 
-      #{snsType,jdbcType=CHAR}, #{createdDate,jdbcType=TIMESTAMP})
+      #{city,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{language,jdbcType=VARCHAR}, 
+      #{uploadCnt,jdbcType=INTEGER}, #{postCnt,jdbcType=INTEGER}, #{likeCnt,jdbcType=INTEGER}, 
+      #{earnTotalMoney,jdbcType=REAL}, #{earnRewordMoney,jdbcType=REAL}, #{resentSendBasicAddr,jdbcType=VARCHAR}, 
+      #{resentSendDetailAddr,jdbcType=VARCHAR}, #{resentSendZipcode,jdbcType=VARCHAR}, 
+      #{resentSendCity,jdbcType=VARCHAR}, #{resentSendLocation,jdbcType=VARCHAR}, #{resentSendName,jdbcType=VARCHAR}, 
+      #{point,jdbcType=INTEGER}, #{userStatus,jdbcType=CHAR}, #{snsType,jdbcType=CHAR}, 
+      #{createdDate,jdbcType=TIMESTAMP}, #{serviceCnt,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.paintee.common.repository.entity.User" >
     insert into TB_USER
@@ -179,11 +185,17 @@
       <if test="location != null" >
         location,
       </if>
+      <if test="language != null" >
+        language,
+      </if>
       <if test="uploadCnt != null" >
         upload_cnt,
       </if>
       <if test="postCnt != null" >
         post_cnt,
+      </if>
+      <if test="likeCnt != null" >
+        like_cnt,
       </if>
       <if test="earnTotalMoney != null" >
         earn_total_money,
@@ -221,6 +233,9 @@
       <if test="createdDate != null" >
         created_date,
       </if>
+      <if test="serviceCnt != null" >
+        service_cnt,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="userId != null" >
@@ -256,11 +271,17 @@
       <if test="location != null" >
         #{location,jdbcType=VARCHAR},
       </if>
+      <if test="language != null" >
+        #{language,jdbcType=VARCHAR},
+      </if>
       <if test="uploadCnt != null" >
         #{uploadCnt,jdbcType=INTEGER},
       </if>
       <if test="postCnt != null" >
         #{postCnt,jdbcType=INTEGER},
+      </if>
+      <if test="likeCnt != null" >
+        #{likeCnt,jdbcType=INTEGER},
       </if>
       <if test="earnTotalMoney != null" >
         #{earnTotalMoney,jdbcType=REAL},
@@ -297,6 +318,9 @@
       </if>
       <if test="createdDate != null" >
         #{createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="serviceCnt != null" >
+        #{serviceCnt,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -342,11 +366,17 @@
       <if test="record.location != null" >
         location = #{record.location,jdbcType=VARCHAR},
       </if>
+      <if test="record.language != null" >
+        language = #{record.language,jdbcType=VARCHAR},
+      </if>
       <if test="record.uploadCnt != null" >
         upload_cnt = #{record.uploadCnt,jdbcType=INTEGER},
       </if>
       <if test="record.postCnt != null" >
         post_cnt = #{record.postCnt,jdbcType=INTEGER},
+      </if>
+      <if test="record.likeCnt != null" >
+        like_cnt = #{record.likeCnt,jdbcType=INTEGER},
       </if>
       <if test="record.earnTotalMoney != null" >
         earn_total_money = #{record.earnTotalMoney,jdbcType=REAL},
@@ -384,6 +414,9 @@
       <if test="record.createdDate != null" >
         created_date = #{record.createdDate,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.serviceCnt != null" >
+        service_cnt = #{record.serviceCnt,jdbcType=INTEGER},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -402,8 +435,10 @@
       zipcode = #{record.zipcode,jdbcType=VARCHAR},
       city = #{record.city,jdbcType=VARCHAR},
       location = #{record.location,jdbcType=VARCHAR},
+      language = #{record.language,jdbcType=VARCHAR},
       upload_cnt = #{record.uploadCnt,jdbcType=INTEGER},
       post_cnt = #{record.postCnt,jdbcType=INTEGER},
+      like_cnt = #{record.likeCnt,jdbcType=INTEGER},
       earn_total_money = #{record.earnTotalMoney,jdbcType=REAL},
       earn_reword_money = #{record.earnRewordMoney,jdbcType=REAL},
       resent_send_basic_addr = #{record.resentSendBasicAddr,jdbcType=VARCHAR},
@@ -415,7 +450,8 @@
       point = #{record.point,jdbcType=INTEGER},
       user_status = #{record.userStatus,jdbcType=CHAR},
       sns_type = #{record.snsType,jdbcType=CHAR},
-      created_date = #{record.createdDate,jdbcType=TIMESTAMP}
+      created_date = #{record.createdDate,jdbcType=TIMESTAMP},
+      service_cnt = #{record.serviceCnt,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -453,11 +489,17 @@
       <if test="location != null" >
         location = #{location,jdbcType=VARCHAR},
       </if>
+      <if test="language != null" >
+        language = #{language,jdbcType=VARCHAR},
+      </if>
       <if test="uploadCnt != null" >
         upload_cnt = #{uploadCnt,jdbcType=INTEGER},
       </if>
       <if test="postCnt != null" >
         post_cnt = #{postCnt,jdbcType=INTEGER},
+      </if>
+      <if test="likeCnt != null" >
+        like_cnt = #{likeCnt,jdbcType=INTEGER},
       </if>
       <if test="earnTotalMoney != null" >
         earn_total_money = #{earnTotalMoney,jdbcType=REAL},
@@ -495,6 +537,9 @@
       <if test="createdDate != null" >
         created_date = #{createdDate,jdbcType=TIMESTAMP},
       </if>
+      <if test="serviceCnt != null" >
+        service_cnt = #{serviceCnt,jdbcType=INTEGER},
+      </if>
     </set>
     where user_id = #{userId,jdbcType=VARCHAR}
   </update>
@@ -510,8 +555,10 @@
       zipcode = #{zipcode,jdbcType=VARCHAR},
       city = #{city,jdbcType=VARCHAR},
       location = #{location,jdbcType=VARCHAR},
+      language = #{language,jdbcType=VARCHAR},
       upload_cnt = #{uploadCnt,jdbcType=INTEGER},
       post_cnt = #{postCnt,jdbcType=INTEGER},
+      like_cnt = #{likeCnt,jdbcType=INTEGER},
       earn_total_money = #{earnTotalMoney,jdbcType=REAL},
       earn_reword_money = #{earnRewordMoney,jdbcType=REAL},
       resent_send_basic_addr = #{resentSendBasicAddr,jdbcType=VARCHAR},
@@ -523,7 +570,8 @@
       point = #{point,jdbcType=INTEGER},
       user_status = #{userStatus,jdbcType=CHAR},
       sns_type = #{snsType,jdbcType=CHAR},
-      created_date = #{createdDate,jdbcType=TIMESTAMP}
+      created_date = #{createdDate,jdbcType=TIMESTAMP},
+      service_cnt = #{serviceCnt,jdbcType=INTEGER}
     where user_id = #{userId,jdbcType=VARCHAR}
   </update>
 </mapper>

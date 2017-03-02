@@ -15,18 +15,12 @@
 package com.paintee.admin.login.controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.paintee.common.repository.entity.Purchase;
 
 /**
 @class LoginController
@@ -41,7 +35,7 @@ com.paintee.admin.test.controller \n
     | Class Version | v1.0 |
     | 작업자 | Administrator |
  @section 상세설명
- - jsp view 를 포함한 controller
+ - 관리자 로그인, 로그아웃 처리를 포함한 controller
 */
 @Controller(value="com.paintee.admin.login.LoginController")
 @RequestMapping(value="/admin/login")
@@ -49,17 +43,17 @@ public class LoginController {
 	
 	/**
 	 @fn test
-	 @brief 함수 간략한 설명 : 로그인 처리
+	 @brief 함수 간략한 설명 : 관리자 로그인 처리
 	 @remark
-	 - 함수의 상세 설명 : 
+	 - 함수의 상세 설명 : 관리자 로그인 처리 
 	 @return 
 	*/
 	@RequestMapping(value="/login")
 	public String login(String id, String pass, HttpSession session) {
 		// 별도의 테이블 없이 특정 사용자만 허용
 		List<String> users = new ArrayList<>();
-		users.add("admin:1234");
-		users.add("manager:1234");
+		users.add("admin:admin");
+		users.add("manager:manager");
 		
 		String result = "redirect:/";
 		if (users.indexOf(id + ":" + pass) == -1) {
@@ -71,6 +65,14 @@ public class LoginController {
 		return result;
 	}
 	
+	/**
+	 @fn logout
+	 @brief 함수 간략한 설명 : 관리자 로그아웃 처리 
+	 @remark
+	 - 함수의 상세 설명 : 관리자 로그아웃 처리
+	 @param session
+	 @return 
+	*/
 	@RequestMapping(value="/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();

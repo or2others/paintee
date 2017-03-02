@@ -18,7 +18,6 @@ import java.util.List;
 
 import com.paintee.common.repository.entity.User;
 import com.paintee.common.repository.entity.vo.RewardResultVO;
-import com.paintee.common.repository.entity.vo.RewardSearchVO;
 import com.paintee.common.repository.entity.vo.RewardVO;
 import com.paintee.common.repository.mapper.RewardMapper;
 
@@ -57,7 +56,7 @@ public interface RewardHelper extends RewardMapper {
 	 @param rewardSearchVO
 	 @return 
 	 */
-	public List<RewardResultVO> selectRewardList(RewardSearchVO rewardSearchVO);
+	public List<RewardResultVO> selectRewardList();
 
 	/**
 	 @fn selectPurchaseListCount
@@ -67,6 +66,15 @@ public interface RewardHelper extends RewardMapper {
 	 @param rewardSearchVO
 	 @return 
 	*/
-	public Integer selectRewardListCount(RewardSearchVO rewardSearchVO);
+	public Integer selectRewardListCount();
 	
+	/**
+	 @fn selectRewardHistoryList
+	 @brief 함수 간략한 설명 : 
+	 @remark
+	 - 함수의 상세 설명 : 사용자의 리워드 히스토리 팝업 정보를 조회
+	 @param user
+	 @return 
+	*/
+	public List<RewardResultVO> selectRewardHistoryList(User user);
 }

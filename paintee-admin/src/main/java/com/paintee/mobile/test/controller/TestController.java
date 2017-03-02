@@ -26,9 +26,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.paintee.common.file.service.FileInfoGenerator;
 import com.paintee.common.repository.entity.FileInfo;
+import com.paintee.common.repository.entity.Purchase;
 import com.paintee.mobile.test.service.TestService;
 
 /**
@@ -64,15 +66,22 @@ public class TestController {
 	 - 함수의 상세 설명 : json 데이터 전송 테스트용 json 데이터 전송
 	 @return 
 	*/
-	@RequestMapping(value="/api/test", method={RequestMethod.GET})
-	public Map<String, Object> test() {
+	@RequestMapping(value="/api/test/ddddd", method={RequestMethod.GET})
+	public String test() {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
+		
+		logger.debug("test");
 		
 		resultMap.put("test", "aaa");
 		resultMap.put("ccc", 1);
 
-		return resultMap;
+		//return resultMap;
+		
+		return "/test/list.jsp";
+//		return "redirect:/admin/purchase/list";
 	}
+
+
 
 	@RequestMapping(value="/api/upload", method={RequestMethod.POST})
 	public Map<String, Object> testUpload(TestVO testVO) throws Exception {

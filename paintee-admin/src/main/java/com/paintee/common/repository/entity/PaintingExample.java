@@ -565,6 +565,66 @@ public class PaintingExample {
             return (Criteria) this;
         }
 
+        public Criteria andCommentCntIsNull() {
+            addCriterion("comment_cnt is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentCntIsNotNull() {
+            addCriterion("comment_cnt is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentCntEqualTo(Integer value) {
+            addCriterion("comment_cnt =", value, "commentCnt");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentCntNotEqualTo(Integer value) {
+            addCriterion("comment_cnt <>", value, "commentCnt");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentCntGreaterThan(Integer value) {
+            addCriterion("comment_cnt >", value, "commentCnt");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentCntGreaterThanOrEqualTo(Integer value) {
+            addCriterion("comment_cnt >=", value, "commentCnt");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentCntLessThan(Integer value) {
+            addCriterion("comment_cnt <", value, "commentCnt");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentCntLessThanOrEqualTo(Integer value) {
+            addCriterion("comment_cnt <=", value, "commentCnt");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentCntIn(List<Integer> values) {
+            addCriterion("comment_cnt in", values, "commentCnt");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentCntNotIn(List<Integer> values) {
+            addCriterion("comment_cnt not in", values, "commentCnt");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentCntBetween(Integer value1, Integer value2) {
+            addCriterion("comment_cnt between", value1, value2, "commentCnt");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommentCntNotBetween(Integer value1, Integer value2) {
+            addCriterion("comment_cnt not between", value1, value2, "commentCnt");
+            return (Criteria) this;
+        }
+
         public Criteria andPostedPeopleCntIsNull() {
             addCriterion("posted_people_cnt is null");
             return (Criteria) this;
@@ -942,6 +1002,76 @@ public class PaintingExample {
 
         public Criteria andPaintingStatusNotBetween(String value1, String value2) {
             addCriterion("painting_status not between", value1, value2, "paintingStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andPrivateAtIsNull() {
+            addCriterion("private_at is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPrivateAtIsNotNull() {
+            addCriterion("private_at is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPrivateAtEqualTo(String value) {
+            addCriterion("private_at =", value, "privateAt");
+            return (Criteria) this;
+        }
+
+        public Criteria andPrivateAtNotEqualTo(String value) {
+            addCriterion("private_at <>", value, "privateAt");
+            return (Criteria) this;
+        }
+
+        public Criteria andPrivateAtGreaterThan(String value) {
+            addCriterion("private_at >", value, "privateAt");
+            return (Criteria) this;
+        }
+
+        public Criteria andPrivateAtGreaterThanOrEqualTo(String value) {
+            addCriterion("private_at >=", value, "privateAt");
+            return (Criteria) this;
+        }
+
+        public Criteria andPrivateAtLessThan(String value) {
+            addCriterion("private_at <", value, "privateAt");
+            return (Criteria) this;
+        }
+
+        public Criteria andPrivateAtLessThanOrEqualTo(String value) {
+            addCriterion("private_at <=", value, "privateAt");
+            return (Criteria) this;
+        }
+
+        public Criteria andPrivateAtLike(String value) {
+            addCriterion("private_at like", value, "privateAt");
+            return (Criteria) this;
+        }
+
+        public Criteria andPrivateAtNotLike(String value) {
+            addCriterion("private_at not like", value, "privateAt");
+            return (Criteria) this;
+        }
+
+        public Criteria andPrivateAtIn(List<String> values) {
+            addCriterion("private_at in", values, "privateAt");
+            return (Criteria) this;
+        }
+
+        public Criteria andPrivateAtNotIn(List<String> values) {
+            addCriterion("private_at not in", values, "privateAt");
+            return (Criteria) this;
+        }
+
+        public Criteria andPrivateAtBetween(String value1, String value2) {
+            addCriterion("private_at between", value1, value2, "privateAt");
+            return (Criteria) this;
+        }
+
+        public Criteria andPrivateAtNotBetween(String value1, String value2) {
+            addCriterion("private_at not between", value1, value2, "privateAt");
             return (Criteria) this;
         }
 

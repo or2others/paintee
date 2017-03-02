@@ -56,4 +56,22 @@ public class TestController {
 
 		return "test/list";
 	}
+	
+
+	/**
+	 @fn test
+	 @brief 함수 간략한 설명 : test view 화면
+	 @remark
+	 - 함수의 상세 설명 : test view 화면
+	 @return 
+	*/
+	@RequestMapping(value="/api/test", method={RequestMethod.GET})
+	public String tttt(Model model) {
+		model.addAttribute("msg", "hello ");
+		model.addAttribute("count", testService.totalCount());
+
+		return "test/list";
+	}
+	
+	
 }

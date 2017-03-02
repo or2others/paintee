@@ -15,9 +15,12 @@
 package com.paintee.common.repository.helper;
 
 import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.annotations.Param;
 
 import com.paintee.common.repository.entity.Painting;
-import com.paintee.common.repository.entity.vo.PaintingSearchVO;
+import com.paintee.common.repository.entity.vo.LikeUserVO;
 import com.paintee.common.repository.entity.vo.PaintingVO;
 import com.paintee.common.repository.mapper.PaintingMapper;
 
@@ -52,10 +55,11 @@ public interface PaintingHelper extends PaintingMapper {
 	 @brief 함수 간략한 설명 : 그림 아이디에 해당하는 그림 정보를 조회
 	 @remark
 	 - 함수의 상세 설명 : 그림 아이디에 해당하는 그림 정보를 조회
-	 @param search
+	 @param paintingId
+	 @param userId
 	 @return 
 	*/
-	public PaintingVO selectPaintingInfo(String paintingId);
+	public PaintingVO selectPaintingInfo(@Param("paintingId") String paintingId, @Param("userId") String userId);
 	
 	/**
 	 @fn selectPaintingUpdateList
@@ -65,7 +69,7 @@ public interface PaintingHelper extends PaintingMapper {
 	 @param search
 	 @return 
 	 */
-	public List<PaintingVO> selectPaintingUpdateList(PaintingSearchVO search);
+	public List<PaintingVO> selectPaintingUpdateList();
 	
 	/**
 	 @fn selectPaintingUpdateList
@@ -75,5 +79,45 @@ public interface PaintingHelper extends PaintingMapper {
 	 @param search
 	 @return 
 	 */
-	public Integer selectPaintingUpdateListCount(PaintingSearchVO search);
+	public Integer selectPaintingUpdateListCount();
+	
+	/**
+	 @fn sumPostedNum
+	 @brief 함수 간략한 설명 : 사용자의 옆서가 post 된 개수 조회
+	 @remark
+	 - 함수의 상세 설명 : 사용자의 옆서가 post 된 개수 조회
+	 @param artistId
+	 @return 
+	*/
+	public Integer sumPostedNum(String artistId);
+	
+	/**
+	 @fn sumPostedNum
+	 @brief 함수 간략한 설명 : 사용자의 옆서가 post 된 개수 조회
+	 @remark
+	 - 함수의 상세 설명 : 사용자의 옆서가 post 된 개수 조회
+	 @param artistId
+	 @return 
+	*/
+	public Integer countPaintingLike(String artistId);
+
+	/**
+	 @fn updateCommentCntByPaintingId
+	 @brief 함수 간략한 설명 : 그림의 코멘트 카운트를 1 증가 시킨다.
+	 @remark
+	 - 함수의 상세 설명 : 그림의 코멘트 카운트를 1 증가 시킨다.
+	 @param param
+	 @return 
+	*/
+	public void updateCommentCntByPaintingId(Map<String, Object> param);
+
+	/**
+	 @fn selectLikeUserList
+	 @brief 함수 간략한 설명 : 그림을 좋아요 한 사용자 목록
+	 @remark
+	 - 함수의 상세 설명 : 그림을 좋아요 한 사용자 목록
+	 @param paintingId
+	 @return 
+	*/
+	public List<LikeUserVO> selectLikeUserList(String paintingId);
 }

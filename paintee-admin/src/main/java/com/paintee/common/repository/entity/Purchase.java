@@ -12,6 +12,10 @@ public class Purchase extends BaseEntity {
 
     private Date purchaseDate;
 
+    private String purchaseType;
+
+    private Integer tuesdaySeq;
+
     private String sentence;
 
     private String privateAt;
@@ -24,15 +28,17 @@ public class Purchase extends BaseEntity {
 
     private String receiverCity;
 
-    private String senderAddr;
-
     private String receiverName;
+
+    private String senderAddr;
 
     private String senderName;
 
     private String location;
 
     private String purchaseStatus;
+
+    private Date statusUpdateDate;
 
     private Date createdDate;
 
@@ -66,6 +72,22 @@ public class Purchase extends BaseEntity {
 
     public void setPurchaseDate(Date purchaseDate) {
         this.purchaseDate = purchaseDate;
+    }
+
+    public String getPurchaseType() {
+        return purchaseType;
+    }
+
+    public void setPurchaseType(String purchaseType) {
+        this.purchaseType = purchaseType;
+    }
+
+    public Integer getTuesdaySeq() {
+        return tuesdaySeq;
+    }
+
+    public void setTuesdaySeq(Integer tuesdaySeq) {
+        this.tuesdaySeq = tuesdaySeq;
     }
 
     public String getSentence() {
@@ -116,20 +138,20 @@ public class Purchase extends BaseEntity {
         this.receiverCity = receiverCity;
     }
 
-    public String getSenderAddr() {
-        return senderAddr;
-    }
-
-    public void setSenderAddr(String senderAddr) {
-        this.senderAddr = senderAddr;
-    }
-
     public String getReceiverName() {
         return receiverName;
     }
 
     public void setReceiverName(String receiverName) {
         this.receiverName = receiverName;
+    }
+
+    public String getSenderAddr() {
+        return senderAddr;
+    }
+
+    public void setSenderAddr(String senderAddr) {
+        this.senderAddr = senderAddr;
     }
 
     public String getSenderName() {
@@ -154,6 +176,14 @@ public class Purchase extends BaseEntity {
 
     public void setPurchaseStatus(String purchaseStatus) {
         this.purchaseStatus = purchaseStatus;
+    }
+
+    public Date getStatusUpdateDate() {
+        return statusUpdateDate;
+    }
+
+    public void setStatusUpdateDate(Date statusUpdateDate) {
+        this.statusUpdateDate = statusUpdateDate;
     }
 
     public Date getCreatedDate() {

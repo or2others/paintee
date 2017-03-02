@@ -8,6 +8,8 @@
 	    <result column="follows_count" property="followsCount" />
 	    <result column="following_count" property="followingCount" />
 	    <result column="artist_name" property="artistName" />
+	    <result column="like_cnt" property="likeCnt" />
+	    <result column="login_like_cnt" property="loginLikeCnt" />	    
 	</resultMap>
   	
 	<!-- 로그인 사용자가 팔로잉한 사용자가 구매한 그림과 업로드한 그림의 목록을 가져오기 -->
@@ -20,9 +22,17 @@
 			   a.upload_date, 
 			   a.painting_id, 
 			   a.posted_num, 
-			   a.posted_people_cnt
+			   a.comment_cnt, 
+			   a.painting_status,
+			   a.posted_people_cnt,
+		       (select count(*) from TB_PAINTING_LIKE where painting_id = a.painting_id and user_id = #{userId}) login_like_cnt,
+		       (select count(*) from TB_PAINTING_LIKE where painting_id = a.painting_id) like_cnt			   
 		  from TB_PAINTING a
 		 where a.artist_id in (select following from TB_FOLLOW where user_id = #{userId})
+		   and a.painting_status in <foreach item="status" collection="paintingStatusList" open="(" close=")" separator=",">
+		    							#{status}
+		                            </foreach>
+		   and a.private_at = 'N'                        		 
 		 union all
 		select a.artist_id, 
 			   (select name from TB_USER where user_id = a.artist_id) artist_name, 
@@ -32,10 +42,15 @@
 			   b.purchase_date,
 			   a.painting_id,
 			   a.posted_num,
-			   a.posted_people_cnt
+			   a.comment_cnt, 
+			   a.painting_status,
+			   a.posted_people_cnt,
+		       (select count(*) from TB_PAINTING_LIKE where painting_id = a.painting_id and user_id = #{userId}) login_like_cnt,
+		       (select count(*) from TB_PAINTING_LIKE where painting_id = a.painting_id) like_cnt	
 		  from TB_PAINTING a, 
 		       TB_PURCHASE b
 		 where a.painting_id = b.painting_id
+		   and a.private_at = 'N'
     	   and b.private_at = #{privateAt}
 		   and b.purchase_status in <foreach item="status" collection="purchaseStatusList" open="(" close=")" separator=",">
 		    							#{status}
@@ -45,7 +60,7 @@
 		 limit #{startRow}, #{rowPerPage}
   	</select>  	
   	
-	<!-- 로그인 사용자가 팔로잉한 사용자가 구매한 그림과 업로드한 그림의 목록을 가져오기 -->
+	<!-- 로그인 사용자의 팔로잉한 사용자 카운트와 팔로워의 카운트 -->
   	<select id="selectFollowCount" resultMap="BaseResultMap">
   	     select (select count(*) from TB_FOLLOW where user_id = #{userId}) as following_count,
   	            (select count(*) from TB_FOLLOW where following = #{userId}) as follows_count
@@ -55,7 +70,7 @@
   	<!-- 로그인한 사용자를 팔로잉한 사용자의 목록을 조회 -->
   	<select id="selectFollowsList" resultMap="BaseResultMap">
 		select user_id, 
-			   (select name from tb_user where user_id = a.user_id) follows_name, 
+			   (select name from TB_USER where user_id = a.user_id) follows_name, 
 			   (select count(*)
 				  from TB_FOLLOW
 				 where user_id = #{userId}

@@ -24,10 +24,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.paintee.common.repository.entity.Purchase;
 import com.paintee.common.repository.entity.PurchaseExample;
-import com.paintee.common.repository.entity.User;
 import com.paintee.common.repository.entity.vo.PostedSearchVO;
+import com.paintee.common.repository.entity.vo.PurchaseVO;
 import com.paintee.common.repository.helper.PurchaseHelper;
 import com.paintee.common.repository.helper.UserHelper;
 
@@ -69,24 +68,23 @@ public class PostedServiceImpl implements PostedService {
 
 		PurchaseExample example = new PurchaseExample();
 		PurchaseExample.Criteria where =  example.createCriteria();
-		where.andPurchaseStatusEqualTo(searchVO.getPurchaseStatus());
+		where.andPurchaseStatusIn(searchVO.getPurchaseStatusList());
 		where.andPrivateAtEqualTo(searchVO.getPrivateAt());
 
 		int count = purchaseHelper.countByExample(example);
 		logger.debug("전체 개수 : " + count);
 
-		List<Purchase> list = purchaseHelper.selectPostedList(searchVO);
+		List<PurchaseVO> list = purchaseHelper.selectPostedList(searchVO);
 		logger.debug("list : " + list);
 
 		//파일정보 조회
-		for (Purchase purchase : list) {
-			User user = userHelper.selectByPrimaryKey(purchase.getUserId());
-
+		for (PurchaseVO purchaseVO : list) {
 			Map<String, Object> tmpMap = new HashMap<>();
-			tmpMap.put("purchaseSeq", purchase.getSeq());
-			tmpMap.put("userId", purchase.getUserId());
-			tmpMap.put("userName", user.getName());
-			tmpMap.put("sentence", purchase.getSentence());
+			tmpMap.put("purchaseSeq", purchaseVO.getSeq());
+			tmpMap.put("userId", purchaseVO.getUserId());
+			tmpMap.put("userName", purchaseVO.getUserName());
+			tmpMap.put("sentence", purchaseVO.getSentence());
+			tmpMap.put("sentenceType", purchaseVO.getSentenceType());
 
 			resultList.add(tmpMap);
 		}

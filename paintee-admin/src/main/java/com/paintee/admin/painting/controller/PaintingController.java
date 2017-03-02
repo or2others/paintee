@@ -15,7 +15,6 @@
 package com.paintee.admin.painting.controller;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,15 +22,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.paintee.admin.painting.service.PaintingService;
-import com.paintee.admin.test.service.TestService;
-import com.paintee.common.paging.PageVO;
 import com.paintee.common.repository.entity.Painting;
-import com.paintee.common.repository.entity.Purchase;
-import com.paintee.common.repository.entity.vo.PaintingSearchVO;
 
 /**
 @class PaintingController
@@ -57,26 +51,18 @@ public class PaintingController {
 	
 	/**
 	 @fn test
-	 @brief 함수 간략한 설명 : test view 화면
+	 @brief 함수 간략한 설명 : 신규 그림 정보를 조회 
 	 @remark
-	 - 함수의 상세 설명 : test view 화면
+	 - 함수의 상세 설명 : 신규 그림 정보를 조회
 	 @return 
 	*/
 	@RequestMapping(value="/list", method={RequestMethod.GET})
-	public void list(@RequestParam(name="pageNo", required=false, defaultValue="1") Integer pageNo, Model model) {
+	public void list(Model model) {
 		// 데이터 조건 설정
-		PaintingSearchVO search = new PaintingSearchVO();
-		search.setStartRow((pageNo - 1) * 5);
-		search.setRowPerPage(10);
-		Map<String, Object> result = paintingService.getPatingList(search);
-		
-		// 화면 페이징 처리
-		PageVO pageVO = new PageVO(
-				"/admin/painting/list", pageNo, 
-				(int)result.get("count"), (List<Object>)result.get("list"));
-		model.addAttribute(pageVO);
+		Map<String, Object> result = paintingService.getPatingList();
+		model.addAttribute("list", result.get("list"));
+		model.addAttribute("count", result.get("count"));
 	}
-	
 	
 	/**
 	 @fn modPainting
