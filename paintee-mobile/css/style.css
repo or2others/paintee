@@ -922,6 +922,14 @@ a{
     color: darkred;
     font-size: 12px;
 }
+.news_frame{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+}
 .news_container{
     position: absolute;
     top: 100%;
