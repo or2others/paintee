@@ -10,11 +10,9 @@ var newslist = [];
 
 $(document).ready(function () {
 	// 페이지 로딩 시 Tuesday 스와이프 홈 화면 정보구성
-  if (userInfo.userName == "") {
-  }
-  else{
+    if (userInfo != null) {
 	   initNews();
-   }
+    }
 });
 
 function initNews(){
@@ -140,18 +138,19 @@ function showNewsContents(){
     }
 }
 function setReadNewses(){
-  AjaxCall.call(apiUrl + "/notify/read",
-    null,
-    "POST",
-    function (result) {
-        followcount = 0;
-        commentcount = 0;
-        postcount = 0;
-        likecount = 0;
-
-        clearNews();
+    if(userInfo!=null){
+        AjaxCall.call(apiUrl + "/notify/read",
+        null,
+        "POST",
+        function (result) {
+            followcount = 0;
+            commentcount = 0;
+            postcount = 0;
+            likecount = 0;
+        }
+      );
     }
-  );
+    clearNews();
 }
 function hideNewsContents(){
     if(newsStatus==2){
