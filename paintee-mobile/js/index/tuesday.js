@@ -113,7 +113,7 @@ Tuesday.prototype = {
                                 this.comment.append(this.title.html(convertToBr(title) + "<br>"));
                             }
                             this.comment.append(convertToBr(comment));
-                            this.comment.append(this.commentedby);
+//                            this.comment.append(this.commentedby);
                         },
         setArtist:      function(artistName){
                             var paintingId = this.paintingId;
@@ -126,8 +126,9 @@ Tuesday.prototype = {
                             this.week.html(startDateString);
 
                         },
-			  setDay:function(month, day){
-														this.day.html(month +" "+ day)
+        setDay:function(month, day){
+				        //this.day.html(month +" "+ day)
+                        this.day.html("<span data-i18n='[html]tuesday."+month+"'></span> <span data-i18n='[html]tuesday."+day+"'></span> <span data-i18n='[html]tuesday.title'></span>");
 				},
         setPost:        function(listData){
                             this.tueBtn.append(this.listBtnPost);
@@ -254,12 +255,8 @@ var startDateStringg = startDateArr[0]+'-'+startDateArr[1]+'-'+startDateArr[2];
 var startDateCompare = new Date(startDateStringg);
 
     var startDate = new Date(startDateCompare);
-		// var startDateString = startDate.getMonth()+1 + "월 "+startDate.getDate()+"일";
-		// console.log(startDate);
-		// newSlide.setWeek(startDateString);
+
 		newSlide.setDay(startDate.convertEngMonth(), startDate.getDate());
-    // newSlide.setWeek(startDate.weekCountOfMonth() + "st", startDate.convertEngMonth());
-    // 게시기간이 시작되는 날짜를 기준으로 [월] [몇번째주] 로 표시됩니다.
 
     newSlide.setPost(listData);
     newSlide.setArtist(listData.artistName);

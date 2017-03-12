@@ -2005,8 +2005,8 @@ a{
 .tue_day{
     position: absolute;
     text-align: center;
-    font-family: 'Merriweather', serif;
-    font-size: 1.6em;
+    font-family: 'NanumMyeongjo', sans-serif;
+    font-size: 1.2em;
     width: 100%;
     bottom: 140px;
     color: rgba(255,255,255,0.9);

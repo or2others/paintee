@@ -6,8 +6,8 @@
 			"randingCardContents": "Paintee is full of paintings,<br>where you can be an artist,<br>and it is easy to have those as well.",
 			"randingCardTitle2": "You can get any painting you want.",
 			"randingCardContents2": "You can get all paintings in Paintee as a postcard form.<br>Just click 'Post it' button.",
-			"randingCardTitle3": "$0.99 USD is all you have to pay.",
-			"randingCardContents3": "No additional shipping fee is required.<br>You can send anywhere with $0.99 USD only.",
+			"randingCardTitle3": "$1 USD is all you have to pay.",
+			"randingCardContents3": "No additional shipping fee is required.<br>You can send anywhere with $1 USD only.",
             "randingCardTitle4": "Your painting will become a postcard.",
 			"randingCardContents4": "It will be a real postcard.<br>Only enough size of image is needed"
 		},
@@ -19,7 +19,7 @@
 			"randingCardTitle3": "Please wait, it takes a while",
 			"randingCardContents3": "All purchased postcards will be delivered through regular mail.",
 			"randingCardTitle4": "Your support will be a lot to the artists.",
-			"randingCardContents4": "Part of your $0.99 USD support will be contributed to the artists for the sponsorship."
+			"randingCardContents4": "Part of your $1 USD support will be contributed to the artists for the sponsorship."
 		},
 		"upload": {
 			"randingCardTitle1": "Your image will become a postcard.",
@@ -39,7 +39,10 @@
 	{
 		"explainFree": "Every day, One painting.<br>You can get this painting for free for 5 days.",
 		"explainNotFree": "This is pase Painting of Day<br>Free period was over.",
-		"explainAlready": "You already purchase this painting for free.<br>You can get free postcard just once"
+		"explainAlready": "You already purchase this painting for free.<br>You can get free postcard just once",
+        "Jan":"Jan","Fed":"Fed","Mar":"Mar", "Apr":"Apr", "May":"May", "Jun":"Jun", "Jul":"Jul", "Aug":"Aug", "Sep":"Sep", "Oct":"Oct", "Nov":"Nov", "Dec":"Dec",
+        "1": "1st", "2": "2nd", "3": "3rd", "4": "4th", "5": "5th", "6": "6th", "7": "7th", "8": "8th", "9": "9th", "10": "10th", "11": "11th", "12": "12th", "13": "13th", "14": "14th", "15": "15th", "16": "16th", "17": "17th", "18": "18th","19": "19th", "20": "20th", "21": "21th", "22": "22th", "23": "23th", "24": "24th", "25": "25th", "26": "26th", "27": "27th", "28": "28th", "29": "29th", "30": "30th","31": "31th",
+        "title": "painting"
 	},
 	"follow":
 	{
@@ -84,7 +87,7 @@
 		"content5": "Please enter your account name and account number correctly."	,
 		"content6": "If incorrect, there will be an error to transfer into your account."
 	},
-	"payment": 
+	"payment":
 	{
         "1": "by Credit Card",
 		"2": "by Google Acount",
