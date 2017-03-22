@@ -22,13 +22,20 @@ package com.paintee1.pnt;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 
 import org.apache.cordova.*;
 import org.apache.cordova.inappbrowser.InAppBrowser;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.File;
 
 public class MainActivity extends CordovaActivity
 {
@@ -44,6 +51,11 @@ public class MainActivity extends CordovaActivity
     public void bind(Intent serviceIntent, ServiceConnection mServiceConnection, InAppBrowser plugin){
         this.mPlugin = plugin;
         bindService(serviceIntent, mServiceConnection, Context.BIND_AUTO_CREATE);
+    }
+
+    public void bind2(InAppBrowser plugin){
+        this.mPlugin = plugin;
+
     }
 
 
@@ -82,5 +94,39 @@ public class MainActivity extends CordovaActivity
                 Log.e("user cancel ? : ", String.valueOf(resultCode));
             }
         }
+        else if(requestCode == 1){
+            if(resultCode == RESULT_OK){
+
+                Uri selectedImage = data.getData();
+                String[] filePathColumn = { MediaStore.Images.Media.DATA };
+
+                Cursor cursor = getContentResolver().query(selectedImage,
+                        filePathColumn, null, null, null);
+                cursor.moveToFirst();
+
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                String picturePath = cursor.getString(columnIndex);
+                cursor.close();
+//                String imagepath = getPath(selectedImage);
+//                File myFile = new File(picturePath);
+//                Bitmap photo = BitmapFactory.decodeFile(picturePath);
+                mPlugin.photoSuccess(picturePath);
+            }
+            else{
+
+            }
+        }
     }
+    public String getPath(Uri uri) {
+        String[] projection = { MediaStore.Images.Media.DATA };
+        Cursor cursor = getContentResolver().query(uri, projection, null, null, null);
+        int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+        cursor.moveToFirst();
+        int columnIndex = cursor.getColumnIndex(projection[0]);
+        String filePath = cursor.getString(columnIndex);
+        cursor.close();
+
+        return cursor.getString(column_index);
+    }
+
 }

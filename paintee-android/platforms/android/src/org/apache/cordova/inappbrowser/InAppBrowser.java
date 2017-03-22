@@ -25,6 +25,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.ServiceConnection;
+import android.content.pm.PackageManager;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.provider.Browser;
@@ -60,6 +61,7 @@ import android.widget.Toast;
 
 import com.android.vending.billing.IInAppBillingService;
 import com.paintee1.pnt.MainActivity;
+import com.synconset.GettingPermissionsActivity;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.Config;
@@ -73,16 +75,21 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.StringTokenizer;
+
+import static android.app.Activity.RESULT_OK;
 
 @SuppressLint("SetJavaScriptEnabled")
 public class InAppBrowser extends CordovaPlugin {
 
+    private int PICK_IMAGE = 1;
     IInAppBillingService mService;
 
     ServiceConnection mServiceConn = new ServiceConnection() {
@@ -278,7 +285,6 @@ public class InAppBrowser extends CordovaPlugin {
             this.callbackContext.sendPluginResult(pluginResult);
         }
         else if(action.equals("store")){
-
             tempCallbackContext = callbackContext;
 
             Intent serviceIntent =
@@ -288,10 +294,68 @@ public class InAppBrowser extends CordovaPlugin {
             mActivity.bind(serviceIntent, mServiceConn, this);
 //            ..Service(serviceIntent, mServiceConn, Context.BIND_AUTO_CREATE);
         }
+        else if(action.equals("photo")){
+            tempCallbackContext = callbackContext;
+            Context context = this.cordova.getActivity().getApplicationContext();
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                int read = context
+                        .checkCallingOrSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE);
+                int write = context
+                        .checkCallingOrSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                if (read != PackageManager.PERMISSION_GRANTED && write != PackageManager.PERMISSION_GRANTED) {
+                    Intent intent = new Intent(cordova.getActivity(), GettingPermissionsActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(intent);
+                } else {
+                    Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                    getIntent.setType("image/*");
+
+                    Intent pickIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    pickIntent.setType("image/*");
+
+                    Intent chooserIntent = Intent.createChooser(getIntent, "Select Image");
+                    chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[]{pickIntent});
+
+                    mActivity = (MainActivity) cordova.getActivity();
+                    mActivity.bind2(this);
+                    mActivity.startActivityForResult(chooserIntent, PICK_IMAGE);
+
+                }
+            }
+            else{
+                Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                getIntent.setType("image/*");
+
+                Intent pickIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                pickIntent.setType("image/*");
+
+                Intent chooserIntent = Intent.createChooser(getIntent, "Select Image");
+                chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[]{pickIntent});
+
+//                this.cordova.setActivityResultCallback(this);
+                mActivity = (MainActivity) cordova.getActivity();
+                mActivity.bind2(this);
+                mActivity.startActivityForResult(chooserIntent, PICK_IMAGE);
+            }
+        }
         else {
             return false;
         }
         return true;
+    }
+
+    public void photoSuccess(String newFile){
+
+        File file = new File(newFile);
+        JSONObject object = new JSONObject();
+        try {
+            object.put("file",file);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+//        File file = new File(photoPath);
+        tempCallbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK,object));
     }
 
     public void gotoBuy(){
@@ -382,6 +446,25 @@ public class InAppBrowser extends CordovaPlugin {
 
     }
 
+    //    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
+//            String picturePath = data.getStringExtra("picturePath");
+//            Uri uri = data.getData();
+//
+//            Log.e("picturePath : ",picturePath);
+//            tempCallbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, picturePath));
+//
+////            mActivity.unbind(mServiceConn);
+//        }
+//        else{
+//            tempCallbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, " "));
+//
+////            mActivity.unbind(mServiceConn);
+//        }
+//
+//    }
     public void payFailed(){
         if(tempCallbackContext == null){
 
@@ -702,8 +785,8 @@ public class InAppBrowser extends CordovaPlugin {
              */
             private int dpToPixels(int dipValue) {
                 int value = (int) TypedValue.applyDimension( TypedValue.COMPLEX_UNIT_DIP,
-                                                            (float) dipValue,
-                                                            cordova.getActivity().getResources().getDisplayMetrics()
+                        (float) dipValue,
+                        cordova.getActivity().getResources().getDisplayMetrics()
                 );
 
                 return value;
@@ -803,8 +886,8 @@ public class InAppBrowser extends CordovaPlugin {
                     public boolean onKey(View v, int keyCode, KeyEvent event) {
                         // If the event is a key-down event on the "enter" button
                         if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                          navigate(edittext.getText().toString());
-                          return true;
+                            navigate(edittext.getText().toString());
+                            return true;
                         }
                         return false;
                     }
@@ -1051,7 +1134,7 @@ public class InAppBrowser extends CordovaPlugin {
             // Update the UI if we haven't already
             if (!newloc.equals(edittext.getText().toString())) {
                 edittext.setText(newloc);
-             }
+            }
 
             try {
                 JSONObject obj = new JSONObject();

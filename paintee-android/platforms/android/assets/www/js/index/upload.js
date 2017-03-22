@@ -4,7 +4,6 @@ var onceAboutUpload = true;
 var sourceWidth;
 var sourceHeight;
 
-
 //업로드화면
 function upload(){
 	if (userID == "") {
@@ -35,11 +34,24 @@ function likeInfoRes(result, status) {
 		initUpload(likeCount, doTotaluploadCount, uploadedCount);
 		setBox();
 
-		replaceHistory({"call": "uploadPop"});
+		replaceHistory({"call": "uploadPop"} );
 	    addHistory({"call": "upload"});
 	}
 }
+function readFile(fileEntry) {
 
+    fileEntry.file(function (file) {
+        var reader = new FileReader();
+
+        reader.onloadend = function() {
+            alert("Successful file read: " + this.result);
+            displayFileData(fileEntry.fullPath + ": " + this.result);
+        };
+
+        reader.readAsText(file);
+
+    }, onErrorReadFile);
+}
 function Upload(){
     this.title      = $("<div>").addClass("upload_title").addClass("popup_title");
     this.contents   = $("<div>").addClass("upload_contents").addClass("popup_contents");
@@ -68,7 +80,11 @@ Upload.prototype = {
 }
 
 function checkPainteeFile(file) {
-	var reader = new FileReader();
+
+
+//    File file = new File(filePath);
+//    alert(file);
+    var reader = new FileReader();
 	var image  = new Image();
 	var fileType = file.type;
 
@@ -168,14 +184,48 @@ function resetUpload() {
 	$('.uploadFileBox').html("<label for='painteeFile' class='upload_btn_text'>Select image file </label><img class='icon' src='ico/folder.png'>");
 
 	$('#upload_file_input_box').empty();
-	$('#upload_file_input_box').html("<form id='paintingCreateForm' name='paintingCreateForm' method='POST' enctype='multipart/form-data'><input type='file' id='painteeFile' name='painteeFile' title='' class='upload-input-hidden' /></form>");
+	$('#upload_file_input_box').html("<div id='painteeFile' name='painteeFile'></div>");// method='POST' enctype='multipart/form-data'><input type='file' id='painteeFile' name='painteeFile' title='' class='upload-input-hidden' /></form>");
 
 
-	$('#painteeFile').on('change', function(e) {
+	$('.uploadFileBox').on('click', function() {
+	   cordova.exec(function(result){
 
-		if(this.files[0]) {
-			checkPainteeFile(this.files[0]);
-		}
+
+	   var path = "file://"+result.file;
+//	   alert(path);
+
+//	       File file = new File(result);
+
+//        alert(result.file);
+        window.resolveLocalFileSystemURL(path, function(fileEntry) {
+
+//            alert(fileEntry);
+            fileEntry.file(function(file) {
+
+//                alert(file);
+                checkPainteeFile(file);
+//                var reader = new FileReader(),
+//                    data = null;
+//                reader.onloadend = function(event) {
+//                    data = reader.result;
+//                };
+//                console.log('Reading file: ' + file.name);
+//                reader.readAsDataURL(file)
+            });
+        }, function(e){
+            alert("error: "+e);
+        });
+
+
+//            readFile(result.file);
+           checkPainteeFile(result.file);
+
+//            File file = new File(result);
+//            checkPainteeFile(file);
+        },function(err){
+            alert("사진을 불러오는 과정에 발생했습니다.");
+
+        },"InAppBrowser","photo",[]);
 	});
 }
 function initUpload(likeCount, doTotaluploadCount, uploadedCount){

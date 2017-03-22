@@ -4,12 +4,6 @@ var onceAboutUpload = true;
 var sourceWidth;
 var sourceHeight;
 
-var pictureSource;
-var destinationType;
-
-document.addEventListener("deviceready",onDeviceReady,false);
-
-
 //업로드화면
 function upload(){
 	if (userID == "") {
@@ -40,11 +34,24 @@ function likeInfoRes(result, status) {
 		initUpload(likeCount, doTotaluploadCount, uploadedCount);
 		setBox();
 
-		replaceHistory({"call": "uploadPop"});
+		replaceHistory({"call": "uploadPop"} );
 	    addHistory({"call": "upload"});
 	}
 }
+function readFile(fileEntry) {
 
+    fileEntry.file(function (file) {
+        var reader = new FileReader();
+
+        reader.onloadend = function() {
+            alert("Successful file read: " + this.result);
+            displayFileData(fileEntry.fullPath + ": " + this.result);
+        };
+
+        reader.readAsText(file);
+
+    }, onErrorReadFile);
+}
 function Upload(){
     this.title      = $("<div>").addClass("upload_title").addClass("popup_title");
     this.contents   = $("<div>").addClass("upload_contents").addClass("popup_contents");
@@ -70,11 +77,14 @@ Upload.prototype = {
         $(".upload_box").append(this.bottomMargin);
         $(".upload_box").append(this.bottom);
     }
-
 }
 
 function checkPainteeFile(file) {
-	var reader = new FileReader();
+
+
+//    File file = new File(filePath);
+//    alert(file);
+    var reader = new FileReader();
 	var image  = new Image();
 	var fileType = file.type;
 
@@ -82,13 +92,12 @@ function checkPainteeFile(file) {
 	reader.onload = function(_file) {
 		image.src    = _file.target.result;
 
-
-        image.onload = function() {
+		image.onload = function() {
 			var width = this.width;
 			var height = this.height;
 
-			console.log("width : " + width);
-			console.log("height : " + height);
+//			console.log("width : " + width);
+//			console.log("height : " + height);
 
 			//이미지 이면서 1080x1500 인 이미지
 			if(!fileType.match(/image\//) || width < 1080 || height < 1500) {
@@ -167,46 +176,58 @@ function createPaintingRes(result, status) {
 		alert('error');
 	}
 }
-function onDeviceReady() {
-        pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;
-    }
-
 function resetUpload() {
 	boxStatus = "uploadPop";
 
 //	$('.painting_preview').empty();
 	$('.uploadFileBox').empty();
-	$('.uploadFileBox').html("<label for='upload_file_input_box' class='upload_btn_text' id='painteeFile'>Select image file </label><img class='icon' src='ico/folder.png'>");
+	$('.uploadFileBox').html("<label for='painteeFile' class='upload_btn_text'>Select image file </label><img class='icon' src='ico/folder.png'>");
 
 	$('#upload_file_input_box').empty();
-//	$('#upload_file_input_box').html("<form id='paintingCreateForm' name='paintingCreateForm' method='POST' enctype='multipart/form-data'><input type='file' id='painteeFile' name='painteeFile' title='' class='upload-input-hidden' /></form>");
+	$('#upload_file_input_box').html("<div id='painteeFile' name='painteeFile'></div>");// method='POST' enctype='multipart/form-data'><input type='file' id='painteeFile' name='painteeFile' title='' class='upload-input-hidden' /></form>");
 
-    $('#painteeFile').click(function(){
-        getPhoto(pictureSource.SAVEDPHOTOALBUM);
-    });
-//	$('#painteeFile').on('change', function() {
-//	    alert("fuck");
-//		if(this.files[0]) {
-//			checkPainteeFile(this.files[0]);
-//		}
-//	});
+
+	$('.uploadFileBox').on('click', function() {
+	   cordova.exec(function(result){
+
+
+	   var path = "file://"+result.file;
+//	   alert(path);
+
+//	       File file = new File(result);
+
+//        alert(result.file);
+        window.resolveLocalFileSystemURL(path, function(fileEntry) {
+
+//            alert(fileEntry);
+            fileEntry.file(function(file) {
+
+//                alert(file);
+                checkPainteeFile(file);
+//                var reader = new FileReader(),
+//                    data = null;
+//                reader.onloadend = function(event) {
+//                    data = reader.result;
+//                };
+//                console.log('Reading file: ' + file.name);
+//                reader.readAsDataURL(file)
+            });
+        }, function(e){
+            alert("error: "+e);
+        });
+
+
+//            readFile(result.file);
+           checkPainteeFile(result.file);
+
+//            File file = new File(result);
+//            checkPainteeFile(file);
+        },function(err){
+            alert("사진을 불러오는 과정에 발생했습니다.");
+
+        },"InAppBrowser","photo",[]);
+	});
 }
-function getPhoto(source) {
-
-        alert("click",navigator);
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 100,
-        correctOrientation : true,
-        destinationType: destinationType.FILE_URI,
-        sourceType: source });
-    }
-   function onPhotoDataSuccess(imageData) {
-        alert("success");
-      var smallImage = document.getElementById('smallImage');
-      smallImage.style.display = 'block';
-      smallImage.src = "data:image/jpeg;base64," + imageData;
-    }
-
 function initUpload(likeCount, doTotaluploadCount, uploadedCount){
     $(".upload_box").empty();
     $(".upload_box").removeClass("upload_box_preview");
@@ -498,5 +519,3 @@ $(".crop_return_btn").click(function(){
     $(".crop_container").hide();
     cropper.destroy();
 })
-
-// checkPainteeFile -> initCrop -> successUpload (preview 수정) -> createPainting (cropCenter 수정)
