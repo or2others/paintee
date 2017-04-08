@@ -36,10 +36,10 @@ newSwiper.on("onSlideChangeStart", function(swiper){
 newSwiper.on("onTransitionEnd", function(swiper){listLock(swiper)});
 
 newSwiper.on("onSlideNextStart", function(swiper) {
-    $(swiper.container).find(".home_btn").hide()
+    $("#back_btn").hide()
 });
 newSwiper.on("onSlidePrevStart", function(swiper) {
-    $(swiper.container).find(".home_btn").show()
+    $("#back_btn").show()
 });
 
 //side menu에 이벤트 설정
