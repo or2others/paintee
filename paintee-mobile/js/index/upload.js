@@ -414,14 +414,21 @@ function initCrop(src, originalWidth, originalHeight){
             $(".stopper").hide();
         },
         zoom: function(e){
-//            console.log(e.detail.ratio);
+            console.log(originalRatio + " : " + e.detail.ratio);
             if(e.detail.ratio>originalRatio){
+                console.log("stop!")
                 e.preventDefault();
             }
         }
     });
 }
 
+$(".crop_zoomin_btn").click(function(){
+    cropper.zoom(0.1);
+})
+$(".crop_zoomout_btn").click(function(){
+    cropper.zoom(-0.1);
+})
 $(".crop_confirm_btn").click(function(){
     croped = cropper.getData();
 //    console.log(croped);

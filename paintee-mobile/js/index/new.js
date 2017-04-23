@@ -107,3 +107,14 @@ function initNew(){
   //테이블에서 가져올 데이터의 시작 위치를 처음 로딩시 0번째 부터 조회
   new NewController().getListData(0);
 }
+
+
+function showTileView(swiper){
+    $(swiper.slides).addClass("list_container_tile");
+    swiper.destroy(true, true);
+}
+
+function endTileView(swiper){
+    $(swiper.slides).removeClass("list_container_tile");
+    swiper.destroy(true, true);
+}
