@@ -92,8 +92,8 @@ function setSideMenu() {
 
 // var imageUrl="http://52.78.12.134:8080/paintee-admin";
 // var imageUrl="http://localhost:8080/paintee-admin";
-var imageUrl="http://211.249.62.50:8080/paintee-admin";
-// var imageUrl="http://paintee.me/paintee-admin";
+// var imageUrl="http://211.249.62.50:8080/paintee-admin";
+var imageUrl="http://paintee.me/paintee-admin";
 //var imageUrl=window.location.protocol+"//paintee.me/paintee-admin";
 var apiUrl = imageUrl + "/api";
 
