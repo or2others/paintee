@@ -625,7 +625,7 @@ function listLock(swiper){
         }
         swiper.disableMousewheelControl();
         $(".swiper-scrollbar").hide();
-        $(".home_btn").hide()
+        $("#back_btn").hide()
         $(".bottom_bar").css("opacity", 0);
     }else{
         mainSwiper.lockSwipes();
@@ -746,7 +746,6 @@ function selectMenu(index){
 // 가로휠방지 && 페이지네이션숨김 && 위로스와이프방지
 // [tuesday] 처음 시작할때 무조건 위로 스와이프 방지하는 부분 삭제
 $(".swiper-scrollbar").hide();
-$(".home_btn").hide()
 
 // 화면 리사이즈할때 layout 재 설정
 $(window).resize(function (){
@@ -805,7 +804,7 @@ function btnToggle(btn){
 }
 
 // list의 맨앞으로 되돌아가기 버튼
-$(".home_btn").click(function(){
+$("#back_btn").click(function(){
     currentSwiper.slideTo(0);
 })
 
