@@ -36,10 +36,14 @@ followSwiper.on("onTransitionEnd", function(swiper) {
 	listLock(swiper)
 });
 followSwiper.on("onSlideNextStart", function(swiper) {
-    $(swiper.container).find(".home_btn").hide()
+//    $(swiper.container).find(".home_btn").hide()
+    $("#back_btn").hide()
+
 });
 followSwiper.on("onSlidePrevStart", function(swiper) {
-    $(swiper.container).find(".home_btn").show()
+//    $(swiper.container).find(".home_btn").show()
+    $("#back_btn").show()
+
 });
 
 // side menu에 이벤트 설정
@@ -206,7 +210,7 @@ function initFollow() {
         welcome.setContents(logInBtn);
         // 안드로이드랑 iOS는 아래 부분 주석처리
         if(!painteeFB.isCordova()){
-            welcome.setAdd("<a href='https://play.google.com/store/apps/details?id=com.paintee1.pnt' target='_blank'><img class='download_btn_android' src='ico/download_btn_play.png'></a><a href='https://itunes.apple.com/ph/app/paintee-your-painting/id1146256092?mt=8' target='_blank'><img class='download_btn_android' src='ico/download_btn_ios.png'></a>");
+            welcome.setAdd("<a href='https://play.google.com/store/apps/details?id=com.paintee1.pnt' target='_blank'><img class='download_btn_android' src='ico/download_btn_play.png'></a>");
         }
 		followSwiper.appendSlide(welcome.buildStructure());
 		$("#menu_follow").addClass("side_menu_major_inactive");

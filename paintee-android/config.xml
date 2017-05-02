@@ -18,7 +18,6 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
-        <!-- you can use any density that exists in the Android project -->
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -26,28 +25,17 @@
     </platform>
     <engine name="android" spec="~5.1.1" />
     <plugin name="cordova-plugin-inappbrowser" spec="~1.4.0" />
-
     <platform name="android">
-              <icon src="res/android/ldpi.png" density="ldpi" />
-              <icon src="res/android/mdpi.png" density="mdpi" />
-              <icon src="res/android/hdpi.png" density="hdpi" />
-              <icon src="res/android/xhdpi.png" density="xhdpi" />
-              <icon src="res/android/xxhdpi.png" density="xxhdpi" />
-              <icon src="res/android/xxxhdpi.png" density="xxxhdpi" />
-              <preference name="Fullscreen" value="false" />
-     </platform>
-
-    <!--
-    <preference name="fullscreen" value="false"/>
-
-    <preference name="Orientation" value="portrait" />
-    -->
+        <icon density="ldpi" src="res/android/ldpi.png" />
+        <icon density="mdpi" src="res/android/mdpi.png" />
+        <icon density="hdpi" src="res/android/hdpi.png" />
+        <icon density="xhdpi" src="res/android/xhdpi.png" />
+        <icon density="xxhdpi" src="res/android/xxhdpi.png" />
+        <icon density="xxxhdpi" src="res/android/xxxhdpi.png" />
+        <preference name="Fullscreen" value="false" />
+    </platform>
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
-    <!--
-    <feature name="StatusBar">
-            <param name="ios-package" value="CDVStatusBar" onload="true" />
-    </feature>
-    -->
+    <plugin name="cordova-plugin-firebase" spec="~0.1.20" />
 </widget>

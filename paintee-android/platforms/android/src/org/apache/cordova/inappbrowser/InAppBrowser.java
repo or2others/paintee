@@ -79,6 +79,7 @@ import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -345,12 +346,13 @@ public class InAppBrowser extends CordovaPlugin {
         return true;
     }
 
-    public void photoSuccess(String newFile){
+    public void photoSuccess(String newFile, Uri imageURI){
 
         File file = new File(newFile);
         JSONObject object = new JSONObject();
         try {
             object.put("file",file);
+            object.put("imageURI",imageURI);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -446,7 +448,7 @@ public class InAppBrowser extends CordovaPlugin {
 
     }
 
-    //    @Override
+//    @Override
 //    public void onActivityResult(int requestCode, int resultCode, Intent data) {
 //        super.onActivityResult(requestCode, resultCode, data);
 //        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
@@ -785,8 +787,8 @@ public class InAppBrowser extends CordovaPlugin {
              */
             private int dpToPixels(int dipValue) {
                 int value = (int) TypedValue.applyDimension( TypedValue.COMPLEX_UNIT_DIP,
-                        (float) dipValue,
-                        cordova.getActivity().getResources().getDisplayMetrics()
+                                                            (float) dipValue,
+                                                            cordova.getActivity().getResources().getDisplayMetrics()
                 );
 
                 return value;
@@ -886,8 +888,8 @@ public class InAppBrowser extends CordovaPlugin {
                     public boolean onKey(View v, int keyCode, KeyEvent event) {
                         // If the event is a key-down event on the "enter" button
                         if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                            navigate(edittext.getText().toString());
-                            return true;
+                          navigate(edittext.getText().toString());
+                          return true;
                         }
                         return false;
                     }
@@ -1134,7 +1136,7 @@ public class InAppBrowser extends CordovaPlugin {
             // Update the UI if we haven't already
             if (!newloc.equals(edittext.getText().toString())) {
                 edittext.setText(newloc);
-            }
+             }
 
             try {
                 JSONObject obj = new JSONObject();

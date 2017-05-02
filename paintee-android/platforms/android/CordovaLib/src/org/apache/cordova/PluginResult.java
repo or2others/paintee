@@ -18,6 +18,7 @@
 */
 package org.apache.cordova;
 
+import java.io.File;
 import java.util.List;
 
 import org.json.JSONArray;

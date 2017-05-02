@@ -66,6 +66,8 @@ function setSideMenu() {
         });
 	}
 	else {
+
+
 		$("#menu_upload").click(function(){
 		    upload();
 		    sideOff();
@@ -87,13 +89,14 @@ function setSideMenu() {
 				$(".side_menu_lang_select").val(lang);
 			}
 		);
+
 	}
 }
 
 //var imageUrl="http://52.78.12.134:8080/paintee-admin";
-// var imageUrl="http://localhost:8080/paintee-admin";
-
- var imageUrl="http://paintee.me/paintee-admin";
+// var imageUrl="http://121.134.249.167:8080/paintee-admin";
+var imageUrl = "http://paintee.me/paintee-admin";
+//var imageUrl="http://211.249.62.50:8080/paintee-admin";
 //var imageUrl=window.location.protocol+"//paintee.me/paintee-admin";
 var apiUrl = imageUrl + "/api";
 
@@ -187,7 +190,7 @@ function Structure(data) {
         this.likeSeq            =$("<div>").addClass("like_sequence");
         this.likeSeqCir         =$("<div>").addClass("like_sequence_circle");
         this.listBtnLike        =$("<img>").attr("src", "ico/like.png").addClass("list_btn_icon").addClass("list_btn_like")
-                                            .click(function(){riseBubble(this, data.paintingId, data.artistId);});
+                                            .click(function(){riseBubble(this, data.paintingId, data.artistId, data.artistName);});
         this.listBtnLiked       =$("<img>").attr("src", "ico/liked.png").addClass("list_btn_icon").addClass("list_btn_liked")
                                             .click(function(){dropBubble(this, data.paintingId, data.artistId)});
         this.listBtnComment     =$("<img>").attr("src", "ico/comment.png").addClass("list_btn_icon").addClass("list_btn_comment")
@@ -606,7 +609,7 @@ function mainLock(mainSwiper){
         colorDark = "250,60%,20%";
         if(isPersonal){hidePersonal()};
         //        [news] 알림창 표출 주석처리
-        //        showNewsHead();
+                showNewsHead();
     }
     currentSwiper="";
 };
@@ -619,13 +622,14 @@ function listLock(swiper){
         }else if(mainSwiper.isEnd){
             mainSwiper.unlockSwipeToPrev();
             //        [news] 알림창 표출 주석처리
-            //        if(swiper.previousIndex==1)showNewsHead();
+                    if(swiper.previousIndex==1)showNewsHead();
         }else{
             mainSwiper.unlockSwipes();
         }
         swiper.disableMousewheelControl();
         $(".swiper-scrollbar").hide();
-        $(".home_btn").hide()
+//        $(".home_btn").hide()
+        $("#back_btn").hide()
         $(".bottom_bar").css("opacity", 0);
     }else{
         mainSwiper.lockSwipes();
@@ -661,6 +665,7 @@ mainSwiper.on("onSlideChangeEnd", function(mainSwiper){
            };
        }
    }
+
 });
 mainSwiper.on("onSlidePrevStart", function(mainSwiper){
    if(painteeFB.isCordova()){
@@ -746,7 +751,7 @@ function selectMenu(index){
 // 가로휠방지 && 페이지네이션숨김 && 위로스와이프방지
 // [tuesday] 처음 시작할때 무조건 위로 스와이프 방지하는 부분 삭제
 $(".swiper-scrollbar").hide();
-$(".home_btn").hide()
+//$(".home_btn").hide()
 
 // 화면 리사이즈할때 layout 재 설정
 $(window).resize(function (){
@@ -770,6 +775,7 @@ function setWidth() {
     if(purchaseStatus!=""){
         setPurchase();
     }
+    $(".base_position").height(mainHeight);
     setBox();
     setStatusPosition();
 }
@@ -805,7 +811,8 @@ function btnToggle(btn){
 }
 
 // list의 맨앞으로 되돌아가기 버튼
-$(".home_btn").click(function(){
+//$(".home_btn").click(function(){
+$("#back_btn").click(function(){
     currentSwiper.slideTo(0);
 })
 

@@ -29,13 +29,16 @@ var tueSwiper = new Swiper('.swiper_container_tuesday', {
 // 공통적인 설정
 tueSwiper.on("onTransitionEnd", function(swiper){
     setTueBg();
-    if(swiper.activeIndex==0){$(swiper.container).find(".home_btn").hide()}
+//    if(swiper.activeIndex==0){$(swiper.container).find(".home_btn").hide()}
+    if(swiper.activeIndex==0){$("#back_btn").hide()}
 });
 tueSwiper.on("onSlideNextStart", function(swiper) {
-    $(swiper.container).find(".home_btn").hide()
+//    $(swiper.container).find(".home_btn").hide()
+    $("#back_btn").hide()
 });
 tueSwiper.on("onSlidePrevStart", function(swiper) {
-    $(swiper.container).find(".home_btn").show()
+//    $(swiper.container).find(".home_btn").show()
+    $("#back_btn").show()
 });
 
 //side menu에 이벤트 설정
@@ -66,7 +69,7 @@ function Tuesday(data){
         this.expalin    =$("<div>").addClass("tue_explain");
         this.tueBtn            =$("<div>").addClass("tue_btn");
         this.listBtnLike        =$("<img>").attr("src", "ico/like.png").addClass("list_btn_icon").addClass("list_btn_like")
-                                            .click(function(){riseBubble(this, data.paintingId, data.artistId);});
+                                            .click(function(){riseBubble(this, data.paintingId, data.artistId,data.artistName);});
         this.listBtnLiked       =$("<img>").attr("src", "ico/liked.png").addClass("list_btn_icon").addClass("list_btn_liked")
                                             .click(function(){dropBubble(this, data.paintingId, data.artistId)});
         this.listBtnComment     =$("<img>").attr("src", "ico/comment.png").addClass("list_btn_icon").addClass("list_btn_comment").click(function(){
@@ -113,7 +116,7 @@ Tuesday.prototype = {
                                 this.comment.append(this.title.html(convertToBr(title) + "<br>"));
                             }
                             this.comment.append(convertToBr(comment));
-                            this.comment.append(this.commentedby);
+                            //this.comment.append(this.commentedby);
                         },
         setArtist:      function(artistName){
                             var paintingId = this.paintingId;
@@ -127,7 +130,8 @@ Tuesday.prototype = {
 
                         },
 			  setDay:function(month, day){
-														this.day.html(month +" "+ day)
+														//this.day.html(month +" "+ day)
+														this.day.html("<span data-i18n='[html]tuesday."+month+"'></span> <span data-i18n='[html]tuesday."+day+"'></span> <span data-i18n='[html]tuesday.title'></span>");
 				},
         setPost:        function(listData){
                             this.tueBtn.append(this.listBtnPost);

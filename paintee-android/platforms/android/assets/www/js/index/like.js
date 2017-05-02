@@ -8,7 +8,7 @@ function riseBubble(bubble, paintingId, artistId, artistName){
 		alert($.i18n.t('alert.common.notLogin'));
 		return;
 	}
-	alert(artistName);
+//	alert(artistName);
 	var controller = new PaintingLikeController(bubble, paintingId, artistId, artistName);
 	controller.addPaintingLike();
 }

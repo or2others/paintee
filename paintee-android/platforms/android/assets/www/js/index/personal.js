@@ -25,10 +25,12 @@ function showPersonal(username, paintingId){
     });
     personal.swiper.on("onTransitionEnd", function(swiper){listLock(swiper)});
     personal.swiper.on("onSlideNextStart", function(swiper) {
-        $(swiper.container).find(".home_btn").hide()
+//        $(swiper.container).find(".home_btn").hide()
+            $("#back_btn").hide()
     });
     personal.swiper.on("onSlidePrevStart", function(swiper) {
-        $(swiper.container).find(".home_btn").show()
+//        $(swiper.container).find(".home_btn").show()
+            $("#back_btn").show()
     });
     personal.swiper.on("onSetTranslate", function(swiper, translate){swipeToMenu(swiper, translate)});
       
@@ -56,7 +58,7 @@ function Personal(username){
 	this.username = username;
     this.container  = $("<div>").addClass("personal_container").addClass("swiper-slide");
     this.list       = $("<div>").addClass("list_container").addClass("swiper_container_personal");
-    this.homeBtn    = $("<div>").addClass("home_btn").html("< back").click(function(){currentSwiper.slideTo(0);});
+//    this.homeBtn    = $("<div>").addClass("home_btn").html("< back").click(function(){currentSwiper.slideTo(0);});
     this.bottom     = $("<div>").addClass("bottom_bar").css("background-color", "hsl(250,60%,20%)");
     this.wrapper    = $("<div>").addClass("swiper-wrapper");
     this.scroll     = $("<div>").addClass("swiper-scrollbar").addClass("swiper-scrollbar-personal");
@@ -83,7 +85,7 @@ Personal.prototype = {
                         })
                     },
     buildStructure  : function(){
-                        this.list.append(this.homeBtn);
+//                        this.list.append(this.homeBtn);
                         this.list.append(this.bottom);
                         this.list.append(this.wrapper);
                         this.list.append(this.scroll);

@@ -35,10 +35,12 @@ popularSwiper.on("onTransitionEnd", function(swiper){
 	listLock(swiper);
 });
 popularSwiper.on("onSlideNextStart", function(swiper) {
-    $(swiper.container).find(".home_btn").hide()
+//    $(swiper.container).find(".home_btn").hide()
+    $("#back_btn").hide()
 });
 popularSwiper.on("onSlidePrevStart", function(swiper) {
-    $(swiper.container).find(".home_btn").show()
+//    $(swiper.container).find(".home_btn").show()
+    $("#back_btn").show()
 });
 
 //side menu에 이벤트 설정

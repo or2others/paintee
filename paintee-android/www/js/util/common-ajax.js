@@ -69,6 +69,7 @@ var AjaxCall = {
 							clearUserInfoCookie();
 						}
 					} catch (e) {
+
 					}
 				}
 

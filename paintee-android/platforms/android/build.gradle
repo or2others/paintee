@@ -31,7 +31,7 @@ buildscript {
     // http://tools.android.com/tech-docs/new-build-system/version-compatibility
     // and https://issues.apache.org/jira/browse/CB-8143
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:2.3.1'
     }
    }
 
@@ -86,6 +86,7 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
+apply from: "cordova-plugin-firebase/pnt-build.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras = file('build-extras.gradle').exists()
@@ -241,6 +242,10 @@ dependencies {
     // SUB-PROJECT DEPENDENCIES START
     debugCompile project(path: "CordovaLib", configuration: "debug")
     releaseCompile project(path: "CordovaLib", configuration: "release")
+    compile "com.google.firebase:firebase-core:+"
+    compile "com.google.firebase:firebase-messaging:+"
+    compile "com.google.firebase:firebase-crash:+"
+    compile "com.google.firebase:firebase-config:+"
     // SUB-PROJECT DEPENDENCIES END
 }
 

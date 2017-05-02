@@ -202,15 +202,15 @@ $("#signupUserName").keyup(function(e){ if(e.keyCode == 13) new SignupController
 $('#signup_btn').on("click", function() { new SignupController().doSignup(); });
 
 $('#signup_facebook_btn').on('click', function() {
-    alert($.i18n.t('alert.signup.preventSocial'));
+//    alert($.i18n.t('alert.signup.preventSocial'));
 
 
-/*  Facebook 회원가입 기능 일단 중단
+///*  Facebook 회원가입 기능 일단 중단
 
     painteeFB.login(function(response) {
 		 registSocialUser(response, "FACEBOOK")
 	 }, {scope: 'email,user_likes'});
-*/
+//*/
 });
 
 /*  4.4 수정  */

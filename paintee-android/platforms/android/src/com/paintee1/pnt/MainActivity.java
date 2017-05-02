@@ -110,7 +110,7 @@ public class MainActivity extends CordovaActivity
 //                String imagepath = getPath(selectedImage);
 //                File myFile = new File(picturePath);
 //                Bitmap photo = BitmapFactory.decodeFile(picturePath);
-                mPlugin.photoSuccess(picturePath);
+                mPlugin.photoSuccess(picturePath, selectedImage);
             }
             else{
 

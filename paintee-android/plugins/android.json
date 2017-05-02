@@ -15,7 +15,23 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.paintee1.pnt"
+        },
+        "cordova-plugin-image-picker": {
+            "PACKAGE_NAME": "com.paintee1.pnt"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.paintee1.pnt"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.paintee1.pnt"
+        },
+        "cordova-plugin-firebase": {
+            "PACKAGE_NAME": "com.paintee1.pnt"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.paintee1.pnt"
+        }
+    }
 }

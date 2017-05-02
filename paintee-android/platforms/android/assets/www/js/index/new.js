@@ -36,10 +36,12 @@ newSwiper.on("onSlideChangeStart", function(swiper){
 newSwiper.on("onTransitionEnd", function(swiper){listLock(swiper)});
 
 newSwiper.on("onSlideNextStart", function(swiper) {
-    $(swiper.container).find(".home_btn").hide()
+//    $(swiper.container).find(".home_btn").hide()
+    $("#back_btn").hide()
 });
 newSwiper.on("onSlidePrevStart", function(swiper) {
-    $(swiper.container).find(".home_btn").show()
+//    $(swiper.container).find(".home_btn").show()
+    $("#back_btn").show()
 });
 
 //side menu에 이벤트 설정
@@ -107,3 +109,15 @@ function initNew(){
   //테이블에서 가져올 데이터의 시작 위치를 처음 로딩시 0번째 부터 조회
   new NewController().getListData(0);
 }
+
+
+function showTileView(swiper){
+    $(swiper.slides).addClass("list_container_tile");
+    swiper.destroy(true, true);
+}
+
+function endTileView(swiper){
+    $(swiper.slides).removeClass("list_container_tile");
+    swiper.destroy(true, true);
+}
+

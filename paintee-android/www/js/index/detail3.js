@@ -77,16 +77,16 @@ function DetailStructure(paintingId, paintingInfo){
 
     this.likeSeq              =$("<div>").addClass("like_sequence");
     this.likeSeqCir           =$("<div>").addClass("like_sequence_circle");
-    
+
     this.detailBtnLike        =$("<img>").attr("src", "ico/like.png").addClass("list_btn_icon").addClass("list_btn_like")
                                         .click(function(){
-                                        		riseBubble(this, paintingId, paintingInfo.artistId);
+                                        		riseBubble(this, paintingId, paintingInfo.artistId,paintingInfo.artistName);
                                         });
     this.detailBtnLiked       =$("<img>").attr("src", "ico/liked.png").addClass("list_btn_icon").addClass("list_btn_liked")
                                             .click(function(){
-                                            	dropBubble(this, paintingId, paintingInfo.artistId);
+                                            	dropBubble(this, paintingId, paintingInfo.artistId,paintingInfo.artistName);
                                            });
-    
+
     this.detailBtnComment     =$("<img>").attr("src", "ico/comment.png").addClass("list_btn_icon").addClass("detail_btn_comment")
                                         .click(function(){
                                                purchase(paintingId, paintingInfo.artistName, "comment", "CASH");
@@ -210,7 +210,7 @@ DetailStructure.prototype = {
         	 this.detailArtistFollow.on('click', function() { alert(artistName + $.i18n.t('alert.detail.existFollow')); });
         } else if(!userInfo || this.artistId != userInfo.userId) {
         	this.detailArtistFollow.on('click', function(){
-                detailController.artistFollow(picArtistId);
+                detailController.artistFollow(picArtistId, artistName);
                 $(this).addClass("detail_artist_followed").removeClass("detail_artist_follow");
             });
         }
@@ -291,12 +291,31 @@ DetailController.prototype = {
             callPosted(detailSwiper);
         }
  	},
-	artistFollow: function(artistId) {
+	artistFollow: function(artistId, artistName) {
 		var controller = this;
 
 		// 개인페이지에서 사용하는 부분이 있어 selectedArtistId 이 없을 경우 artistId를 사용하도록 변경. 04-05
-		AjaxCall.call(apiUrl+"/user/"+(selectedArtistId ? selectedArtistId : artistId)+"/follow", null, "POST", function(result, status) { controller.artistFollowRes(result, status); });
-	},
+		AjaxCall.call(apiUrl+"/user/"+(selectedArtistId ? selectedArtistId : artistId)+"/follow", null, "POST", function(result, status) {
+      controller.artistFollowNotify(result, status, artistName);
+     });
+ },
+ artistFollowNotify :function(result, status, artistName){
+   var controller = this;
+
+   var data = {
+       sender: userInfo.name,
+       userId: artistName,
+       type: 3
+   };
+
+   AjaxCall.call(apiUrl + "/notify",
+     data,
+     "POST",
+     function(result2, status2){
+         controller.addFollowRes(result, status);
+       }
+     );
+ },
 	artistFollowRes: function(result, status) {
 		if(result.errorNo == 0) {
 			dataReload(["initFollow();"]);
@@ -379,27 +398,9 @@ function closeDetail(){
     	processDetailClose();
         $(".notice_box").hide();
         if(painteeFB.isCordova()){
-          if(mainSwiper.activeIndex==0){
-              if(StatusBar){
-                  StatusBar.backgroundColorByHexString("#505050")
-              }
-          }else if(mainSwiper.activeIndex==1){
-              if(StatusBar){
-                  StatusBar.backgroundColorByHexString("#33b3cc")
-              }
-          }else if(mainSwiper.activeIndex==2){
-              if(StatusBar){
-                  StatusBar.backgroundColorByHexString("#cc3380")
-              }
-          }else if(mainSwiper.activeIndex==3){
-              if(StatusBar){
-                  StatusBar.backgroundColorByHexString("#8ab82e")
-              }
-          }else if(mainSwiper.activeIndex==4){
-              if(StatusBar){
-                  StatusBar.backgroundColorByHexString("#4c33cc")
-              }
-          }
+            if(StatusBar){
+                StatusBar.backgroundColorByHexString("#8ab82e")
+            };
         }
     }
 }

@@ -3,21 +3,22 @@
 /**
  * 좋아요 선택 시 호출되는 함수
  */
-function riseBubble(bubble, paintingId, artistId){
+function riseBubble(bubble, paintingId, artistId, artistName){
 	if (!userInfo) {
 		alert($.i18n.t('alert.common.notLogin'));
 		return;
 	}
-	var controller = new PaintingLikeController(bubble, paintingId, artistId);
+//	alert(artistName);
+	var controller = new PaintingLikeController(bubble, paintingId, artistId, artistName);
 	controller.addPaintingLike();
 }
 
-function dropBubble(bubble, paintingId, artistId){
+function dropBubble(bubble, paintingId, artistId, artistName){
 	if (!userInfo) {
 		alert($.i18n.t('alert.common.notLogin'));
 		return;
-	}	
-	var controller = new PaintingLikeController(bubble, paintingId, artistId);
+	}
+	var controller = new PaintingLikeController(bubble, paintingId, artistId, artistName);
 	controller.cancelPaintingLike();
 }
 
@@ -75,10 +76,11 @@ function Likes() {
 	}
 }
 
-function PaintingLikeController(bubble, paintingId, artistId) {
+function PaintingLikeController(bubble, paintingId, artistId, artistName) {
 	this.bubble = bubble;
 	this.paintingId = paintingId;
 	this.artistId = artistId;
+	this.artistName = artistName;
 }
 
 PaintingLikeController.prototype = {
@@ -88,16 +90,33 @@ PaintingLikeController.prototype = {
 			paintingId: this.paintingId,
 			artistId: controller.artistId
 		};
-		
+
 		AjaxCall.call(
 				apiUrl + "/painting/like",
-				data, 
-				"POST", 
+				data,
+				"POST",
 				function (result) {
-					controller.addPaintingLikeRes(result);			
+					controller.addPaintingLikeNotify(result);
 				}
 		);
 	},
+	addPaintingLikeNotify :function(result){
+        var controller = this;
+
+        var data = {
+            sender: userInfo.name,
+            userId: controller.artistName,
+            type: 1
+        };
+
+        AjaxCall.call(apiUrl + "/notify",
+          data,
+          "POST",
+          function(result2){
+              controller.addPaintingLikeRes(result);
+            }
+          );
+  },
 	addPaintingLikeRes: function (result) {
 		var controller = this;
 		// 기존 입력 내용 지우기
@@ -118,24 +137,24 @@ PaintingLikeController.prototype = {
 	cancelPaintingLike: function () {
 		var controller = this;
 		var data = {"artistId": controller.artistId};
-		
-		AjaxCall.call(apiUrl + "/painting/" + controller.paintingId + "/like", 
-			data, 
+
+		AjaxCall.call(apiUrl + "/painting/" + controller.paintingId + "/like",
+			data,
 			"DELETE",
 			function (result) {
-				controller.cancelPaintingLikeRes(result);			
+				controller.cancelPaintingLikeRes(result);
 			}
 		);
 	},
 	cancelPaintingLikeRes: function (result) {
 		var controller = this;
-	    var listBtnLike =$("<img>").attr("src", "ico/like.png").addClass("list_btn_icon").addClass("list_btn_like").click(function(){riseBubble(this, controller.paintingId, controller.artistId)});
+	    var listBtnLike =$("<img>").attr("src", "ico/like.png").addClass("list_btn_icon").addClass("list_btn_like").click(function(){riseBubble(this, controller.paintingId, controller.artistId, controller.artistName)});
 	    var likeSeqCir  =$("<div>").addClass("like_sequence_circle");
 	    $(this.bubble).parent().find(".like_sequence").show().find(".like_sequence_circle")
 	    .animate({width: "120%", height: "120%", top: "-10%", left: "-10%", opacity: "0"}, 500, "swing", function(){$(this).parent().hide();$(this).replaceWith(likeSeqCir)});
 	    $("div.list_btn[data-likeId='" + controller.paintingId + "'] > img.list_btn_liked, div.tue_btn > img.list_btn_liked").replaceWith(listBtnLike);
         if($(this.bubble).parent().attr("class")=="detail_btn"){
-            $(this.bubble).replaceWith($("<img>").attr("src", "ico/like.png").addClass("list_btn_icon").addClass("list_btn_like").click(function(){riseBubble(this, selectedPaintingId, selectedArtistId)}))
+            $(this.bubble).replaceWith($("<img>").attr("src", "ico/like.png").addClass("list_btn_icon").addClass("list_btn_like").click(function(){riseBubble(this, selectedPaintingId, selectedArtistId, selectedArtistName)}))
         };
 	    $("[data-like=like_" + controller.paintingId + "]").html(parseInt($("[data-like=like_" + controller.paintingId + "]").html()) - 1);
 	    // dataReload(["initPopular();"]);
@@ -148,7 +167,7 @@ PaintingLikeController.prototype = {
 		AjaxCall.call(
 			apiUrl + "/painting/" + controller.paintingId + "/like/users",
 			null,
-			"GET", 
+			"GET",
 			function(result) {
 				controller.getLikeUserListRes(result);
 			}

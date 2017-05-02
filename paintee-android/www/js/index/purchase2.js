@@ -801,41 +801,76 @@ PurchaseController.prototype = {
       usedRewardMoney:userInfo.usedRewardMoney
 		};
 
-		AjaxCall.call(apiUrl + "/purchase",
-			data,
-			"POST",
-			function (result) {
-				controller.addPurchaseRes(result);
-			}
-		);
+		AjaxCall.callAjaxCall.call(apiUrl + "/purchase",
+                data,
+                "POST",
+                function (result) {
+                    controller.addPurchaseNotify(result);
+                }
+            );
 
-	},
-	addPurchaseRes: function (result) {
-        // 스피너 화면 중지
-		$(".stopper").hide();
+        },
+       addPurchaseNotify: function(result){
+         var controller = this;
+         $(".stopper").hide();
 
-        var popClose = false;
-		if(result.errorNo == '500') {
-			alert($.i18n.t('alert.purchase.notFreeTuesdayPaint'));
-			popClose = true;
-		} else if(result.errorNo == '501') {
-			alert($.i18n.t('alert.purchase.alreadyPostedTuesdayPaint'));
-			popClose = true;
-		}
+         var popClose = false;
+            if(result.errorNo == '500') {
+                alert($.i18n.t('alert.purchase.notFreeTuesdayPaint'));
+                popClose = true;
+            } else if(result.errorNo == '501') {
+                alert($.i18n.t('alert.purchase.alreadyPostedTuesdayPaint'));
+                popClose = true;
+            }
 
-		if (popClose) {
-			$(".popup_container").hide();
-			$(".payment_container").hide();
-			return;
-		}
+            if (popClose) {
+                $(".popup_container").hide();
+                $(".payment_container").hide();
+                return;
+            }
 
 
-		// 기존 입력 내용 지우기
-//		resetPurchase();
-		closePurchaseStep01();
-		completePayment(result);
-    	dataReload(["initMy();", "initPopular();"]);
-	},
+         var data = {
+           sender: userInfo.name,
+           userId: this.artistName,
+           type: 2
+         };
+         AjaxCall.call(apiUrl + "/notify",
+           data,
+           "POST",
+           function(result2){
+               controller.addPurchaseRes(result);
+           }
+         );
+       },
+        addPurchaseRes: function (result) {
+             // 스피너 화면 중지
+
+         //     alert("addPurchaseRes");
+            // $(".stopper").hide();
+         //
+         // var popClose = false;
+            // if(result.errorNo == '500') {
+            // 	alert($.i18n.t('alert.purchase.notFreeTuesdayPaint'));
+            // 	popClose = true;
+            // } else if(result.errorNo == '501') {
+            // 	alert($.i18n.t('alert.purchase.alreadyPostedTuesdayPaint'));
+            // 	popClose = true;
+            // }
+         //
+            // if (popClose) {
+            // 	$(".popup_container").hide();
+            // 	$(".payment_container").hide();
+            // 	return;
+            // }
+
+
+            // 기존 입력 내용 지우기
+     //		resetPurchase();
+            closePurchaseStep01();
+            completePayment(result);
+            dataReload(["initMy();", "initPopular();"]);
+        },
 	cancelPurchase: function (listData) {
 		var controller = this;
 		var data = {
@@ -1049,25 +1084,43 @@ CommentController.prototype = {
 				sentence: $("[name=sentence]").val()
 			};
 		AjaxCall.call(apiUrl + "/painting/"+controller.paintingId+"/comment",
-			data,
-			"POST",
-			function (result) {
-				controller.addCommentRes(result);
-			}
-		);
-	},
-	addCommentRes: function (result) {
-		dataReload(["initMy();"]);
-		$("[data-comment='" + this.paintingId + "']").html(parseInt($("[data-comment='" + this.paintingId + "']").html()) + 1);
-		closePurchaseStep01();
-        // [fix] 코멘트 작성 오류 수정
-        if(isDetail){
-            refreshDetailPosted(detailSwiper);
-            detailSwiper.slideTo(1);
-        }else{
-            loadDetail(this.paintingId, color, colorDark, 'comment');
-        }
-	},
+        			data,
+        			"POST",
+        			function (result) {
+        				controller.addCommentNofity(result);
+        			}
+        		);
+        	},
+          addCommentNofity: function(result){
+            var controller = this;
+//
+//            alert("artist Name : "+this.artistName);
+
+            var data = {
+              sender: userInfo.name,
+              userId: artistName,
+              type: 4
+            };
+            AjaxCall.call(apiUrl + "/notify",
+              data,
+              "POST",
+              function(result2){
+                  controller.addCommentRes(result);
+              }
+            );
+          },
+        	addCommentRes: function (result) {
+        		dataReload(["initMy();"]);
+        		$("[data-comment='" + this.paintingId + "']").html(parseInt($("[data-comment='" + this.paintingId + "']").html()) + 1);
+        		closePurchaseStep01();
+                // [fix] 코멘트 작성 오류 수정
+                if(isDetail){
+                    refreshDetailPosted(detailSwiper);
+                    detailSwiper.slideTo(1);
+                }else{
+                    loadDetail(this.paintingId, color, colorDark, 'comment');
+                }
+        	},
 	delComment: function (listData) {
 		var controller = this;
 		AjaxCall.call(apiUrl + "/painting/"+listData.seq+"/comment",

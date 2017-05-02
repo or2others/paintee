@@ -4,6 +4,8 @@ var onceAboutUpload = true;
 var sourceWidth;
 var sourceHeight;
 
+var myFile = null;
+var imageURI = null;
 //업로드화면
 function upload(){
 	if (userID == "") {
@@ -34,24 +36,11 @@ function likeInfoRes(result, status) {
 		initUpload(likeCount, doTotaluploadCount, uploadedCount);
 		setBox();
 
-		replaceHistory({"call": "uploadPop"} );
+		replaceHistory({"call": "uploadPop"});
 	    addHistory({"call": "upload"});
 	}
 }
-function readFile(fileEntry) {
 
-    fileEntry.file(function (file) {
-        var reader = new FileReader();
-
-        reader.onloadend = function() {
-            alert("Successful file read: " + this.result);
-            displayFileData(fileEntry.fullPath + ": " + this.result);
-        };
-
-        reader.readAsText(file);
-
-    }, onErrorReadFile);
-}
 function Upload(){
     this.title      = $("<div>").addClass("upload_title").addClass("popup_title");
     this.contents   = $("<div>").addClass("upload_contents").addClass("popup_contents");
@@ -81,10 +70,8 @@ Upload.prototype = {
 
 function checkPainteeFile(file) {
 
-
-//    File file = new File(filePath);
-//    alert(file);
-    var reader = new FileReader();
+    myFile = file;
+	var reader = new FileReader();
 	var image  = new Image();
 	var fileType = file.type;
 
@@ -137,26 +124,58 @@ function createPainting() {
 		$("[name=painting_sentence_text]").focus();
 		return ;
 	}
+    var options = new FileUploadOptions();
+    options.fileKey = "painteeFile";
+    options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
+    options.mimeType = "image/png";
 
-	var formData = new FormData($('#paintingCreateForm').get(0));
+    var params = new Object();
+    params.sentence = sentence;
+    params.artistId = userInfo.userId;
+    params.privateAt = 'N';
+    params.x = parseInt(croped.x,10);
+    params.y = parseInt(croped.y,10);
+    params.xWidth = parseInt(croped.width,10);
+    params.yWidth = parseInt(croped.height,10);
+    options.params = params;
 
-	formData.append("sentence", sentence);
-	formData.append("artistId", userInfo.userId);
-	formData.append("privateAt", 'N');
+    var headers = {'X-PAINTEE-HASH':userInfo.hash};
+    options.headers = headers;
 
-	formData.append("x", parseInt(croped.x,10));
-	formData.append("y", parseInt(croped.y,10));
-	formData.append("xWidth", parseInt(croped.width,10));
-	formData.append("yWidth", parseInt(croped.height,10));
+    options.chunkedMode = false;
 
-	// 2016-10-04 : ..가로/세로 Problem
-	formData.append("rotate", parseInt(croped.rotate,10));
+    var ft = new FileTransfer();
+
+    ft.upload(imageURI, apiUrl +"/painting", function(result){
+        var value = result.response;
+        var mydatas= JSON.parse(value);
+
+        createPaintingRes(mydatas, 0);
+    }, function(error){
+
+        alert("업로드 중 오류가 발생했습니다");
+//        console.log(JSON.stringify(error));
+    }, options);
+
+//	var formData = new FormData($('#paintingCreateForm').get(0));
+//
+//	formData.append("sentence", sentence);
+//	formData.append("artistId", userInfo.userId);
+//	formData.append("privateAt", 'N');
+//
+//	formData.append("x", parseInt(croped.x,10));
+//	formData.append("y", parseInt(croped.y,10));
+//	formData.append("xWidth", parseInt(croped.width,10));
+//	formData.append("yWidth", parseInt(croped.height,10));
+//
+//	// 2016-10-04 : ..가로/세로 Problem
+//	formData.append("rotate", parseInt(croped.rotate,10));
 
 	/* 4.3 수정 */
 	$("#update_painting_sentence_btn").html("<div class='purchase_btn_text'>wait </div><img src='spinner.png' class='spinner'>");
 	$(".stopper").show();
 
-	AjaxCall.callMultipart(apiUrl+"/painting", formData, createPaintingRes);
+//	AjaxCall.callMultipart(apiUrl+"/painting", formData, createPaintingRes);
 }
 function createPaintingRes(result, status) {
 	//4.4 수정
@@ -190,38 +209,28 @@ function resetUpload() {
 	$('.uploadFileBox').on('click', function() {
 	   cordova.exec(function(result){
 
+                    var filePath = result.file;
+                    var filePathString = "file://"+filePath;
 
-	   var path = "file://"+result.file;
-//	   alert(path);
+                    imageURI = result.imageURI;
+                    window.resolveLocalFileSystemURL(filePathString, success, fail);
 
-//	       File file = new File(result);
+                    function fail(e) {
+                          console.error(e);
+                    }
 
-//        alert(result.file);
-        window.resolveLocalFileSystemURL(path, function(fileEntry) {
-
-//            alert(fileEntry);
-            fileEntry.file(function(file) {
-
-//                alert(file);
-                checkPainteeFile(file);
-//                var reader = new FileReader(),
-//                    data = null;
-//                reader.onloadend = function(event) {
-//                    data = reader.result;
-//                };
-//                console.log('Reading file: ' + file.name);
-//                reader.readAsDataURL(file)
-            });
-        }, function(e){
-            alert("error: "+e);
-        });
+                    function success(fileEntry) {
+                       fileEntry.file(function(file) {
+                            checkPainteeFile(file);
+//                               var reader = new FileReader();
+//                               reader.onloadend = function(e) {
+//                               var content = this.result;
+//                               console.log(content);
+                        });
+//                           reader.readAsText(file); // or the way you want to read it
+                       }
 
 
-//            readFile(result.file);
-           checkPainteeFile(result.file);
-
-//            File file = new File(result);
-//            checkPainteeFile(file);
         },function(err){
             alert("사진을 불러오는 과정에 발생했습니다.");
 
@@ -356,7 +365,7 @@ function successUpload() {
 	});
 
 	$("#update_painting_sentence_btn").on('click', function(){
-		if($('#painteeFile').val() == '') {
+		if(myFile == null) {
 //			alert('업로드 파일을 선택하세요.');
 			alert($.i18n.t('alert.upload.choiceFile'));
 			return;
@@ -429,7 +438,9 @@ function initCrop(src, originalWidth, originalHeight){
     cropCanvas.left    = (mainWidth-cropCanvas.width)/2;
 
     var original = $("#crop_original_image")[0];
-    var originalRatio = cropBox.width/1080;
+    var originalRatio = cropBox.width/1080.0;
+
+//    alert(originalRatio);
 
     sourceWidth = originalWidth;
     sourceHeight = originalHeight;
@@ -458,13 +469,20 @@ function initCrop(src, originalWidth, originalHeight){
             $(".stopper").hide();
         },
         zoom: function(e){
-//            console.log(e.detail.ratio);
+            console.log(originalRatio+"  : "+e.detail.ratio);
             if(e.detail.ratio>originalRatio){
+                console.log("stop!")
                 e.preventDefault();
             }
         }
     });
 }
+$(".crop_zoomin_btn").click(function(){
+    cropper.zoom(0.1);
+})
+$(".crop_zoomout_btn").click(function(){
+    cropper.zoom(-0.1);
+})
 
 $(".crop_confirm_btn").click(function(){
     croped = cropper.getData();

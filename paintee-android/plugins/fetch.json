@@ -22,5 +22,48 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-plugin-image-picker": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mirulumam/cordova-imagePicker",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {
+            "PHOTO_LIBRARY_USAGE_DESCRIPTION": "사진 업로드를 위해 앨범에 접근합니다"
+        }
+    },
+    "cordova-plugin-file": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-file"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-compat": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-compat"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "cordova-plugin-file-transfer": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-file-transfer"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-firebase": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-firebase@0.1.20"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }
