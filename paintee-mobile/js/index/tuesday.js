@@ -34,9 +34,9 @@ tueSwiper.on("onTransitionEnd", function(swiper){
 tueSwiper.on("onSlideNextStart", function(swiper) {
     $("#back_btn").hide()
 });
-tueSwiper.on("onSlidePrevStart", function(swiper) {
+/*tueSwiper.on("onSlidePrevStart", function(swiper) {
     $("#back_btn").show()
-});
+});*/
 
 //side menu에 이벤트 설정
 $("#menu_tuesday").on('click', function(){

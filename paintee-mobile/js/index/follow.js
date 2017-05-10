@@ -56,7 +56,9 @@ followSwiper.on("onSetTranslate", function(swiper, translate) {
 	swipeToMenu(swiper, translate)
 });
 
-function FollowController() {}
+function FollowController(tile) {
+    this.tile=tile;
+}
 
 FollowController.prototype = {
 	// 팔로워 목록 홈 카운드 요청 AJAX
@@ -90,7 +92,7 @@ FollowController.prototype = {
 	// 팔로워 목록 그림 요청 후 처리 함수
 	getListDataRes : function(result) {
 		for ( var index in result.list) {
-			addPainting(followSwiper, 1, "follow", result.list[index]);
+			addPainting(followSwiper, 1, "follow", result.list[index], this.tile);
 			if (followSwiper.slides.length > 100) {
 				break;
 			}
@@ -370,4 +372,26 @@ function Following() {
 
 		return this.following;
 	}
+}
+
+
+$("#follow").find("#view_mode_btn").click(function(){
+    toggleViewFollow();
+
+})
+
+function toggleViewFollow(){
+    if(isTile=="follow"){
+        isTile="false";
+        endTile(followSwiper, "follow");
+    }else if(isTile=="false"){
+        isTile="follow";
+        showTile(followSwiper, "follow");
+    }else{
+        endTilePopular(popularSwiper, "popular");
+        endTile(newSwiper, "new");
+        endTile(followSwiper, "follow");
+        isTile="follow";
+        showTile(followSwiper, "follow");
+    }
 }

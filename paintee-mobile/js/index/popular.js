@@ -55,8 +55,9 @@ popularSwiper.on("onSetTranslate", function(swiper, translate){
 	swipeToMenu(swiper, translate);
 });
 
-function PopularController() {
+function PopularController(tile) {
 	this.startRow = 0;
+    this.tile = tile;
 }
 
 PopularController.prototype = {
@@ -78,7 +79,7 @@ PopularController.prototype = {
 			$("#popular_count").text(result.count);
 		}
 		for (var index in result.list) {
-			addPainting(popularSwiper, 1, "popular", result.list[index]);
+			addPainting(popularSwiper, 1, "popular", result.list[index], this.tile);
 			if (popularSwiper.slides.length > 1000) {
 				break;
 			}
@@ -103,4 +104,28 @@ function initPopular(){
 
     //테이블에서 가져올 데이터의 시작 위치를 처음 로딩시 0번째 부터 조회
 	new PopularController().getListData(0);
+}
+/**
+ *  타일보기
+ */
+
+$("#popular").find("#view_mode_btn").click(function(){
+    toggleViewPopular();
+
+})
+
+function toggleViewPopular(){
+    if(isTile=="popular"){
+        isTile="false";
+        endTile(popularSwiper, "popular");
+    }else if(isTile=="false"){
+        isTile="popular";
+        showTile(popularSwiper, "popular");
+    }else{
+        endTilePopular(popularSwiper, "popular");
+        endTile(newSwiper, "new");
+        endTile(followSwiper, "follow");
+        isTile="popular";
+        showTile(popularSwiper, "popular");
+    }
 }

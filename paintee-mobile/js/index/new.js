@@ -55,8 +55,9 @@ newSwiper.disableMousewheelControl();
 newSwiper.on("onSetTranslate", function(swiper, translate){swipeToMenu(swiper, translate)});
 
 // Ajax 방식의 데이터 처리를 위한 컨트롤러 객체
-function NewController() {
+function NewController(tile) {
 	this.startRow = 0;
+    this.tile=tile;
 }
 
 NewController.prototype = {
@@ -78,7 +79,7 @@ NewController.prototype = {
 			$("#new_count").text(result.count);
 		}
 		for (var index in result.list) {
-			addPainting(newSwiper, 1, "new", result.list[index]);
+			addPainting(newSwiper, 1, "new", result.list[index], this.tile);
 			// 그림은 최대 100개 까지만 조회
 			if (newSwiper.slides.length > 1000) {
 				break;
@@ -108,13 +109,23 @@ function initNew(){
   new NewController().getListData(0);
 }
 
+$("#new").find("#view_mode_btn").click(function(){
+    toggleViewNew();
 
-function showTileView(swiper){
-    $(swiper.slides).addClass("list_container_tile");
-    swiper.destroy(true, true);
-}
+})
 
-function endTileView(swiper){
-    $(swiper.slides).removeClass("list_container_tile");
-    swiper.destroy(true, true);
+function toggleViewNew(){
+    if(isTile=="new"){
+        isTile="false";
+        endTile(newSwiper, "new");
+    }else if(isTile=="false"){
+        isTile="new";
+        showTile(newSwiper, "new");
+    }else{
+        endTilePopular(popularSwiper, "popular");
+        endTile(newSwiper, "new");
+        endTile(followSwiper, "follow");
+        isTile="new";
+        showTile(newSwiper, "new");
+    }
 }

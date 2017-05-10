@@ -24,6 +24,8 @@ var boxHeight;
 var boxStatus="";
 var popName="";
 var fullImage=true;
+var isTile = "false";
+var tileLoaded;
 
 //get 방식으로 user, painting 가져오기
 function getRequest() {
@@ -231,7 +233,9 @@ Structure.prototype = {
                                 this.listInfoDate.html(date)
                             },
        	setPainting:        function(paintingId, fileId, type){
-                                if(mainWidth<729){
+                                if(isTile!="false"){
+                                    this.listPainting.css({"width": mainHeight*0.5, "height": mainHeight/1.44});
+                                }else if(mainWidth<729){
                                     this.listPainting.css({"width": mainWidth*0.8, "height": mainWidth*10/9});
                                 }else{
                                     this.listPainting.css({"width": "648px", "height": "900px"});
@@ -415,7 +419,7 @@ Structure.prototype = {
 }
 
 // 현재 슬라이드 위치에서 앞으로 5개의 슬라이드가 없으면 새로 생성 (무한스크롤)
-function addPainting(swiper, currentIndex, type, listData){
+function addPainting(swiper, currentIndex, type, listData, tile){
 
 	if (!listData) { return; }
 	var data = {
@@ -451,6 +455,9 @@ function addPainting(swiper, currentIndex, type, listData){
         newSlide.setStatus(listData);
 	}
 
+    if(tile==true){
+        $(newSlide.container).addClass("list_container_tile");
+    }
     swiper.appendSlide(newSlide.buildStructure(type, listData));
     delete newSlide;
 }
@@ -735,6 +742,16 @@ sideMenu.swipe({
 
 //side menu에 이벤트 설정
 function selectMenu(index){
+    if(isTile=="follow"){
+        isTile="false";
+        endTile(followSwiper, "follow");
+    }else if(isTile=="new"){
+        isTile="false";
+        endTile(newSwiper, "new");
+    }else if(isTile=="popular"){
+        isTile="false";
+        endTile(popularSwiper, "popular");
+    }
     if(currentSwiper!==""){
         currentSwiper.slideTo(0);
     }
@@ -756,15 +773,22 @@ $(window).resize(function (){
     }
 });
 
+var isPopularTile = false;
+
 function setWidth() {
     mainWidth = $(window).width();
     mainHeight = $(window).height();
-    if(mainWidth>729){
+    if(isTile!="false"){
+        $(".list_painting").css({"width": mainHeight*0.5, "height": mainHeight/1.44});
+    }else if(mainWidth>729){
     	slideWidth=648;
         $(".list_painting").css({"width": "648px", "height": "900px"});
     }else{
     	slideWidth=mainWidth*0.8;
         $(".list_painting").css({"width": slideWidth, "height": mainWidth*10/9});
+    }
+    if(isPopularTile==true){
+        $(".list_painting").css({"width": mainHeight*0.5, "height": mainHeight*5/9});
     }
     if(purchaseStatus!=""){
         setPurchase();
@@ -996,3 +1020,192 @@ function showNotice(notice){
     $(".notice_box").delay(2000).fadeOut(2000);
 }
 $(".notice_box").hide();
+
+/**
+ *  타일보기
+ */
+
+function showTile(swiper, type){
+    this.swiper = swiper;
+    $(swiper.slides).addClass("list_container_tile");
+    tileLoaded = swiper.slides.length - 1;
+    swiper.destroy(true, true);
+    setWidth();
+    if(type=="popular"){
+        popularSwiper = undefined;
+        popularSwiper = new Swiper('.swiper_container_popular', {
+                                slidesPerView: 'auto',
+                                centeredSlides: false,
+                                spaceBetween: 0,
+                                mousewheelControl : true,
+                                freeMode: true,
+                                freeModeMomentumRatio: 0.2,
+                                freeModeMomentumBounceRatio: 5,
+                                freeModeSticky: true,
+                                slidesPerColumn: 2,
+                                scrollbar: '.swiper-scrollbar-popular',
+                                scrollbarHide: true,
+                                lazyLoading: false,
+                                lazyLoadingInPrevNext: true,
+                                lazyLoadingInPrevNextAmount: 3
+        });
+        swiper = popularSwiper;
+    }else if(type=="new"){
+        newSwiper = undefined;
+        newSwiper = new Swiper('.swiper_container_new', {
+                                slidesPerView: 'auto',
+                                centeredSlides: false,
+                                spaceBetween: 0,
+                                mousewheelControl : true,
+                                freeMode: true,
+                                freeModeMomentumRatio: 0.2,
+                                freeModeMomentumBounceRatio: 5,
+                                freeModeSticky: true,
+                                slidesPerColumn: 2,
+                                scrollbar: '.swiper-scrollbar-new',
+                                scrollbarHide: true,
+                                lazyLoading: false,
+                                lazyLoadingInPrevNext: true,
+                                lazyLoadingInPrevNextAmount: 3
+        });
+        swiper = newSwiper;
+    }else if(type=="follow"){
+        followSwiper = undefined;
+        followSwiper = new Swiper('.swiper_container_follow', {
+                                slidesPerView: 'auto',
+                                centeredSlides: false,
+                                spaceBetween: 0,
+                                mousewheelControl : true,
+                                freeMode: true,
+                                freeModeMomentumRatio: 0.2,
+                                freeModeMomentumBounceRatio: 5,
+                                freeModeSticky: true,
+                                slidesPerColumn: 2,
+                                scrollbar: '.swiper-scrollbar-follow',
+                                scrollbarHide: true,
+                                lazyLoading: false,
+                                lazyLoadingInPrevNext: true,
+                                lazyLoadingInPrevNextAmount: 3
+        });
+        swiper = followSwiper;
+    }
+
+    swiper.on("onSetTranslate", function(swiper, translate){
+        if(translate>((mainWidth/2)-(slideWidth/3))){
+            isTile="false";
+            endTile(swiper, type);
+        }
+    });
+
+    swiper.on("onReachEnd", function(swiper){
+        var slidesCnt = swiper.slides.length - 1;
+        if(slidesCnt>=tileLoaded){
+            if(type=="popular"){
+                var controller = new PopularController(true);
+            }else if(type=="new"){
+                var controller = new NewController(true);
+            }else if(type=="follow"){
+                var controller = new FollowController(true);
+            }
+            controller.getListData(slidesCnt);
+            tileLoaded = slidesCnt+5;
+        }
+    });
+    mainSwiper.lockSwipes();
+    swiper.on("onSlideNextStart", function(swiper) {
+        $("#back_btn").hide()
+    });
+    $("#"+type).find("#view_mode_btn").find("img").attr("src", "ico/list.png");
+    $(swiper.slides[0]).css("width", mainHeight/2);
+
+}
+
+function endTile(swiper, type){
+    this.swiper = swiper;
+    $(swiper.slides).removeClass("list_container_tile");
+    swiper.destroy(true, true);
+    setWidth();
+    if(type=="popular"){
+        popularSwiper = undefined;
+        popularSwiper = new Swiper('.swiper_container_popular', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: mainWidth*0.05,
+            mousewheelControl : true,
+            freeMode: false,
+            freeModeMomentumRatio: 0.2,
+            freeModeMomentumBounceRatio: 5,
+            freeModeSticky: true,
+            scrollbar: '.swiper-scrollbar-popular',
+            scrollbarHide: true,
+            lazyLoading: false,
+            lazyLoadingInPrevNext: true,
+            lazyLoadingInPrevNextAmount: 3
+        })
+        swiper = popularSwiper;
+    }else if(type=="new"){
+        newSwiper = undefined;
+        newSwiper = new Swiper('.swiper_container_new', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: mainWidth*0.05,
+            mousewheelControl : true,
+            freeMode: false,
+            freeModeMomentumRatio: 0.2,
+            freeModeMomentumBounceRatio: 5,
+            freeModeSticky: true,
+            scrollbar: '.swiper-scrollbar-new',
+            scrollbarHide: true,
+            lazyLoading: false,
+            lazyLoadingInPrevNext: true,
+            lazyLoadingInPrevNextAmount: 3
+        })
+        swiper = newSwiper;
+    }else if(type=="follow"){
+        followSwiper = undefined;
+        followSwiper = new Swiper('.swiper_container_follow', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: mainWidth*0.05,
+            mousewheelControl : true,
+            freeMode: false,
+            freeModeMomentumRatio: 0.2,
+            freeModeMomentumBounceRatio: 5,
+            freeModeSticky: true,
+            scrollbar: '.swiper-scrollbar-follow',
+            scrollbarHide: true,
+            lazyLoading: false,
+            lazyLoadingInPrevNext: true,
+            lazyLoadingInPrevNextAmount: 3
+        })
+        swiper = followSwiper;
+    }
+
+    currentSwiper = swiper;
+    swiper.on("onSlideChangeStart", function(swiper){
+        // 화면에 로딩된 슬라이드 그림 개수
+        var slidesCnt = swiper.slides.length - 1;
+        // 만약, 현재 선택한 슬라이드가 로딩된 슬라이드의 수보다 하나 작을 경우 서버에 5개의 그림을 재요청
+        if (slidesCnt - 1 <= swiper.activeIndex && slidesCnt < 1000) {
+            if(type=="popular"){
+                var controller = new PopularController();
+            }else if(type=="new"){
+                var controller = new NewController();
+            }else if(type=="follow"){
+                var controller = new FollowController();
+            }
+            controller.getListData(slidesCnt);
+        }
+    });
+    mainSwiper.unlockSwipes();
+    swiper.on("onTransitionEnd", function(swiper){listLock(swiper)});
+
+    swiper.on("onSlideNextStart", function(swiper) {
+        $("#back_btn").hide()
+    });
+    swiper.on("onSlidePrevStart", function(swiper) {
+        $("#back_btn").show()
+    });
+
+    $("#"+type).find("#view_mode_btn").find("img").attr("src", "ico/tile.png");
+};
