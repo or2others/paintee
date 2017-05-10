@@ -481,13 +481,7 @@ function initPayment(serviceCnt, option){
                 purchaseController.addPurchase(serviceCnt+1);
                 showPurchaseSpinner();
         })
-    }else if (serviceCnt < 0) {
-         var contents = "<span class='reward_money'>" + serviceCnt + "/3</span><br>"
-                     + "<span data-i18n='[html]purchasePop1.alert'></span>"
-        payment.setContents(contents);
-        payment.setBottom("<div class='popup_cancle_btn payment_cancle_btn'><img class='icon' src='ico/create.png'><div class='purchase_btn_text' onclick='history.back();'>edit address</div></div>");
-        payment.buildPayment();
-    }else if(serviceCnt >= 5 || serviceCnt == 0){
+    }else{
         var contents = "<span data-i18n='[html]purchasePop1.contents1'></span>"
         payment.setContents(contents);
         payment.setBottom("<div class='popup_cancle_btn payment_cancle_btn'><img class='icon' src='ico/create.png'><div class='purchase_btn_text' onclick='history.back();'>edit address</div></div><div class='popup_btn payment_btn'><div class='purchase_btn_text'>Payment </div><img class='icon' src='ico/payment.png'></div>");
@@ -497,16 +491,6 @@ function initPayment(serviceCnt, option){
          *  [payment] payment 버튼 선택시 선택 옵셥을 표출
          */
                 payment.setPay();
-        })
-    }else{
-        var contents = "<span class='reward_money'>" + serviceCnt + "/3</span><br>"
-                     + "<span data-i18n='[html]purchasePop1.contents'></span>"
-        payment.setContents(contents);
-        payment.setBottom("<div class='popup_cancle_btn payment_cancle_btn'><img class='icon' src='ico/create.png'><div class='purchase_btn_text' onclick='history.back();'>edit address</div></div><div class='popup_btn payment_btn'><div class='purchase_btn_text'>Payment </div><img class='icon' src='ico/payment.png'></div>");
-        payment.buildPayment();
-        $(".payment_btn").click(function(){
-                purchaseController.addPurchase(serviceCnt);
-                showPurchaseSpinner();
         })
     }
     delete payment;
