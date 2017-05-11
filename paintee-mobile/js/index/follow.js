@@ -215,9 +215,11 @@ function initFollow() {
 		delete welcome;
 		// 다국어 변경 적용
 		exeTranslation('.main_container', lang);
+        $("#follow").find("#view_mode_btn").hide();
 	} else {
 		// 로그인 상태일 경우 홈카운트 가져오기
 		new FollowController().getHomeCount();
+        $("#follow").find("#view_mode_btn").show();
 	}
 }
 

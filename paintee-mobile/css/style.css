@@ -277,7 +277,7 @@ a{
 }
 .list_container_tile{
     width: auto;
-    height: 150px;
+    height: 50%;
     overflow: hidden;
 }
 .list_container_tile > .list_info{
@@ -2373,6 +2373,9 @@ screen and (-o-min-device-pixel-ratio: 2.5) {
     .list_contents{
         width: 648px;
     }
+    .list_container_tile{
+        width: auto;
+    }
 }
 
 /*   긴화면   */
@@ -2382,7 +2385,7 @@ screen and (-o-min-device-pixel-ratio: 2.5) {
     }
 }
 
-@media  screen and (min-height : 300px){
+/*@media  screen and (min-height : 300px){
     .list_container_tile{
         width: auto;
         height: 200px;
@@ -2441,4 +2444,4 @@ screen and (-o-min-device-pixel-ratio: 2.5) {
         width: auto;
         height: 650px;
     }
-}
+}*/
