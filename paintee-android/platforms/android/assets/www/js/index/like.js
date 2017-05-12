@@ -8,7 +8,6 @@ function riseBubble(bubble, paintingId, artistId, artistName){
 		alert($.i18n.t('alert.common.notLogin'));
 		return;
 	}
-//	alert(artistName);
 	var controller = new PaintingLikeController(bubble, paintingId, artistId, artistName);
 	controller.addPaintingLike();
 }
@@ -101,21 +100,21 @@ PaintingLikeController.prototype = {
 		);
 	},
 	addPaintingLikeNotify :function(result){
-        var controller = this;
+    var controller = this;
 
-        var data = {
-            sender: userInfo.name,
-            userId: controller.artistName,
-            type: 1
-        };
+    var data = {
+        sender: userInfo.name,
+        userId: controller.artistName,
+        type: 1
+    };
 
-        AjaxCall.call(apiUrl + "/notify",
-          data,
-          "POST",
-          function(result2){
-              controller.addPaintingLikeRes(result);
-            }
-          );
+    AjaxCall.call(apiUrl + "/notify",
+      data,
+      "POST",
+      function(result2){
+          controller.addFollowRes(result);
+        }
+      );
   },
 	addPaintingLikeRes: function (result) {
 		var controller = this;

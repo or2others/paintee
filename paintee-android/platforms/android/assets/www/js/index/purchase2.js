@@ -480,7 +480,11 @@ function initPayment(serviceCnt, option){
                 purchaseController.addPurchase(serviceCnt+1);
                 showPurchaseSpinner();
         })
+<<<<<<< HEAD
+    }else {
+=======
     }else{
+>>>>>>> master
         var contents = "<span data-i18n='[html]purchasePop1.contents1'></span>"
         payment.setContents(contents);
         payment.setBottom("<div class='popup_cancle_btn payment_cancle_btn'><img class='icon' src='ico/create.png'><div class='purchase_btn_text' onclick='history.back();'>edit address</div></div><div class='popup_btn payment_btn'><div class='purchase_btn_text'>Payment </div><img class='icon' src='ico/payment.png'></div>");

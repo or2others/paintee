@@ -2386,6 +2386,10 @@ screen and (-o-min-device-pixel-ratio: 2.5) {
 }
 
 /*@media  screen and (min-height : 300px){
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
     .list_container_tile{
         width: auto;
         height: 200px;
@@ -2445,3 +2449,7 @@ screen and (-o-min-device-pixel-ratio: 2.5) {
         height: 650px;
     }
 }*/
+<<<<<<< HEAD
+
+=======
+>>>>>>> master

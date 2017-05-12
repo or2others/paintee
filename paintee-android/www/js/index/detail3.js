@@ -419,6 +419,10 @@ function closeDetail(){
                    StatusBar.backgroundColorByHexString("#4c33cc")
                };
            }
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
         }
     }
 }
