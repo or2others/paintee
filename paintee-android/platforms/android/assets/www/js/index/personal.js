@@ -38,9 +38,7 @@ function showPersonal(username, paintingId){
     // [tuesday] mainSwiper 순서 하나씩 미룸
     selectMenu(5);
     if(painteeFB.isCordova()){
-        if(StatusBar){
-            StatusBar.backgroundColorByHexString("#8ab82e")
-        };
+                   StatusBar.backgroundColorByHexString("#4c33cc")
     }
 }
 

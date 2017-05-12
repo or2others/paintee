@@ -208,18 +208,16 @@ function initFollow() {
 		welcome.setTitle("Welcome!");
 		welcome.setExplain("<span data-i18n='[html]follow.notloginexplain'></span><br><br><br>");
         welcome.setContents(logInBtn);
-        // 안드로이드랑 iOS는 아래 부분 주석처리
-        if(!painteeFB.isCordova()){
-            welcome.setAdd("<a href='https://play.google.com/store/apps/details?id=com.paintee1.pnt' target='_blank'><img class='download_btn_android' src='ico/download_btn_play.png'></a>");
-        }
 		followSwiper.appendSlide(welcome.buildStructure());
 		$("#menu_follow").addClass("side_menu_major_inactive");
 		delete welcome;
 		// 다국어 변경 적용
 		exeTranslation('.main_container', lang);
+		$("#follow").find("#view_mode_btn").hide();
 	} else {
 		// 로그인 상태일 경우 홈카운트 가져오기
 		new FollowController().getHomeCount();
+		$("#follow").find("#view_mode_btn").show();
 	}
 }
 

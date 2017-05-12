@@ -110,14 +110,3 @@ function initNew(){
   new NewController().getListData(0);
 }
 
-
-function showTileView(swiper){
-    $(swiper.slides).addClass("list_container_tile");
-    swiper.destroy(true, true);
-}
-
-function endTileView(swiper){
-    $(swiper.slides).removeClass("list_container_tile");
-    swiper.destroy(true, true);
-}
-
