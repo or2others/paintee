@@ -1,7 +1,852 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="779d8c63-f2c3-4267-86cd-90862a723230" name="Default" comment="" />
+    <list default="true" id="779d8c63-f2c3-4267-86cd-90862a723230" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-20x20@2x-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-29x29@1x-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-29x29@2x-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-40x40@2x-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-57x57@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-57x57@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-72x72@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-72x72@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-Small-50x50@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Icon-Small-50x50@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/cordova-js-src/android/nativeapiprovider.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/cordova-js-src/android/promptbasednativeapi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/cordova-js-src/plugin/android/app.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/admin/promotioncode/controller/PromotionCodeController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/admin/promotioncode/service/PromotionCodeService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/admin/promotioncode/service/PromotionCodeServiceImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/common/repository/entity/PromotionCode.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/common/repository/entity/PromotionCodeExample.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/common/repository/helper/PromotionCodeHelper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/common/repository/helper/sqlmap/PromotionCodeHelper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/common/repository/mapper/PromotionCodeMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/common/repository/mapper/sqlmap/PromotionCodeMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/mobile/promotioncode/controller/PromotionCodeRestController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/mobile/promotioncode/service/PromotionCodeService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/mobile/promotioncode/service/PromotionCodeServiceImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-admin/src/main/webapp/WEB-INF/jsp/admin/promotioncode/list.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-admin/src/main/webapp/WEB-INF/jsp/admin/promotioncode/popup.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/.idea/libraries/systembartint_1_0_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/android/InAppBrowser_bk.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/.bin/ios-deploy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/CONTRIBUTING.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/Release/ios-deploy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/Release/ios-deploy.dSYM/Contents/Info.plist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/Release/ios-deploy.dSYM/Contents/Resources/DWARF/ios-deploy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/Release/libios-deploy.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/Release/libios_deploy.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy-lib.build/Objects-normal/x86_64/ios-deploy.LinkFileList" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy-lib.build/Objects-normal/x86_64/libios_deploy.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy-lib.build/Objects-normal/x86_64/libios_deploy.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy-lib.build/Objects-normal/x86_64/libios_deploy.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy-lib.build/dgph" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy-lib.build/ios-deploy-all-non-framework-target-headers.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy-lib.build/ios-deploy-all-target-headers.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy-lib.build/ios-deploy-generated-files.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy-lib.build/ios-deploy-own-target-headers.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy-lib.build/ios-deploy-project-headers.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy-lib.build/ios-deploy.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy.build/Objects-normal/x86_64/ios-deploy.LinkFileList" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy.build/Objects-normal/x86_64/ios-deploy.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy.build/Objects-normal/x86_64/ios-deploy.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy.build/Objects-normal/x86_64/ios-deploy.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy.build/Objects-normal/x86_64/ios-deploy_dependency_info.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy.build/Script-7EDCC3CF1C45E03B002F9851.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy.build/dgph" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy.build/ios-deploy-all-non-framework-target-headers.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy.build/ios-deploy-all-target-headers.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy.build/ios-deploy-generated-files.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy.build/ios-deploy-own-target-headers.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy.build/ios-deploy-project-headers.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/build/ios-deploy.build/Release/ios-deploy.build/ios-deploy.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/demo/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/demo/Entitlements.plist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/demo/Info.plist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/demo/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/demo/ResourceRules.plist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/demo/demo.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/ios-deploy.xcodeproj/project.pbxproj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/ios-deploy.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/ios-deploy.xcodeproj/project.xcworkspace/xcuserdata/shazron.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/ios-deploy.xcodeproj/xcshareddata/xcschemes/ios-deploy-tests.xcscheme" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/ios-deploy.xcodeproj/xcuserdata/shazron.xcuserdatad/xcschemes/ios-deploy-lib.xcscheme" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/ios-deploy.xcodeproj/xcuserdata/shazron.xcuserdatad/xcschemes/ios-deploy.xcscheme" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/ios-deploy.xcodeproj/xcuserdata/shazron.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/src/ios-deploy-lib/libios_deploy.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/src/ios-deploy-lib/libios_deploy.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/src/ios-deploy-tests/Info.plist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/src/ios-deploy-tests/ios_deploy_tests.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/src/ios-deploy/MobileDevice.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/src/ios-deploy/errors.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/src/ios-deploy/ios-deploy.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/src/ios-deploy/lldb.py.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/src/ios-deploy/version.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/src/scripts/check_reqs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/node_modules/ios-deploy/src/scripts/lldb.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/apple-icon-114x114.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/apple-icon-120x120.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/apple-icon-144x144.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/apple-icon-152x152.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/apple-icon-180x180.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/apple-icon-57x57.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/apple-icon-60x60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/apple-icon-72x72.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/apple-icon-76x76.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/apple-icon-precomposed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/apple-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/icon-40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/icon-40@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/icon-50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/icon-50@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/icon-60@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/icon-60@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/icon-72.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/icon-72@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/icon-76.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/icon-76@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/icon-83.5@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/icon-small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/icon-small@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/icon-small@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/icon@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/LaunchImage.launchimage/Default~iphone.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Paintee-Info.plist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Paintee.temp_caseinsensitive_rename.temp_caseinsensitive_rename-Prefix.pch" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Plugins/cordova-plugin-statusbar/CDVStatusBar.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Plugins/cordova-plugin-statusbar/CDVStatusBar.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/platform_www/plugins/cordova-plugin-statusbar/www/statusbar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/CONTRIBUTING.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/NOTICE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/RELEASENOTES.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/doc/de/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/doc/de/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/doc/es/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/doc/es/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/doc/fr/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/doc/fr/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/doc/it/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/doc/it/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/doc/ja/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/doc/ja/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/doc/ko/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/doc/ko/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/doc/pl/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/doc/pl/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/doc/ru/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/doc/zh/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/doc/zh/index.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/plugin.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/src/android/StatusBar.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/src/browser/StatusBarProxy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/src/ios/CDVStatusBar.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/src/ios/CDVStatusBar.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/src/windows/StatusBarProxy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/src/wp/StatusBar.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/tests/plugin.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/tests/tests.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/cordova-plugin-statusbar/www/statusbar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/cordova.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/cordova_plugins.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/css/cropper.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/css/cropper.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/css/easyzoom.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/css/fonts.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/css/fonts_edit.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/css/icons.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/css/index.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/css/materialize.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/css/popup.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/css/search.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/css/swiper.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/-2n2p-_Y08sg57CNWQfKNvesZW2xOQ-xsNqO47m55DA.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/-L14Jk06m6pUHB-5mXQQnRJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/0eC6fl06luXEYWpBSJvXCBJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/1459624185.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/1459624185.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/1459624185.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/2tsd397wLxj96qwHyNIkxPesZW2xOQ-xsNqO47m55DA.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/3Y_xCyt7TNunMGg0Et2pnhJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/77FXFjRbGzN4aCrSFhlh3hJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/97uahxiqZRoncBaCEI3aWxJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/9_7S_tWeGDh5Pq3u05RVkhJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/CWB0XYA8bzo0kSThX0UTuA.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Fcx7Wwv8OzT71A3E1XOAjvesZW2xOQ-xsNqO47m55DA.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Fl4y0QdOxyyTHEGMXX8kcRJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/I3S1wsgSg9YCurV6PUkTORJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Merriweather-Bold.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Merriweather-Bold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Merriweather-Bold.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Merriweather-Italic.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Merriweather-Italic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Merriweather-Italic.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Merriweather-Regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Merriweather-Regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Merriweather-Regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/NYDWBdD4gIq26G5XYbHsFBJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/NanumMyeongjo.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/NanumMyeongjo.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/NanumMyeongjo.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/NdF9MtnOpLzo-noMoG0miPesZW2xOQ-xsNqO47m55DA.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Pacifico-Regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Pacifico-Regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Pacifico.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Pacifico.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Pru33qjShpZSmG3z6VYwnRJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/PwZc-YbIL414wB9rB1IAPRJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Q_Z9mv4hySLTMoMjnk_rCfesZW2xOQ-xsNqO47m55DA.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/RFda8w1V0eDZheqfcyQ4ED0LW-43aMEzIO6XUTLjad8.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/RFda8w1V0eDZheqfcyQ4EJX5f-9o1vgP2EXwfjgl7AY.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/RFda8w1V0eDZheqfcyQ4EK-j2U0lmluP9RWlSytm3ho.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/RFda8w1V0eDZheqfcyQ4EOgdm0LZdjqr5-oayXSOefg.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Roboto-Black.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Roboto-BlackItalic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Roboto-Bold.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Roboto-Bold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Roboto-Bold.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Roboto-BoldItalic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Roboto-Italic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Roboto-Light.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Roboto-Light.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Roboto-Light.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Roboto-LightItalic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Roboto-Medium.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Roboto-MediumItalic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Roboto-Regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Roboto-Regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Roboto-Regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Roboto-Thin.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/Roboto-ThinItalic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/UX6i4JxQDm3fVTc1CPuwqhJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/VvXUGKZXbHtX_S_VCTLpGhTbgVql8nDJpwnrE27mub0.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/WeQRRE07FDkIrr29oHQgHBJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/ZLqKeelYbATG60EpZBSDyxJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/ZvcMqxEwPfh2qDWBPxn6nnNuWYKPzoeKl5tYj8yhly0.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/ZvcMqxEwPfh2qDWBPxn6nrPaLDTSXeXFRL0dx0NiHII.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/ZvcMqxEwPfh2qDWBPxn6ntkZ6ofoXFVR94fBb90XSvU.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/ZvcMqxEwPfh2qDWBPxn6nuIaMZP5eRGvEWe_CNIU_oY.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/aZMswpodYeVhtRvuABJWvBTbgVql8nDJpwnrE27mub0.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/e7MeVAyvogMqFwwl61PKhBTbgVql8nDJpwnrE27mub0.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/ek4gzZ-GeXAPcSbHtCeQI_esZW2xOQ-xsNqO47m55DA.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/frNV30OaYdlFRtH2VnZZdhTbgVql8nDJpwnrE27mub0.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/gwVJDERN2Amz39wrSoZ7FxTbgVql8nDJpwnrE27mub0.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/isZ-wbCXNKAbnjo6_TwHThJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/jSN2CGVDbcVyCnfJfjSdfBJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/jyIYROCkJM3gZ4KV00YXOBJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/mErvLBYg_cXG3rLvUsKT_fesZW2xOQ-xsNqO47m55DA.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/mbmhprMH69Zi6eEPBYVFhRJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/mnpfi9pxYH-Go5UiibESIltXRa8TVwTICgirnJhmVJw.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/mx9Uck6uB63VIKFYnEMXrRJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/notokr-bold.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/notokr-bold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/notokr-bold.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/notokr-demilight.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/notokr-demilight.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/notokr-demilight.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/notokr-light.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/notokr-light.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/notokr-light.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/notokr-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/notokr-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/notokr-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/notokr-thin.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/notokr-thin.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/notokr-thin.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/oHi30kwQWvpCWqAhzHcCSBJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/oOeFwZNlrTefzLYmlVV1UBJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/phsu-QZXz1JBv0PbFoPmEBJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/rGvHdJnr2l75qb0YND9NyBJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/s7gftie1JANC-QmDJvMWZhJtnKITppOI_IvcXXDNrsc.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/ty9dfvLAziwdqQ2dHoyjphTbgVql8nDJpwnrE27mub0.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/fonts/u0TOpm082MNkS5K0Q4rhqvesZW2xOQ-xsNqO47m55DA.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/add_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/attach_money.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/clear_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/comment.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/comment_dark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/comment_deact.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/create.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/create_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/done.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/done_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/download_btn_ios.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/download_btn_play.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/folder.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/follows.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/follows_dark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/follows_deact.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/fullscreen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/fullscreen_exit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/keyboard_arrow_down.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/keyboard_arrow_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/keyboard_arrow_left_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/keyboard_arrow_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/keyboard_arrow_right_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/keyboard_arrow_up.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/keyboard_arrow_up_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/keyboard_arrow_up_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/keyboard_backspace.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/like.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/like_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/like_dark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/like_deact.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/liked.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/lock.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/mail.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/mail_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/menu.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/next.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/pay_android.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/pay_ios.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/pay_paypal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/pay_promotion.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/payment.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/person_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/playlist_add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/playlist_add_check.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/post.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/post_dark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/post_deact.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/post_free.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/prev.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/social_facebook.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/social_facebook_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/social_twitter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/social_twitter_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/social_url.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/social_url_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/star_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/ico/unlock.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/android-icon-144x144.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/android-icon-192x192.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/android-icon-36x36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/android-icon-48x48.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/android-icon-72x72.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/android-icon-96x96.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/apple-icon-114x114.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/apple-icon-120x120.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/apple-icon-144x144.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/apple-icon-152x152.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/apple-icon-180x180.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/apple-icon-57x57.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/apple-icon-60x60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/apple-icon-72x72.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/apple-icon-76x76.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/apple-icon-precomposed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/apple-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/browserconfig.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/favicon-16x16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/favicon-32x32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/favicon-96x96.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/manifest.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/ms-icon-144x144.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/ms-icon-150x150.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/ms-icon-310x310.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/icon/ms-icon-70x70.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/images/crop_test.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/images/heart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/images/meta.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/images/notice.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/images/overview.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/images/overview_ios.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/images/post.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/images/upload.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/img/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/cropper.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/cropper.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/easyzoom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/about.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/detail.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/detail2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/detail3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/follow.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/init.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/like.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/login.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/myhome.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/new.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/news.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/personal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/popular.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/profile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/purchase.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/purchase2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/reward.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/signup.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/tuesday.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/index/upload.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/jquery.touchSwipe.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/jquery/i18next.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/jquery/jquery-2.1.1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/jquery/jquery-2.1.1___.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/materialize.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/materialize.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/swiper.jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/swiper.jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/swiper.jquery.umd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/swiper.jquery.umd.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/swiper.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/swiper.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/util/common-ajax.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/util/common.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/util/daumAddrApi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/util/facebook.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/util/history.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/util/openFB.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/util/search.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/util/spinner.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/js/util/translation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/locales/dev/translation.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/locales/en/translation.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/locales/ko/translation.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/policy.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/privacy.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/spinner.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/spinner_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/splash_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-ios/www/working.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/.project" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/.settings/.jsdtscope" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/.settings/org.eclipse.jdt.core.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/.settings/org.eclipse.m2e.core.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/.settings/org.eclipse.wst.common.component" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/.settings/org.eclipse.wst.common.project.facet.core.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/.settings/org.eclipse.wst.jsdt.ui.superType.container" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/.settings/org.eclipse.wst.jsdt.ui.superType.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/.settings/org.eclipse.wst.validation.prefs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/css/cropper.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/css/cropper.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/css/fonts.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/css/fonts_edit.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/css/icons.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/css/popup.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/css/search.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/css/swiper.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Merriweather-Bold.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Merriweather-Bold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Merriweather-Bold.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Merriweather-Italic.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Merriweather-Italic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Merriweather-Italic.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Merriweather-Regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Merriweather-Regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Merriweather-Regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/NanumMyeongjo.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/NanumMyeongjo.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/NanumMyeongjo.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Pacifico-Regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Pacifico-Regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Pacifico.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Pacifico.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Roboto-Black.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Roboto-BlackItalic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Roboto-Bold.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Roboto-Bold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Roboto-Bold.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Roboto-BoldItalic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Roboto-Italic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Roboto-Light.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Roboto-Light.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Roboto-Light.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Roboto-LightItalic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Roboto-Medium.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Roboto-MediumItalic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Roboto-Regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Roboto-Regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Roboto-Regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Roboto-Thin.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/Roboto-ThinItalic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/notokr-bold.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/notokr-bold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/notokr-bold.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/notokr-demilight.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/notokr-demilight.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/notokr-demilight.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/notokr-light.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/notokr-light.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/notokr-light.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/notokr-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/notokr-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/notokr-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/notokr-thin.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/notokr-thin.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/fonts/notokr-thin.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/add_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/attach_money.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/clear_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/comment.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/comment_dark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/comment_deact.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/create.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/create_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/done.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/done_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/download_btn_ios.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/download_btn_play.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/folder.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/follows.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/follows_dark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/follows_deact.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/fullscreen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/fullscreen_exit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/keyboard_arrow_down.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/keyboard_arrow_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/keyboard_arrow_left_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/keyboard_arrow_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/keyboard_arrow_right_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/keyboard_arrow_up.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/keyboard_arrow_up_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/keyboard_arrow_up_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/keyboard_backspace.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/like.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/like_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/like_dark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/like_deact.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/liked.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/lock.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/mail.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/mail_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/menu.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/next.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/pay_android.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/pay_ios.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/pay_paypal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/pay_promotion.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/payment.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/person_black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/playlist_add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/playlist_add_check.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/post.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/post_dark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/post_deact.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/post_free.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/prev.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/social_facebook.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/social_facebook_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/social_twitter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/social_twitter_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/social_url.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/social_url_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/star_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/ico/unlock.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/android-icon-144x144.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/android-icon-192x192.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/android-icon-36x36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/android-icon-48x48.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/android-icon-72x72.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/android-icon-96x96.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/apple-icon-114x114.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/apple-icon-120x120.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/apple-icon-144x144.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/apple-icon-152x152.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/apple-icon-180x180.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/apple-icon-57x57.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/apple-icon-60x60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/apple-icon-72x72.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/apple-icon-76x76.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/apple-icon-precomposed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/apple-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/browserconfig.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/favicon-16x16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/favicon-32x32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/favicon-96x96.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/manifest.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/ms-icon-144x144.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/ms-icon-150x150.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/ms-icon-310x310.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/4e2078f7934e782391e1b8ee0b73b8bf.ico/ms-icon-70x70.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/android-icon-144x144.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/android-icon-192x192.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/android-icon-36x36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/android-icon-48x48.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/android-icon-72x72.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/android-icon-96x96.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/apple-icon-114x114.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/apple-icon-120x120.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/apple-icon-144x144.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/apple-icon-152x152.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/apple-icon-180x180.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/apple-icon-57x57.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/apple-icon-60x60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/apple-icon-72x72.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/apple-icon-76x76.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/apple-icon-precomposed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/apple-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/browserconfig.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/favicon-16x16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/favicon-32x32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/favicon-96x96.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/manifest.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/ms-icon-144x144.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/ms-icon-150x150.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/ms-icon-310x310.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/icon/ms-icon-70x70.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/images/crop_test.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/images/heart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/images/meta.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/images/notice.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/images/overview.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/images/overview_ios.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/images/post.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/images/upload.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/cropper.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/cropper.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/about.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/detail.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/detail2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/detail3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/follow.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/init.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/like.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/login.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/myhome.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/new.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/news.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/personal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/popular.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/profile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/purchase.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/purchase2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/reward.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/signup.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/tuesday.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/index/upload.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/jquery.touchSwipe.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/jquery/html-embed.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/jquery/i18next.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/jquery/jquery-2.1.1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/swiper.jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/swiper.jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/swiper.jquery.umd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/swiper.jquery.umd.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/swiper.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/swiper.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/util/common-ajax.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/util/common.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/util/daumAddrApi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/util/facebook.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/util/history.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/util/openFB.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/util/search.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/util/spinner.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/js/util/translation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/jsp/test/list.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/locales/dev/translation.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/locales/en/translation.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/locales/ko/translation.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/policy.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/privacy.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/spinner.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/spinner_white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../paintee-mobile/src/main/webapp/working.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_CordovaLib_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_CordovaLib_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_CordovaLib_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_CordovaLib_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_CordovaLib_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_CordovaLib_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_CordovaLib_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_CordovaLib_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/tasks/_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/debug/org/apache/cordova/CordovaActivity$1.class" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/debug/org/apache/cordova/CordovaActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/debug/org/apache/cordova/CordovaActivity$2.class" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/debug/org/apache/cordova/CordovaActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/debug/org/apache/cordova/CordovaActivity$3.class" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/debug/org/apache/cordova/CordovaActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/debug/org/apache/cordova/CordovaActivity$4$1.class" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/debug/org/apache/cordova/CordovaActivity$4$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/debug/org/apache/cordova/CordovaActivity$4.class" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/debug/org/apache/cordova/CordovaActivity$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/debug/org/apache/cordova/CordovaActivity.class" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/debug/org/apache/cordova/CordovaActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/debug/org/apache/cordova/PluginResult$Status.class" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/debug/org/apache/cordova/PluginResult$Status.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/debug/org/apache/cordova/PluginResult.class" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/debug/org/apache/cordova/PluginResult.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaActivity$1.class" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaActivity$2.class" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaActivity$3.class" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaActivity$4$1.class" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaActivity$4$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaActivity$4.class" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaActivity$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaActivity.class" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/CordovaActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/PluginResult$Status.class" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/PluginResult$Status.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/PluginResult.class" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/classes/release/org/apache/cordova/PluginResult.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/outputs/aar/CordovaLib-debug.aar" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/outputs/aar/CordovaLib-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/outputs/aar/CordovaLib-release.aar" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/outputs/aar/CordovaLib-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/ico/post_free.png" afterPath="$PROJECT_DIR$/platforms/android/assets/www/ico/post_free.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/images/overview_ios.jpg" afterPath="$PROJECT_DIR$/platforms/android/assets/www/images/overview_ios.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/images/post.jpg" afterPath="$PROJECT_DIR$/platforms/android/assets/www/images/post.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/images/upload.jpg" afterPath="$PROJECT_DIR$/platforms/android/assets/www/images/upload.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/ico/post_free.png" afterPath="$PROJECT_DIR$/www/ico/post_free.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/overview_ios.jpg" afterPath="$PROJECT_DIR$/www/images/overview_ios.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/post.jpg" afterPath="$PROJECT_DIR$/www/images/post.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/images/upload.jpg" afterPath="$PROJECT_DIR$/www/images/upload.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee.xcworkspace/xcuserdata/lim-yeuntaek.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee.xcworkspace/xcuserdata/lim-yeuntaek.xcuserdatad/UserInterfaceState.xcuserstate" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/images/overview_ios.jpg" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/images/overview_ios.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/images/post.jpg" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/images/post.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/images/upload.jpg" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/images/upload.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/img/logo.png" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/img/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/common/repository/entity/Purchase.java" afterPath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/common/repository/entity/Purchase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/common/repository/entity/PurchaseExample.java" afterPath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/common/repository/entity/PurchaseExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/common/repository/mapper/sqlmap/PurchaseMapper.xml" afterPath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/common/repository/mapper/sqlmap/PurchaseMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/mobile/purchase/service/PurchaseServiceImpl.java" afterPath="$PROJECT_DIR$/../paintee-admin/src/main/java/com/paintee/mobile/purchase/service/PurchaseServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/taskArtifacts/cache.properties" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.14.1/taskArtifacts/cache.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties" afterPath="$PROJECT_DIR$/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.idea/gradle.xml" afterPath="$PROJECT_DIR$/platforms/android/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.idea/misc.xml" afterPath="$PROJECT_DIR$/platforms/android/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/.idea/workspace.xml" afterPath="$PROJECT_DIR$/platforms/android/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" afterPath="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/CordovaLib.iml" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/CordovaLib.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build.gradle" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/src/org/apache/cordova/CordovaActivity.java" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/src/org/apache/cordova/CordovaActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/CordovaLib/src/org/apache/cordova/PluginResult.java" afterPath="$PROJECT_DIR$/platforms/android/CordovaLib/src/org/apache/cordova/PluginResult.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/android.iml" afterPath="$PROJECT_DIR$/platforms/android/android.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/android.json" afterPath="$PROJECT_DIR$/platforms/android/android.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/cordova_plugins.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/style.css" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/index.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/index.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/index/detail3.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/index/detail3.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/index/follow.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/index/follow.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/index/init.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/index/init.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/index/like.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/index/like.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/index/new.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/index/new.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/index/news.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/index/news.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/index/popular.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/index/popular.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/index/purchase2.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/index/purchase2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/index/reward.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/index/reward.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/index/signup.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/index/signup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/index/tuesday.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/index/tuesday.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/index/upload.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/index/upload.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/util/common-ajax.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/util/common-ajax.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/util/search.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/util/search.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/locales/en/translation.json" afterPath="$PROJECT_DIR$/platforms/android/assets/www/locales/en/translation.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/locales/ko/translation.json" afterPath="$PROJECT_DIR$/platforms/android/assets/www/locales/ko/translation.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/build.gradle" afterPath="$PROJECT_DIR$/platforms/android/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/platform_www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platforms/android/platform_www/cordova_plugins.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/res/xml/config.xml" afterPath="$PROJECT_DIR$/platforms/android/res/xml/config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/src/com/paintee1/pnt/MainActivity.java" afterPath="$PROJECT_DIR$/platforms/android/src/com/paintee1/pnt/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/src/org/apache/cordova/inappbrowser/InAppBrowser.java" afterPath="$PROJECT_DIR$/platforms/android/src/org/apache/cordova/inappbrowser/InAppBrowser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/android.json" afterPath="$PROJECT_DIR$/plugins/android.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/fetch.json" afterPath="$PROJECT_DIR$/plugins/fetch.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/cordova.js" afterPath="$PROJECT_DIR$/www/cordova.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/www/cordova_plugins.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/style.css" afterPath="$PROJECT_DIR$/www/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/index.js" afterPath="$PROJECT_DIR$/www/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/index/detail3.js" afterPath="$PROJECT_DIR$/www/js/index/detail3.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/index/follow.js" afterPath="$PROJECT_DIR$/www/js/index/follow.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/index/init.js" afterPath="$PROJECT_DIR$/www/js/index/init.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/index/like.js" afterPath="$PROJECT_DIR$/www/js/index/like.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/index/new.js" afterPath="$PROJECT_DIR$/www/js/index/new.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/index/news.js" afterPath="$PROJECT_DIR$/www/js/index/news.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/index/popular.js" afterPath="$PROJECT_DIR$/www/js/index/popular.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/index/purchase2.js" afterPath="$PROJECT_DIR$/www/js/index/purchase2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/index/reward.js" afterPath="$PROJECT_DIR$/www/js/index/reward.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/index/signup.js" afterPath="$PROJECT_DIR$/www/js/index/signup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/index/tuesday.js" afterPath="$PROJECT_DIR$/www/js/index/tuesday.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/index/upload.js" afterPath="$PROJECT_DIR$/www/js/index/upload.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/util/common-ajax.js" afterPath="$PROJECT_DIR$/www/js/util/common-ajax.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/util/search.js" afterPath="$PROJECT_DIR$/www/js/util/search.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/locales/en/translation.json" afterPath="$PROJECT_DIR$/www/locales/en/translation.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/locales/ko/translation.json" afterPath="$PROJECT_DIR$/www/locales/ko/translation.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/config.xml" afterPath="$PROJECT_DIR$/../paintee-ios/config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee.xcworkspace/contents.xcworkspacedata" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee.xcworkspace/contents.xcworkspacedata" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee.xcworkspace/xcshareddata/xcschemes/Paintee.xcscheme" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee.xcworkspace/xcshareddata/xcschemes/Paintee.xcscheme" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee.xcworkspace/xcuserdata/lim-yeuntaek.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee.xcworkspace/xcuserdata/lim-yeuntaek.xcuserdatad/xcschemes/xcschememanagement.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Classes/AppDelegate.h" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Classes/AppDelegate.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Classes/AppDelegate.m" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Classes/AppDelegate.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Classes/MainViewController.h" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Classes/MainViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Classes/MainViewController.m" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Classes/MainViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Contents.json" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/AppIcon.appiconset/Contents.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/LaunchImage.launchimage/Contents.json" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Images.xcassets/LaunchImage.launchimage/Contents.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Plugins/cordova-plugin-inappbrowser/CDVInAppBrowser.h" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Plugins/cordova-plugin-inappbrowser/CDVInAppBrowser.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Plugins/cordova-plugin-inappbrowser/CDVInAppBrowser.m" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/Plugins/cordova-plugin-inappbrowser/CDVInAppBrowser.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/config.xml" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/main.m" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/Paintee/main.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/cordova/build-extras.xcconfig" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/cordova/build-extras.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/ios.json" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/ios.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/platform_www/cordova_plugins.js" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/platform_www/cordova_plugins.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/cordova-js-src/exec.js" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/cordova-js-src/exec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/cordova-js-src/platform.js" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/cordova-js-src/platform.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/cordova.js" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/cordova.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/cordova_plugins.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/css/style.css" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/index.html" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/about.js" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/about.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/detail3.js" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/detail3.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/follow.js" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/follow.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/init.js" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/init.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/like.js" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/like.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/new.js" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/new.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/news.js" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/news.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/popular.js" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/popular.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/purchase2.js" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/purchase2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/reward.js" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/reward.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/tuesday.js" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/index/tuesday.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/util/search.js" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/js/util/search.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/locales/en/translation.json" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/locales/en/translation.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/locales/ko/translation.json" afterPath="$PROJECT_DIR$/../paintee-ios/platforms/ios/www/locales/ko/translation.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/fetch.json" afterPath="$PROJECT_DIR$/../paintee-ios/plugins/fetch.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../paintee-ios/plugins/ios.json" afterPath="$PROJECT_DIR$/../paintee-ios/plugins/ios.json" />
+    </list>
     <ignored path="paintee-android.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,8 +898,8 @@
       <file leaf-file-name="upload.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/index/upload.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="455" column="37" selection-start-line="455" selection-start-column="37" selection-end-line="455" selection-end-column="37" />
+            <state relative-caret-position="481">
+              <caret line="452" column="29" selection-start-line="452" selection-start-column="29" selection-end-line="452" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -72,6 +917,9 @@
       </file>
     </leaf>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -85,6 +933,7 @@
         <option value="$PROJECT_DIR$/platforms/android/assets/www/js/index/new.js" />
         <option value="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/config.xml" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/js/index/upload.js" />
       </list>
     </option>
   </component>
@@ -94,7 +943,7 @@
     <option name="width" value="1993" />
     <option name="height" value="1311" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -119,6 +968,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -145,160 +997,40 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="paintee-android">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="plugins">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="paintee-android">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="platforms">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="paintee-android">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="platforms">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="android">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="paintee-android">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="platforms">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="android">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="assets/www">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="paintee-android">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="platforms">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="android">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="assets/www">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="paintee-android">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="platforms">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="android">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="assets/www">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="index">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="paintee-android">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT=".idea">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="AndroidView">
         <subPane />
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/paintee_github/paintee-android" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="" />
       <option name="DEPLOY" value="true" />
@@ -346,6 +1078,54 @@
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -540,17 +1320,21 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32942164" sideWeight="0.39005637" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32942164" sideWeight="0.6099436" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25269094" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -561,7 +1345,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -641,6 +1424,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -680,6 +1464,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -693,8 +1478,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/index/upload.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="455" column="37" selection-start-line="455" selection-start-column="37" selection-end-line="455" selection-end-column="37" />
+        <state relative-caret-position="481">
+          <caret line="452" column="29" selection-start-line="452" selection-start-column="29" selection-end-line="452" selection-end-column="29" />
           <folding />
         </state>
       </provider>

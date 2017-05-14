@@ -109,7 +109,6 @@ function initNew(){
   new NewController().getListData(0);
 }
 
-<<<<<<< HEAD
 $("#new").find("#view_mode_btn").click(function(){
     toggleViewNew();
 
@@ -130,5 +129,3 @@ function toggleViewNew(){
         showTile(newSwiper, "new");
     }
 }
-=======
->>>>>>> master

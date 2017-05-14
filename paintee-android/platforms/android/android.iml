@@ -93,20 +93,20 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 23 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="firebase-analytics-10.2.1" level="project" />
     <orderEntry type="library" exported="" name="ShortcutBadger-1.1.4" level="project" />
-    <orderEntry type="library" exported="" name="firebase-config-10.2.1" level="project" />
-    <orderEntry type="library" exported="" name="firebase-core-10.2.1" level="project" />
-    <orderEntry type="library" exported="" name="firebase-analytics-impl-10.2.1" level="project" />
-    <orderEntry type="library" exported="" name="firebase-messaging-10.2.1" level="project" />
-    <orderEntry type="library" exported="" name="play-services-tasks-10.2.1" level="project" />
-    <orderEntry type="library" exported="" name="play-services-base-10.2.1" level="project" />
+    <orderEntry type="library" exported="" name="firebase-config-10.2.4" level="project" />
+    <orderEntry type="library" exported="" name="firebase-messaging-10.2.4" level="project" />
+    <orderEntry type="library" exported="" name="firebase-analytics-10.2.4" level="project" />
+    <orderEntry type="library" exported="" name="firebase-analytics-impl-10.2.4" level="project" />
+    <orderEntry type="library" exported="" name="firebase-common-10.2.4" level="project" />
+    <orderEntry type="library" exported="" name="play-services-base-10.2.4" level="project" />
+    <orderEntry type="library" exported="" name="play-services-tasks-10.2.4" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-24.0.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-basement-10.2.4" level="project" />
     <orderEntry type="library" exported="" name="support-v4-24.0.0" level="project" />
-    <orderEntry type="library" exported="" name="firebase-common-10.2.1" level="project" />
-    <orderEntry type="library" exported="" name="play-services-basement-10.2.1" level="project" />
-    <orderEntry type="library" exported="" name="firebase-iid-10.2.1" level="project" />
-    <orderEntry type="library" exported="" name="firebase-crash-10.2.1" level="project" />
+    <orderEntry type="library" exported="" name="firebase-iid-10.2.4" level="project" />
+    <orderEntry type="library" exported="" name="firebase-core-10.2.4" level="project" />
+    <orderEntry type="library" exported="" name="firebase-crash-10.2.4" level="project" />
     <orderEntry type="module" module-name="CordovaLib" exported="" />
   </component>
 </module>
