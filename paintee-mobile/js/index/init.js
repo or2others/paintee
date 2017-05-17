@@ -1039,7 +1039,7 @@ function showTile(swiper, type){
                                 spaceBetween: 0,
                                 mousewheelControl : true,
                                 freeMode: true,
-                                freeModeMomentumRatio: 0.2,
+                                freeModeMomentumRatio: 0.3,
                                 freeModeMomentumBounceRatio: 5,
                                 freeModeSticky: true,
                                 slidesPerColumn: 2,
@@ -1058,7 +1058,7 @@ function showTile(swiper, type){
                                 spaceBetween: 0,
                                 mousewheelControl : true,
                                 freeMode: true,
-                                freeModeMomentumRatio: 0.2,
+                                freeModeMomentumRatio: 0.3,
                                 freeModeMomentumBounceRatio: 5,
                                 freeModeSticky: true,
                                 slidesPerColumn: 2,
@@ -1077,7 +1077,7 @@ function showTile(swiper, type){
                                 spaceBetween: 0,
                                 mousewheelControl : true,
                                 freeMode: true,
-                                freeModeMomentumRatio: 0.2,
+                                freeModeMomentumRatio: 0.3,
                                 freeModeMomentumBounceRatio: 5,
                                 freeModeSticky: true,
                                 slidesPerColumn: 2,
@@ -1097,18 +1097,33 @@ function showTile(swiper, type){
         }
     });
 
-    swiper.on("onReachEnd", function(swiper){
-        var slidesCnt = swiper.slides.length - 1;
-        if(slidesCnt>=tileLoaded){
-            if(type=="popular"){
-                var controller = new PopularController(true);
-            }else if(type=="new"){
-                var controller = new NewController(true);
-            }else if(type=="follow"){
-                var controller = new FollowController(true);
+    currentSwiper = swiper;
+    if(swiper.slides.length==6){
+        tileLoaded = 10;
+        if(type=="popular"){
+            var controller = new PopularController(true);
+        }else if(type=="new"){
+            var controller = new NewController(true);
+        }else if(type=="follow"){
+            var controller = new FollowController(true);
+        }
+        controller.getListData(6);
+    };
+
+    swiper.on("onTransitionStart", function(swiper){
+        if(swiper.progress>0.9){
+            var slidesCnt = swiper.slides.length - 1;
+            if(slidesCnt>=tileLoaded){
+                tileLoaded = slidesCnt+5;
+                if(type=="popular"){
+                    var controller = new PopularController(true);
+                }else if(type=="new"){
+                    var controller = new NewController(true);
+                }else if(type=="follow"){
+                    var controller = new FollowController(true);
+                }
+                controller.getListData(slidesCnt);
             }
-            controller.getListData(slidesCnt);
-            tileLoaded = slidesCnt+5;
         }
     });
     mainSwiper.lockSwipes();
