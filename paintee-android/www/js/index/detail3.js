@@ -398,27 +398,28 @@ function closeDetail(){
     	processDetailClose();
         $(".notice_box").hide();
         if(painteeFB.isCordova()){
-           if(mainSwiper.activeIndex==0){
-               if(StatusBar){
-                   StatusBar.backgroundColorByHexString("#505050")
-               };
-           }else if(mainSwiper.activeIndex==1){
-               if(StatusBar){
-                   StatusBar.backgroundColorByHexString("#33b3cc")
-               };
-           }else if(mainSwiper.activeIndex==2){
-               if(StatusBar){
-                   StatusBar.backgroundColorByHexString("#cc3380")
-               };
-           }else if(mainSwiper.activeIndex==3){
-               if(StatusBar){
-                   StatusBar.backgroundColorByHexString("#8ab82e")
-               };
-           }else if(mainSwiper.activeIndex==4){
-               if(StatusBar){
-                   StatusBar.backgroundColorByHexString("#4c33cc")
-               };
-           }
+                       if(mainSwiper.activeIndex==0){
+                           if(StatusBar){
+                               StatusBar.backgroundColorByHexString("#505050")
+                           };
+                       }else if(mainSwiper.activeIndex==1){
+                           if(StatusBar){
+                               StatusBar.backgroundColorByHexString("#33b3cc")
+                           };
+                       }else if(mainSwiper.activeIndex==2){
+                           if(StatusBar){
+                               StatusBar.backgroundColorByHexString("#cc3380")
+                           };
+                       }else if(mainSwiper.activeIndex==3){
+                           if(StatusBar){
+                               StatusBar.backgroundColorByHexString("#8ab82e")
+                           };
+                       }else if(mainSwiper.activeIndex==4){
+                           if(StatusBar){
+                               StatusBar.backgroundColorByHexString("#4c33cc")
+                           };
+                       }
+
         }
     }
 }

@@ -4,7 +4,7 @@ $(document).ready(function () {
 	initNew();
 });
 
-// list container 시작  
+// list container 시작
 var newSwiper = new Swiper('.swiper_container_new', {
     slidesPerView: 'auto',
     centeredSlides: true,
@@ -18,7 +18,7 @@ var newSwiper = new Swiper('.swiper_container_new', {
     scrollbarHide: true,
     lazyLoading: false,
     lazyLoadingInPrevNext: true,
-    lazyLoadingInPrevNextAmount: 3    
+    lazyLoadingInPrevNextAmount: 3
 })
 
 newSwiper.on("onSlideChangeStart", function(swiper){
@@ -36,11 +36,9 @@ newSwiper.on("onSlideChangeStart", function(swiper){
 newSwiper.on("onTransitionEnd", function(swiper){listLock(swiper)});
 
 newSwiper.on("onSlideNextStart", function(swiper) {
-//    $(swiper.container).find(".home_btn").hide()
     $("#back_btn").hide()
 });
 newSwiper.on("onSlidePrevStart", function(swiper) {
-//    $(swiper.container).find(".home_btn").show()
     $("#back_btn").show()
 });
 
@@ -57,20 +55,21 @@ newSwiper.disableMousewheelControl();
 newSwiper.on("onSetTranslate", function(swiper, translate){swipeToMenu(swiper, translate)});
 
 // Ajax 방식의 데이터 처리를 위한 컨트롤러 객체
-function NewController() {
+function NewController(tile) {
 	this.startRow = 0;
+    this.tile=tile;
 }
 
 NewController.prototype = {
-	// 그림 정보 조회 : 업로드 카운트 및 이미지 목록 
+	// 그림 정보 조회 : 업로드 카운트 및 이미지 목록
 	getListData: function (startRow) {
 		this.startRow = startRow;
 		var controller = this;
-		AjaxCall.call(apiUrl + "/newIndex?startRow=" + startRow, 
-			null, 
-			"GET", 
+		AjaxCall.call(apiUrl + "/newIndex?startRow=" + startRow,
+			null,
+			"GET",
 			function (result) {
-				controller.getListDataRes(result);			
+				controller.getListDataRes(result);
 			}
 		);
 	},
@@ -80,12 +79,12 @@ NewController.prototype = {
 			$("#new_count").text(result.count);
 		}
 		for (var index in result.list) {
-			addPainting(newSwiper, 1, "new", result.list[index]);
+			addPainting(newSwiper, 1, "new", result.list[index], this.tile);
 			// 그림은 최대 100개 까지만 조회
 			if (newSwiper.slides.length > 1000) {
 				break;
 			}
-		} 
+		}
 	}
 };
 
@@ -95,7 +94,7 @@ NewController.prototype = {
 function initNew(){
   // 기존 설정된 슬라이더 제거
   newSwiper.removeAllSlides();
-	
+
   var newHome = new Home();
 	  newHome.setTitle("new");
 	  newHome.setExplain("<span data-i18n='new.explain'><span>");
@@ -105,19 +104,28 @@ function initNew(){
 
   // 다국어 변경 적용
   exeTranslation('.main_container', lang);
-  
+
   //테이블에서 가져올 데이터의 시작 위치를 처음 로딩시 0번째 부터 조회
   new NewController().getListData(0);
 }
 
+$("#new").find("#view_mode_btn").click(function(){
+    toggleViewNew();
 
-function showTileView(swiper){
-    $(swiper.slides).addClass("list_container_tile");
-    swiper.destroy(true, true);
+})
+
+function toggleViewNew(){
+    if(isTile=="new"){
+        isTile="false";
+        endTile(newSwiper, "new");
+    }else if(isTile=="false"){
+        isTile="new";
+        showTile(newSwiper, "new");
+    }else{
+        endTilePopular(popularSwiper, "popular");
+        endTile(newSwiper, "new");
+        endTile(followSwiper, "follow");
+        isTile="new";
+        showTile(newSwiper, "new");
+    }
 }
-
-function endTileView(swiper){
-    $(swiper.slides).removeClass("list_container_tile");
-    swiper.destroy(true, true);
-}
-

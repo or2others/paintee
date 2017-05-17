@@ -259,7 +259,7 @@ function showRewarded(result){
         case "P":{
           status = "bought";
           accountInfo = "paid for postcard";
-          money = 1;
+          money = 2;
           earnRequestedMoney = "$ 1";
           break;
         }
@@ -318,7 +318,7 @@ RewardController.prototype = {
 			accountName: $("[name=accountName]").val(),
 			accountNo: $("[name=accountNo]").val(),
 			bank: $("[name=bank]").val(),
-            rewardType: 'C'
+      rewardType: 'C'
 		};
 
 		if ($("[name=bank]").val() == '99') {

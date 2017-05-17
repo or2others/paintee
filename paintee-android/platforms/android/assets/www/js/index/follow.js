@@ -36,14 +36,10 @@ followSwiper.on("onTransitionEnd", function(swiper) {
 	listLock(swiper)
 });
 followSwiper.on("onSlideNextStart", function(swiper) {
-//    $(swiper.container).find(".home_btn").hide()
     $("#back_btn").hide()
-
 });
 followSwiper.on("onSlidePrevStart", function(swiper) {
-//    $(swiper.container).find(".home_btn").show()
     $("#back_btn").show()
-
 });
 
 // side menu에 이벤트 설정
@@ -60,7 +56,9 @@ followSwiper.on("onSetTranslate", function(swiper, translate) {
 	swipeToMenu(swiper, translate)
 });
 
-function FollowController() {}
+function FollowController(tile) {
+    this.tile=tile;
+}
 
 FollowController.prototype = {
 	// 팔로워 목록 홈 카운드 요청 AJAX
@@ -94,7 +92,7 @@ FollowController.prototype = {
 	// 팔로워 목록 그림 요청 후 처리 함수
 	getListDataRes : function(result) {
 		for ( var index in result.list) {
-			addPainting(followSwiper, 1, "follow", result.list[index]);
+			addPainting(followSwiper, 1, "follow", result.list[index], this.tile);
 			if (followSwiper.slides.length > 100) {
 				break;
 			}
@@ -217,9 +215,11 @@ function initFollow() {
 		delete welcome;
 		// 다국어 변경 적용
 		exeTranslation('.main_container', lang);
+        $("#follow").find("#view_mode_btn").hide();
 	} else {
 		// 로그인 상태일 경우 홈카운트 가져오기
 		new FollowController().getHomeCount();
+        $("#follow").find("#view_mode_btn").show();
 	}
 }
 
@@ -374,4 +374,26 @@ function Following() {
 
 		return this.following;
 	}
+}
+
+
+$("#follow").find("#view_mode_btn").click(function(){
+    toggleViewFollow();
+
+})
+
+function toggleViewFollow(){
+    if(isTile=="follow"){
+        isTile="false";
+        endTile(followSwiper, "follow");
+    }else if(isTile=="false"){
+        isTile="follow";
+        showTile(followSwiper, "follow");
+    }else{
+        endTilePopular(popularSwiper, "popular");
+        endTile(newSwiper, "new");
+        endTile(followSwiper, "follow");
+        isTile="follow";
+        showTile(followSwiper, "follow");
+    }
 }
